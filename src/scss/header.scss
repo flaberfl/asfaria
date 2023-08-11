@@ -1,16 +1,12 @@
 //========================================================================================================================================================
 
 .header {
-	@include adaptiveValue("padding-top", 33, 22);
-	@include adaptiveValue("padding-bottom", 44, 22);
+	@include adaptiveValue("padding-top", 55, 16);
+	@include adaptiveValue("padding-bottom", 55, 16);
 	position: fixed;
-	// background-color: $bodyColor;
-
 	width: 100%;
 	left: 0;
 	top: 0;
-	// z-index: 900;
-
 	z-index: 100;
 
 	transition: all 0.3s ease 0s;
@@ -24,7 +20,6 @@
 
 	&._header-bg {
 		background-color: $bodyColor;
-		// background-color: rgba(34, 45, 55, .9);
 		padding: rem(10) 0;
 
 		@media (min-width:$tablet) {
@@ -42,102 +37,27 @@
 
 	&__logo {
 		@media (max-width:$tablet) {
-			margin: 0 auto;
+			// margin: 0 auto;
 		}
 
 		img {
-			@include adaptiveValue("width", 202, 147);
+			@include adaptiveValue("width", 238, 150);
 		}
 	}
 
-	&__menu {
-		@media (min-width:em(1042)) {
-			@include adaptiveValue("margin-right", 62, 10);
-			@include adaptiveValue("margin-left", 62, 10);
-		}
-	}
+	&__menu {}
 
 	&__button {
-		min-width: 0;
-		font-size: rem(13);
-		line-height: 120%;
-		border-radius: rem(90);
-		border: 1px solid $hoverColor;
-		@include adaptiveValue("width", 155, 262);
-		@include adaptiveValue("min-height", 44, 55);
 
-		transition: all 0.3s ease 0s;
-
-		@media (any-hover: hover) {
-			&:hover {
-				background: $hoverColor;
-			}
-		}
-
-		@media (max-width:$tablet) {
-			font-size: rem(14);
-		}
-	}
-
-	&__actions {
-		display: flex;
-		align-items: center;
-		gap: rem(10);
-		margin-left: rem(10);
-
-		@media (max-width: em(1180)) {
-			flex-direction: column-reverse;
-		}
 	}
 
 	&__contacts {
 		display: grid;
-		gap: rem(6);
+		gap: rem(5);
 
 		@media (max-width:$tablet) {
-			grid-auto-flow: column;
+			// grid-auto-flow: column;
 			@include adaptiveValue("gap", 120, 15);
-		}
-
-		@media (max-width:$mobile) {
-			padding-top: rem(14);
-			padding-bottom: rem(14);
-			border-top: rem(1) solid rgba(255, 255, 255, 0.04);
-			border-bottom: rem(1) solid rgba(255, 255, 255, 0.04);
-			border-width: rem(1);
-		}
-	}
-
-	&__social {
-		display: flex;
-		align-items: center;
-		gap: rem(8);
-
-		font-size: rem(13);
-		line-height: math.div(29, 13);
-		color: #B5BAC2;
-		line-height: 100%;
-	}
-
-	&__phones {
-
-	}
-
-	&__tel {}
-
-	&__langs {
-		display: flex;
-		align-items: center;
-		gap: rem(6);
-
-		&_mobile {
-			@media (min-width:em(768)) {
-				display: none;
-			}
-		}
-
-		@media (max-width:em(768)) {
-			margin-left: auto;
 		}
 	}
 }
@@ -167,7 +87,7 @@
 			padding-left: rem(15);
 			padding-right: rem(15);
 			padding-bottom: rem(60);
-			padding-top: rem(30);
+			padding-top: rem(70);
 
 			visibility: hidden;
 			transform: scale(.8);
@@ -254,57 +174,109 @@
 	@media (max-width: $tablet) {
 		display: block;
 		position: relative;
-		width: rem(15);
+		width: rem(21);
 		height: rem(20);
 		cursor: pointer;
 		z-index: 999;
-		margin-right: rem(20);
 
 		span,
-		&::before,
-		&::after {
+		&::before {
 			content: "";
 			transition: all 0.3s ease 0s;
+			left: 0px;
 			position: absolute;
 			width: 100%;
-			height: rem(2);
+			height: rem(3);
+			border-radius: rem(2);
 			background-color: #fff;
-			transition: all .3s ease 0s;
 		}
 
 		&::before {
-			top: rem(2);
-		}
-
-		&::after {
-			bottom: rem(2);
-			width: 75%;
-			left: rem(12);
+			top: rem(6);
 		}
 
 		span {
-			top: calc(50% - rem(1));
+			top: 70%;
 		}
 
 		.menu-open & {
-			span {
-				transform: scale(0);
-				// top: rem(-12);
+
+			span,
+			&::before {
+				top: 48%;
+				left: -27%;
+				width: rem(22);
+				height: rem(3);
 			}
 
 			&::before {
 				transform: rotate(-45deg);
-				// top: calc(50% - rem(1));
-				top: rem(10);
 			}
 
-			&::after {
+			span {
 				transform: rotate(45deg);
-				bottom: calc(50% - rem(1));
-				top: rem(10);
-				left: 50%;
-				width: 100%;
 			}
 		}
 	}
 }
+
+// .icon-menu {
+// 	display: none;
+
+// 	@media (max-width: $tablet) {
+// 		display: block;
+// 		position: relative;
+// 		width: rem(15);
+// 		height: rem(20);
+// 		cursor: pointer;
+// 		z-index: 999;
+// 		margin-right: rem(20);
+
+// 		span,
+// 		&::before,
+// 		&::after {
+// 			content: "";
+// 			transition: all 0.3s ease 0s;
+// 			position: absolute;
+// 			width: 100%;
+// 			height: rem(2);
+// 			background-color: #fff;
+// 			transition: all .3s ease 0s;
+// 		}
+
+// 		&::before {
+// 			top: rem(2);
+// 		}
+
+// 		&::after {
+// 			bottom: rem(2);
+// 			width: 75%;
+// 			left: rem(12);
+// 		}
+
+// 		span {
+// 			top: calc(50% - rem(1));
+// 		}
+
+// 		.menu-open & {
+// 			span {
+// 				transform: scale(0);
+// 				// top: rem(-12);
+// 			}
+
+// 			&::before {
+// 				transform: rotate(-45deg);
+// 				// top: calc(50% - rem(1));
+// 				top: rem(10);
+// 			}
+
+// 			&::after {
+// 				transform: rotate(45deg);
+// 				bottom: calc(50% - rem(1));
+// 				top: rem(10);
+// 				left: 50%;
+// 				width: 100%;
+// 			}
+// 		}
+// 	}
+// }
