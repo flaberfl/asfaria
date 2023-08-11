@@ -3,9 +3,8 @@
 @import 'base/mixins';
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
-// @import "fonts/fonts";
 
-@import "fonts/icons";
+// @import "fonts/icons";
 
 
 $fontFamily: "Montserrat";
@@ -160,17 +159,10 @@ body {
 
 // Подключение стилей отдельных блоков
 @import "header";
-@import "intro";
-@import "features";
-@import "profit";
-@import "buy-home";
-@import "services";
-@import "questions";
-@import "projects";
-@import "faq";
-@import "feedback";
-@import "contacts";
-@import "quiz-form";
+
+// @import "feedback";
+// @import "contacts";
+// @import "quiz-form";
 @import "footer";
 
 // Подключение стилей отдельных страниц
