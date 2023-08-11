@@ -3,7 +3,7 @@
 @import 'base/mixins';
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
-@import "fonts/fonts";
+// @import "fonts/fonts";
 
 @import "fonts/icons";
 
@@ -20,17 +20,14 @@ $darkColor: #151820;
 $borderColor: #32A9FF;
 $textCoolor: #81878F;
 
-// Палитра цветов
-// @import "base/colors-palette";
 
+$minWidth: 360;
 
-$minWidth: 320;
+$maxWidth: 1920;
 
-$maxWidth: 1440;
+$maxWidthContainer: 1400;
 
-$maxWidthContainer: 1200;
-
-$containerPadding: 30;
+$containerPadding: 40;
 
 $containerWidth: $maxWidthContainer+$containerPadding;
 
@@ -107,8 +104,8 @@ body {
       }
 
       @else {
-        @include adaptiveValue('padding-left', math.div($containerPadding, 2), 15);
-        @include adaptiveValue('padding-right', math.div($containerPadding, 2), 15);
+        @include adaptiveValue('padding-left', math.div($containerPadding, 2), 20);
+        @include adaptiveValue('padding-right', math.div($containerPadding, 2), 20);
       }
     }
   }
