@@ -1,0 +1,120 @@
+.contacts {
+  margin-top: rem(-180);
+  @include adaptiveValue("padding-top", 322, 522);
+  padding-bottom: rem(48);
+  position: relative;
+  z-index: 5;
+
+  /* .contacts__container */
+  &__container {
+
+    /* .contacts__container_small */
+    &_small {}
+  }
+
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  /* .contacts__body */
+  &__body {
+    max-width: rem(400);
+    padding: rem(42);
+    margin-left: auto;
+
+    background-color: $darkColor;
+
+    @media (max-width:$mobile) {
+      margin: 0 auto;
+    }
+  }
+
+  /* .contacts__title */
+  &__title {
+    margin-bottom: rem(24);
+
+    @include adaptiveValue("font-size", 29, 24);
+    line-height: math.div(40, 29);
+    font-weight: 400;
+
+    @media (min-width:$mobile) {
+      max-width: rem(234);
+    }
+  }
+
+  /* .contacts__list */
+  &__list {
+    display: grid;
+    row-gap: rem(40);
+    @include adaptiveValue("margin-bottom", 38, 28);
+
+    font-size: rem(15);
+    line-height: math.div(19, 15);
+    font-weight: 500;
+
+    @media (max-width:$mobile) {
+      font-size: rem(14);
+    }
+  }
+
+  /* .contacts__item */
+  &__item {
+    display: flex;
+    gap: rem(15);
+  }
+
+  /* .contacts__name */
+  &__name {
+    margin-bottom: rem(5);
+
+    color: #A1A3AB;
+  }
+
+  /* .contacts__social */
+  &__social {
+    display: inline-flex;
+
+    @media (max-width:$mobileSmall) {
+      flex-direction: column;
+      gap: rem(10);
+      margin-left: 0;
+    }
+  }
+
+  /* .contacts__phones */
+  &__phones {}
+
+  /* .contacts__mail */
+  &__mail {
+    display: block;
+
+    font-size: rem(16);
+    line-height: math.div(20, 16);
+    font-weight: 500;
+
+    text-align: center;
+    color: $btnColor;
+
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__whatsapp {
+    height: rem(36);
+
+    @media (max-width:$mobileSmall) {
+      margin-left: 0;
+      width: rem(120);
+    }
+  }
+}

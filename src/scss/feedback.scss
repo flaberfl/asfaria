@@ -1,0 +1,82 @@
+.feedback {
+  margin-top: rem(-295);
+  position: relative;
+
+  background-color: transparent !important;
+  z-index: 100;
+
+  /* .feedback__container */
+  &__container {
+    padding-bottom: rem(42);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: rem(20);
+
+    background-color: $darkColor;
+
+    @media (max-width:$mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* .feedback__question */
+  &__question {
+    @include adaptiveValue("padding-top", 45, 30);
+    padding-left: rem(56);
+    @include adaptiveValue("padding-left", 56, 0, 1440, 992, 1);
+  }
+
+  /* .feedback__title */
+  &__title {
+    margin-bottom: rem(14);
+  }
+
+  /* .feedback__form */
+  &__form {
+    @media (max-width:$mobile) {
+      @include adaptiveValue("padding-left", 120, 10, 767, 480, 2);
+    }
+  }
+
+  /* .feedback__button */
+  &__button {
+    @include adaptiveValue("width", 240, 270);
+  }
+
+  /* .feedback__policy */
+  &__policy {
+    max-width: rem(200);
+
+    font-size: rem(11);
+    line-height: math.div(15, 11);
+    font-weight: 300;
+    color: #73767C;
+
+    span {
+      color: #fff;
+    }
+
+    @media (max-width:$mobileSmall) {
+      max-width: rem(260);
+      text-align: center;
+    }
+  }
+
+  /* .feedback__image */
+  &__image {
+    position: relative;
+    background: url('@img/feedback/back-feed.jpg') center / cover no-repeat;
+    margin-right: rem(-14);
+
+    img {
+      position: absolute;
+      max-width: 100%;
+      left: 0;
+      bottom: rem(-42);
+    }
+
+    @media (max-width:$mobile) {
+      display: none;
+    }
+  }
+}

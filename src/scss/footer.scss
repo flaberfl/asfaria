@@ -1,0 +1,36 @@
+//====================================================================================================
+.footer {
+
+  /* .footer__container */
+  &__container {
+    @include adaptiveValue("min-height", 66, 114);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: em(600)) {
+      flex-direction: column;
+      padding: rem(15) 0;
+
+      text-align: center;
+    }
+  }
+
+  /* .footer__copyright */
+  &__copyright {
+    font-size: rem(14);
+    line-height: math.div(17, 14);
+    font-weight: 300;
+    color: #898C96;
+
+    @media (max-width:$mobile) {
+      font-size: rem(13);
+    }
+
+    @media (max-width: em(600)) {
+      max-width: rem(255);
+    }
+  }
+}
+
+//====================================================================================================

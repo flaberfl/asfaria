@@ -1,0 +1,205 @@
+.buy-home {
+  margin-top: rem(-112);
+
+  @media (max-width:em(1080)) {
+    overflow: hidden;
+  }
+
+  /* .buy-home__container */
+  &__container {
+    @include adaptiveValue("padding-top", 80, 30);
+    padding-bottom: rem(105);
+    position: relative;
+    display: grid;
+    grid-template-columns: 50.5% 1fr;
+    gap: rem(15);
+
+    background-color: $darkColor;
+
+    @media (max-width:$mobile) {
+      grid-template-columns: 1fr;
+      @include adaptiveValue("padding-bottom", 200, 143, 767, 320, 1);
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+
+      background: url('@img/buy-home/book.png') center bottom no-repeat;
+      opacity: .1;
+      top: rem(0);
+      right: rem(0);
+      z-index: 0;
+    }
+  }
+
+  /* .buy-home__content */
+  &__content {
+    max-width: rem(500);
+
+    @media (max-width: em(660)) {
+      margin: 0 auto;
+    }
+  }
+
+  /* .buy-home__title */
+  &__title {
+    @include adaptiveValue("margin-bottom", 16, 11);
+    text-align: left;
+
+    @media (max-width:em(660)) {
+      text-align: center;
+    }
+  }
+
+  /* .buy-home__text */
+  &__text {
+    @include adaptiveValue("margin-bottom", 45, 27);
+
+    @include adaptiveValue("font-size", 22, 15);
+    font-weight: 300;
+    line-height: math.div(36, 22);
+    opacity: .8;
+
+    span {
+      font-weight: 700;
+    }
+
+    @media (max-width: em(660)) {
+      text-align: center;
+    }
+  }
+
+  /* .buy-home__button */
+  &__button {
+    width: rem(263);
+
+    @media (max-width: em(660)) {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  /* .buy-home__badge */
+  &__badge {
+    position: absolute;
+    @include adaptiveValue("bottom", 77, 30);
+    right: rem(104);
+  }
+}
+
+.manager-buy-home {
+  padding-top: rem(15);
+  position: relative;
+
+  /* .manager-buy-home__name */
+  &__name {
+    margin-bottom: rem(4);
+  }
+
+  /* .manager-buy-home__position */
+  &__position {
+    margin-bottom: rem(5);
+  }
+
+  /* .manager-buy-home__text */
+  &__text {
+    max-width: rem(200);
+  }
+
+  /* .manager-buy-home__image */
+  &__image {
+
+    img {
+      position: absolute;
+      right: rem(-70);
+      bottom: rem(-140);
+      max-width: 100%;
+
+      @media (max-width:$mobile) {
+        bottom: rem(-360);
+      }
+
+      @media (max-width: em(660)) {
+        @include adaptiveValue("width", 473, 278, 660, 320, 2);
+        @include adaptiveValue("bottom", -360, -180, 660, 320, 2);
+      }
+    }
+  }
+}
+
+.badge-buy-home {
+  display: flex;
+  @include adaptiveValue("width", 452, 281);
+
+  background-color: $hoverColor;
+  z-index: 10;
+
+  border-radius: rem(600);
+
+  @media (min-width:$tablet) {
+    padding: rem(18) 0;
+  }
+
+  @media (max-width: em(660)) {
+    right: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    opacity: 0.14;
+    border: rem(1) dashed #fff;
+    border-radius: rem(600);
+    transform: translate(-50%, 0) scale(1.1);
+    width: 95%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    left: 50%;
+  }
+
+  /* .badge-buy-home__item */
+  &__item {
+    @include adaptiveValue("padding-left", 30, 10);
+    @include adaptiveValue("padding-right", 30, 16);
+    min-height: rem(83);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &:nth-child(2) {
+
+      @media (min-width:$tablet) {
+        border-left: rem(1) dashed rgba(255, 255, 255, 0.23);
+        border-right: rem(1) dashed rgba(255, 255, 255, 0.23);
+      }
+    }
+  }
+
+  /* .badge-buy-home__label */
+  &__label {
+    font-size: rem(13);
+    font-weight: 400;
+    line-height: math.div(16, 13);
+  }
+
+  /* .badge-buy-home__value */
+  &__value {
+    @include adaptiveValue("font-size", 30, 20);
+    line-height: math.div(38, 30);
+    font-weight: 700;
+    flex-shrink: 0;
+
+    span {
+      @include adaptiveValue("font-size", 18, 12);
+      line-height: math.div(23, 18);
+    }
+  }
+}

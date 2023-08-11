@@ -1,0 +1,417 @@
+.title {
+  max-width: rem(430);
+}
+
+h1 {
+  font-family: "SangBleuEmpireTrial";
+  @include adaptiveValue("font-size", 67, 28);
+  line-height: math.div(80, 67);
+  text-transform: uppercase;
+
+  span {
+    display: block;
+    margin-top: rem(-13);
+
+    font-family: "Miama";
+    @include adaptiveValue("font-size", 57, 32);
+    line-height: math.div(80, 57);
+    color: $borderColor;
+    text-transform: capitalize;
+
+    @media (min-width:$mobile) {
+      margin-left: rem(65);
+    }
+  }
+}
+
+h2 {
+  font-family: "SangBleuEmpireTrial";
+  @include adaptiveValue("font-size", 44, 24);
+  line-height: 148%;
+  text-transform: uppercase;
+
+  span {
+    color: $borderColor;
+  }
+
+  @media (max-width:$mobile) {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: rem(610);
+  }
+}
+
+.title-padding {
+  @include adaptiveValue("padding-left", 70, 0, 1440, 992, 1);
+}
+
+.tel {
+  display: flex;
+  align-items: center;
+  gap: rem(10);
+}
+
+.phones {
+  display: grid;
+  gap: rem(2);
+  min-width: rem(153);
+
+  font-size: rem(16);
+  font-weight: 500;
+}
+
+.manager {
+  &__name {
+    @include adaptiveValue("font-size", 24, 20);
+    font-weight: 500;
+    line-height: math.div(23, 24);
+  }
+
+  &__position {
+    @include adaptiveValue("font-size", 16, 14);
+    font-weight: 500;
+    color: #A9AFB3;
+    line-height: math.div(25, 16);
+  }
+
+  &__text {
+    font-size: rem(13);
+    font-weight: 300;
+    line-height: math.div(21, 13);
+    font-style: italic;
+
+    @media (max-width:$mobile) {
+      font-size: rem(12);
+    }
+  }
+}
+
+.mobile-logo {
+  @include adaptiveValue("width", 400, 182);
+
+  @media (min-width:$mobile) {
+    display: none;
+  }
+}
+
+[anim-left-right] {
+  position: relative;
+  overflow: hidden;
+
+  transition-timing-function: ease;
+  transition-duration: .4s;
+
+  img {
+    opacity: 0;
+    max-width: 100%;
+  }
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    // background-color: #232323;
+    background-color: $btnColor;
+    z-index: 2;
+    transform: translateX(101%);
+    display: block;
+  }
+
+
+  &._watcher-view {
+    &::before {
+      animation: toRight 2s cubic-bezier(.77, 0, .175, 1) forwards;
+    }
+
+    img {
+      animation: zoomIN 1s cubic-bezier(.77, 0, .175, 1) forwards;
+      animation-delay: 1s;
+    }
+
+  }
+}
+
+[anim-left-right-del] {
+  overflow: visible;
+
+  &::before {
+    display: none;
+  }
+}
+
+[btn-anim-to_right-trans] {
+  position: relative;
+  overflow: hidden;
+  border: 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    display: block;
+
+    background-color: $borderColor;
+    transition: all 2s ease 0s;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+
+    border: 1px solid $btnColor;
+    transition: width 1.5s ease 0s;
+  }
+
+  &._watcher-view {
+    &::before {
+      animation: btnAnim 2s cubic-bezier(.77, 0, .175, 1) forwards;
+    }
+
+    &::after {
+      // width: 100%;
+      animation: btnAnimBorder 2s cubic-bezier(.77, 0, .175, 1) forwards;
+    }
+  }
+}
+
+[btn-anim-to_right-blue] {
+  position: relative;
+  overflow: hidden;
+  border: 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    display: block;
+
+    background-color: $hoverColor;
+  }
+
+  &._watcher-view {
+    &::after {
+      animation: btnAnimBlue 2s cubic-bezier(.77, 0, .175, 1) forwards;
+    }
+  }
+}
+
+
+@keyframes toRight {
+  0% {
+    transform: translateX(-101%)
+  }
+
+  49%,
+  51% {
+    transform: translateX(0)
+  }
+
+  to {
+    transform: translateX(101%)
+  }
+}
+
+@keyframes zoomIN {
+  0% {
+    opacity: 0;
+    transform: scale(1.6)
+  }
+
+  26% {
+    opacity: 0
+  }
+
+  37% {
+    opacity: 1
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1)
+  }
+}
+
+
+@keyframes backgroundZoom {
+  from {
+    transform: scale(1)
+  }
+
+  to {
+    transform: scale(1.3)
+  }
+}
+
+// @keyframes zoom {
+//   from {
+//     transform: scale(1)
+//   }
+
+//   to {
+//     transform: scale(1.2)
+//   }
+// }
+
+
+// @keyframes btnAnim {
+//   0% {
+//     width: 0;
+//     opacity: 0;
+//   }
+
+//   50% {
+//     width: 100%;
+//     opacity: 1;
+//   }
+
+//   100% {
+//     width: 0;
+//     opacity: 0;
+//   }
+// }
+
+@keyframes btnAnim {
+  0% {
+    transform: translateX(-101%)
+  }
+
+  50% {
+    transform: translateX(0);
+
+  }
+
+  100% {
+    transform: translateX(101%)
+  }
+}
+
+@keyframes btnAnimBlue {
+  0% {
+
+    transform: translateX(-101%)
+  }
+
+  50% {
+
+    transform: translateX(0);
+
+  }
+
+  100% {
+    transform: translateX(101%);
+  }
+}
+
+@keyframes btnAnimBorder {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+
+  50% {
+    width: 100%;
+    opacity: 1;
+  }
+
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
+}
+
+
+
+@keyframes shring-animation {
+  0% {
+    background-position: 0 0;
+    opacity: 0;
+    width: 0;
+  }
+
+  1% {
+    background-position: 0 0;
+    opacity: 1;
+    border-right: 1px solid orange;
+  }
+
+  50% {
+    background-position: 150px 0;
+    opacity: 1;
+    border-right: 1px solid orange;
+  }
+
+  100% {
+    background-position: 400px 0;
+    opacity: 1;
+    border-right: 1px solid orange;
+  }
+}
+
+@keyframes type {
+  0% {
+    width: 0;
+  }
+
+  1%,
+  99% {
+    border-right: 1px solid orange;
+  }
+
+  100% {
+    border-right: none;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+
+
+
+@keyframes animated-text {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+// @keyframes animated-cursor {
+// //   from {
+// //     border-right-color: rgba(0, 255, 0, .75);
+// //   }
+
+// //   to {
+// //     border-right-color: transparent;
+// //   }
+// // }

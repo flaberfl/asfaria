@@ -1,0 +1,1140 @@
+<!-- <div id="popup" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">Закрыть</button>
+			<div class="popup__text">
+				Text
+			</div>
+		</div>
+	</div>
+</div> -->
+<div id="thanks-popup" aria-hidden="true" class="popup popup_show1">
+	<div class="popup__wrapper">
+		<div class="popup__content thanks-popup__content">
+			<button data-close type="button" class="popup__close"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path opacity="0.5" d="M10 1L1 10M1 1L10 10" stroke="white" stroke-linecap="square" stroke-linejoin="round" />
+				</svg></button>
+			<div class="thanks-popup__body">
+				<div class="thanks-popup__check-img">
+					<svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1 5L5.66667 9L15 1" stroke="white" stroke-width="2" stroke-linecap="round"
+							stroke-linejoin="round" />
+					</svg>
+				</div>
+				<h2 class="thanks-popup__title title feedback-popup__title">Спасибо!</h2>
+				<p class="thanks-popup__text feedback-popup__text">Мы получили Вашу заявку и скоро свяжемся с Вами по указанным
+					контактам.</p>
+				<button data-close class="popup__button button">Закрыть</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="feedback-popup" aria-hidden="true" class="popup popup_show1">
+	<div class="popup__wrapper">
+		<div class="popup__content feedback-popup__content">
+			<button data-close type="button" class="popup__close">
+				<svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path opacity="0.5" d="M10 1L1 10M1 1L10 10" stroke="white" stroke-linecap="square" stroke-linejoin="round" />
+				</svg>
+			</button>
+			<div class="feedback-popup__body">
+				<h2 class="feedback-popup__title title">Обратный звонок</h2>
+				<p class="feedback-popup__text">Мы перезвоним Вам и ответим на все интересующие вас вопросы.</p>
+
+				<form class="feedback-form form" action="#" data-dev data-popup-message="#thanks-popup">
+					<div class="feedback-form__line form__line form__line_name">
+						<label for="name">Ваше имя</label>
+						<input data-required="text" type="text" name="name" data-error="Введите ваше имя" data-placeholder=""
+							placeholder="" class="input">
+					</div>
+					<div class="feedback-form__line form__line form__line_tel">
+						<label for="tel">Номер телефона</label>
+						<input autocomplete="off" type="text" name="tel" data-error="Введите корректный номер телефона"
+							data-required="number" data-placeholder="" placeholder="" class="input">
+					</div>
+					<div class="feedback-form__line form__line form__line_send">
+						<button type="submit" class="popup__button button">Отправить</button>
+						<div class="feedback__policy">
+							Нажимая кнопку “Отправить” вы соглашаетесь с <a href="#">Политикой конфиденциальности</a>
+						</div>
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="quiz-popup" aria-hidden="true" class="popup quiz-popup">
+	<div class="quiz-popup__wrapper popup__wrapper">
+		<div class="quiz-popup__content popup__content">
+			<!-- <button data-close type="button" class="popup__close"></button> -->
+			<button data-close type="button" class="popup__close">
+				<svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path opacity="0.5" d="M10 1L1 10M1 1L10 10" stroke="white" stroke-linecap="square" stroke-linejoin="round" />
+				</svg>
+			</button>
+			<form id="quiz-form" class="form quiz-form" action="#" method="POST" data-dev
+				data-popup-message="#quiz-thanks-popup">
+
+				<fieldset class="quiz-form__fieldset quiz-form__fieldset_first" data-card="1" data-validate="novalidate">
+					<div class="quiz-form__content quiz-form__content_1">
+						<h4 class="quiz-form__slogan">Подберём объекты недвижимости под ваши критерии</h4>
+						<h3 class="quiz-form__title">С какой целью планируете приобрести недвижимость?</h3>
+						<div class="quiz-form__body quiz-form__body_2items">
+							<span class="wpcf7-form-control wpcf7-radio step1-1">
+
+								<span class="wpcf7-list-item">
+
+									<label>
+										<input type="radio" name="target" value="Для комфортной и безопасной жизни">
+										<span class="wpcf7-list-item-label quiz-form__label">
+											Для комфортной и безопасной жизни
+										</span>
+									</label>
+
+								</span>
+
+							</span>
+
+							<span class="wpcf7-form-control wpcf7-radio step1-2">
+
+								<span class="wpcf7-list-item">
+
+									<label>
+										<input type="radio" name="target" value="Для инвестиций с доходностью 8%">
+										<span class="wpcf7-list-item-label quiz-form__label">
+											Для инвестиций с доходностью 8%
+										</span>
+									</label>
+
+								</span>
+
+							</span>
+
+						</div>
+						<div class="quiz-form__footer">
+							<div class="quiz-form__progress progress-quiz-form" data-da=".quiz-form__content_1,580, 0">
+								<div class="progress-quiz-form__answer">
+									<p>Вопрос</p>
+									<div class="progress-quiz-form__number">1<span></span>5</div>
+								</div>
+								<div class="progress-quiz-form__bar">
+									<div class="progress-quiz-form__line progress-quiz-form__line_1"></div>
+								</div>
+							</div>
+
+							<button type="button" class="quiz-form__button button button_blue button_next">Далее<svg width="18"
+									height="9" viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M17.3536 4.85355C17.5488 4.65829 17.5488 4.34171 17.3536 4.14645L14.1716 0.964467C13.9763 0.769205 13.6597 0.769205 13.4645 0.964467C13.2692 1.15973 13.2692 1.47631 13.4645 1.67157L16.2929 4.5L13.4645 7.32843C13.2692 7.52369 13.2692 7.84027 13.4645 8.03554C13.6597 8.2308 13.9763 8.2308 14.1716 8.03554L17.3536 4.85355ZM-4.37114e-08 5L17 5L17 4L4.37114e-08 4L-4.37114e-08 5Z"
+										fill="white" />
+								</svg>
+							</button>
+
+						</div>
+					</div>
+					<div class="quiz-form__side">
+						<div class="quiz-form__manager">
+							<img src="@img/quiz/icon-photo.png" alt="Фото менеджера" class="quiz-form__icon-photo">
+							<div class="quiz-form__descr">
+								<p class="quiz-form__name manager__name">Сергей</p>
+								<p class="quiz-form__positon manager__position">АН «Buy Rent»</p>
+								<div class="quiz-form__text manager__text">
+									<p>
+										Если вы планируете переезд в Грузию, хотите купить недвижимость для ваших близких или просто
+										иногда
+										прилетать на отдых - <span>выбирайте первый вариант.</span>
+									</p>
+									<p>
+										Если вы хотите инвестировать в недвижимость, выгодно перепродать или сдать в аренду -
+										<span>выбирайте второй вариант.</span>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="quiz-form__decor">
+							<div class="quiz-form__badge">
+								<img class="quiz-form__book" src="@img/quiz/book.png" alt="Книга">
+								Ответьте на 5 вопросов и получите <span>каталог ТОП 10</span> новостроек для инвестиций
+							</div>
+						</div>
+					</div>
+
+				</fieldset>
+
+				<fieldset class="quiz-form__fieldset hidden" data-card="2">
+					<div class="quiz-form__content quiz-form__content_2">
+						<h4 class="quiz-form__slogan">Подберём объекты недвижимости под ваши критерии</h4>
+						<h3 class="quiz-form__title">Какой тип жилья вы рассматриваете для покупки?</h3>
+						<div class="quiz-form__body quiz-form__body_3items">
+
+							<span class="wpcf7-form-control wpcf7-radio step2-1">
+
+								<span class="wpcf7-list-item">
+
+									<label>
+										<input type="radio" name="type" value="Новостройка">
+										<span class=" wpcf7-list-item-label quiz-form__label">
+											Новостройка
+										</span>
+									</label>
+								</span>
+
+							</span>
+
+							<span class="wpcf7-form-control wpcf7-radio step2-2">
+
+								<span class="wpcf7-list-item">
+
+									<label>
+										<input type="radio" name="type" value="Вторичное жильё">
+										<span class="wpcf7-list-item-label quiz-form__label">
+											Вторичное жильё
+										</span>
+									</label>
+
+								</span>
+
+							</span>
+
+							<span class="wpcf7-form-control wpcf7-radio step2-3">
+
+								<span class="wpcf7-list-item">
+
+									<label>
+										<input type="radio" name="type" value="Таунхаус/Вилла">
+										<span class=" wpcf7-list-item-label quiz-form__label">
+											Таунхаус/Вилла
+										</span>
+									</label>
+
+								</span>
+							</span>
+
+						</div>
+						<div class="quiz-form__footer">
+							<div class="quiz-form__progress progress-quiz-form" data-da=".quiz-form__content_2,580, 0">
+								<div class="progress-quiz-form__answer">
+									<p>Вопрос</p>
+									<div class="progress-quiz-form__number">2<span></span>5</div>
+								</div>
+								<div class="progress-quiz-form__bar">
+									<div class="progress-quiz-form__line progress-quiz-form__line_2"></div>
+								</div>
+							</div>
+
+							<button type="button" class="quiz-form__button button button_blue button_next">Далее<svg width="18"
+									height="9" viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M17.3536 4.85355C17.5488 4.65829 17.5488 4.34171 17.3536 4.14645L14.1716 0.964467C13.9763 0.769205 13.6597 0.769205 13.4645 0.964467C13.2692 1.15973 13.2692 1.47631 13.4645 1.67157L16.2929 4.5L13.4645 7.32843C13.2692 7.52369 13.2692 7.84027 13.4645 8.03554C13.6597 8.2308 13.9763 8.2308 14.1716 8.03554L17.3536 4.85355ZM-4.37114e-08 5L17 5L17 4L4.37114e-08 4L-4.37114e-08 5Z"
+										fill="white" />
+								</svg>
+							</button>
+
+						</div>
+					</div>
+					<div class="quiz-form__side">
+						<div class="quiz-form__manager">
+							<img src="@img/quiz/icon-photo.png" alt="Фото менеджера" class="quiz-form__icon-photo">
+							<div class="quiz-form__descr">
+								<p class="quiz-form__name manager__name">Сергей</p>
+								<p class="quiz-form__positon manager__position">АН «Buy Rent»</p>
+								<div class="quiz-form__text manager__text">
+									<p>
+										Выбирайте тип недвижимости, исходя из целей покупки.
+									</p>
+									<p>
+										<span>Для инвестирования</span> лучше подходят апартаменты и квартиры.
+									</p>
+									<p>Если вы планируете покупать недвижимость <span>для себя</span> , то рекомендуем также посмотреть
+										дома и
+										виллы.</p>
+								</div>
+							</div>
+						</div>
+						<div class="quiz-form__decor">
+							<div class="quiz-form__badge">
+								<img class="quiz-form__book" src="@img/quiz/book.png" alt="Книга">
+								Ответьте на 5 вопросов и получите <span>каталог ТОП 10</span> новостроек для инвестиций
+							</div>
+						</div>
+					</div>
+
+				</fieldset>
+
+				<fieldset class="quiz-form__fieldset hidden" data-card="3">
+					<div class="quiz-form__content quiz-form__content_2a">
+						<h4 class="quiz-form__slogan">Подберём объекты недвижимости под ваши критерии</h4>
+						<h3 class="quiz-form__title">Какой тип жилья вы рассматриваете для покупки?</h3>
+						<div class="quiz-form__body quiz-form__body_3items">
+
+							<span class="wpcf7-form-control wpcf7-radio step2-1">
+
+								<span class="wpcf7-list-item">
+
+									<label>
+										<input type="radio" name="type" value="Новостройка">
+										<span class=" wpcf7-list-item-label quiz-form__label">
+											Новостройка
+										</span>
+									</label>
+								</span>
+
+							</span>
+
+							<span class="wpcf7-form-control wpcf7-radio step2-2a">
+
+								<span class="wpcf7-list-item">
+
+									<label>
+										<input type="radio" name="type" value="Апартаменты в управление">
+										<span class="wpcf7-list-item-label quiz-form__label">
+											Апартаменты в управление
+										</span>
+									</label>
+
+								</span>
+
+							</span>
+
+							<span class="wpcf7-form-control wpcf7-radio step2-3">
+
+								<span class="wpcf7-list-item">
+
+									<label>
+										<input type="radio" name="type" value="Таунхаус/Вилла">
+										<span class=" wpcf7-list-item-label quiz-form__label">
+											Таунхаус/Вилла
+										</span>
+									</label>
+
+								</span>
+							</span>
+
+						</div>
+						<div class="quiz-form__footer">
+							<div class="quiz-form__progress progress-quiz-form" data-da=".quiz-form__content_2a,580, 0">
+								<div class="progress-quiz-form__answer">
+									<p>Вопрос</p>
+									<div class="progress-quiz-form__number">2<span></span>5</div>
+								</div>
+								<div class="progress-quiz-form__bar">
+									<div class="progress-quiz-form__line progress-quiz-form__line_2"></div>
+								</div>
+							</div>
+
+							<button type="button" class="quiz-form__button button button_blue button_next">Далее<svg width="18"
+									height="9" viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M17.3536 4.85355C17.5488 4.65829 17.5488 4.34171 17.3536 4.14645L14.1716 0.964467C13.9763 0.769205 13.6597 0.769205 13.4645 0.964467C13.2692 1.15973 13.2692 1.47631 13.4645 1.67157L16.2929 4.5L13.4645 7.32843C13.2692 7.52369 13.2692 7.84027 13.4645 8.03554C13.6597 8.2308 13.9763 8.2308 14.1716 8.03554L17.3536 4.85355ZM-4.37114e-08 5L17 5L17 4L4.37114e-08 4L-4.37114e-08 5Z"
+										fill="white" />
+								</svg>
+							</button>
+
+						</div>
+					</div>
+					<div class="quiz-form__side">
+						<div class="quiz-form__manager">
+							<img src="@img/quiz/icon-photo.png" alt="Фото менеджера" class="quiz-form__icon-photo">
+							<div class="quiz-form__descr">
+								<p class="quiz-form__name manager__name">Сергей</p>
+								<p class="quiz-form__positon manager__position">АН «Buy Rent»</p>
+								<div class="quiz-form__text manager__text">
+									<p>
+										Выбирайте тип недвижимости, исходя из целей покупки.
+									</p>
+									<p>
+										<span>Для инвестирования</span> лучше подходят апартаменты и квартиры.
+									</p>
+									<p>Если вы планируете покупать недвижимость <span>для себя</span> , то рекомендуем также посмотреть
+										дома и
+										виллы.</p>
+								</div>
+							</div>
+						</div>
+						<div class="quiz-form__decor">
+							<div class="quiz-form__badge">
+								<img class="quiz-form__book" src="@img/quiz/book.png" alt="Книга">
+								Ответьте на 5 вопросов и получите <span>каталог ТОП 10</span> новостроек для инвестиций
+							</div>
+						</div>
+					</div>
+
+				</fieldset>
+
+				<fieldset class="quiz-form__fieldset hidden" data-card="4">
+					<div class="quiz-form__content quiz-form__content_3">
+						<h4 class="quiz-form__slogan">Подберём объекты недвижимости под ваши критерии</h4>
+						<h3 class="quiz-form__title">Какое количество спален вам необходимо?</h3>
+						<div class="quiz-form__body quiz-form__body_3items">
+
+							<span class="wpcf7-form-control wpcf7-radio step3-1">
+
+								<span class="wpcf7-list-item">
+
+									<label>
+										<input type="radio" name="bedroom" value="1 спальня">
+										<span class=" wpcf7-list-item-label quiz-form__label">
+											1 спальня
+										</span>
+									</label>
+								</span>
+
+							</span>
+							<span class="wpcf7-form-control wpcf7-radio step3-2">
+
+								<span class="wpcf7-list-item">
+
+									<label>
+										<input type="radio" name="bedroom" value="2 спальни">
+										<span class="wpcf7-list-item-label quiz-form__label">
+											2 спальни
+										</span>
+									</label>
+
+								</span>
+
+							</span>
+
+							<span class="wpcf7-form-control wpcf7-radio step3-3">
+
+								<span class="wpcf7-list-item">
+
+									<label>
+										<input type="radio" name="bedroom" value="3 и более спален">
+										<span class=" wpcf7-list-item-label quiz-form__label">
+											3 и более спален
+										</span>
+									</label>
+
+								</span>
+							</span>
+						</div>
+						<div class="quiz-form__footer">
+							<div class="quiz-form__progress progress-quiz-form" data-da=".quiz-form__content_3,580, 0">
+								<div class="progress-quiz-form__answer">
+									<p>Вопрос</p>
+									<div class="progress-quiz-form__number">3<span></span>5</div>
+								</div>
+								<div class="progress-quiz-form__bar">
+									<div class="progress-quiz-form__line progress-quiz-form__line_3"></div>
+								</div>
+							</div>
+
+							<button type="button" class="quiz-form__button button button_blue button_next">Далее<svg width="18"
+									height="9" viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M17.3536 4.85355C17.5488 4.65829 17.5488 4.34171 17.3536 4.14645L14.1716 0.964467C13.9763 0.769205 13.6597 0.769205 13.4645 0.964467C13.2692 1.15973 13.2692 1.47631 13.4645 1.67157L16.2929 4.5L13.4645 7.32843C13.2692 7.52369 13.2692 7.84027 13.4645 8.03554C13.6597 8.2308 13.9763 8.2308 14.1716 8.03554L17.3536 4.85355ZM-4.37114e-08 5L17 5L17 4L4.37114e-08 4L-4.37114e-08 5Z"
+										fill="white" />
+								</svg>
+							</button>
+
+						</div>
+					</div>
+					<div class="quiz-form__side">
+						<div class="quiz-form__manager">
+							<img src="@img/quiz/icon-photo.png" alt="Фото менеджера" class="quiz-form__icon-photo">
+							<div class="quiz-form__descr">
+								<p class="quiz-form__name manager__name">Сергей</p>
+								<p class="quiz-form__positon manager__position">АН «Buy Rent»</p>
+								<div class="quiz-form__text manager__text">
+									<p>Как правило, от <span>количества спален</span> зависит <span>площадь</span> недвижимости.</p>
+								</div>
+							</div>
+						</div>
+						<div class="quiz-form__decor">
+							<div class="quiz-form__badge">
+								<img class="quiz-form__book" src="@img/quiz/book.png" alt="Книга">
+								Ответьте на 5 вопросов и получите <span>каталог ТОП 10</span> новостроек для инвестиций
+							</div>
+						</div>
+					</div>
+
+				</fieldset>
+
+				<fieldset class="quiz-form__fieldset hidden" data-card="5">
+					<div class="quiz-form__content quiz-form__content_3a">
+						<h4 class="quiz-form__slogan">Подберём объекты недвижимости под ваши критерии</h4>
+						<h3 class="quiz-form__title">Какое количество спален вам необходимо?</h3>
+						<div class="quiz-form__body quiz-form__body_2items">
+							<span class="wpcf7-form-control wpcf7-radio step3-1a">
+
+								<span class="wpcf7-list-item">
+
+									<label>
+										<input type="radio" name="bedroom" value="2 спальни">
+										<span class="wpcf7-list-item-label quiz-form__label">
+											2 спальни
+										</span>
+									</label>
+
+								</span>
+
+							</span>
+
+							<span class="wpcf7-form-control wpcf7-radio step3-2a">
+
+								<span class="wpcf7-list-item">
+
+									<label>
+										<input type="radio" name="bedroom" value="3 и более спален">
+										<span class="wpcf7-list-item-label quiz-form__label">
+											3 и более спален
+										</span>
+									</label>
+
+								</span>
+
+							</span>
+
+						</div>
+						<div class="quiz-form__footer">
+							<div class="quiz-form__progress progress-quiz-form" data-da=".quiz-form__content_3a,580, 0">
+								<div class="progress-quiz-form__answer">
+									<p>Вопрос</p>
+									<div class="progress-quiz-form__number">3<span></span>5</div>
+								</div>
+								<div class="progress-quiz-form__bar">
+									<div class="progress-quiz-form__line progress-quiz-form__line_3"></div>
+								</div>
+							</div>
+
+							<button type="button" class="quiz-form__button button button_blue button_next">Далее<svg width="18"
+									height="9" viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M17.3536 4.85355C17.5488 4.65829 17.5488 4.34171 17.3536 4.14645L14.1716 0.964467C13.9763 0.769205 13.6597 0.769205 13.4645 0.964467C13.2692 1.15973 13.2692 1.47631 13.4645 1.67157L16.2929 4.5L13.4645 7.32843C13.2692 7.52369 13.2692 7.84027 13.4645 8.03554C13.6597 8.2308 13.9763 8.2308 14.1716 8.03554L17.3536 4.85355ZM-4.37114e-08 5L17 5L17 4L4.37114e-08 4L-4.37114e-08 5Z"
+										fill="white" />
+								</svg>
+							</button>
+
+						</div>
+					</div>
+					<div class="quiz-form__side">
+						<div class="quiz-form__manager">
+							<img src="@img/quiz/icon-photo.png" alt="Фото менеджера" class="quiz-form__icon-photo">
+							<div class="quiz-form__descr">
+								<p class="quiz-form__name manager__name">Сергей</p>
+								<p class="quiz-form__positon manager__position">АН «Buy Rent»</p>
+								<div class="quiz-form__text manager__text">
+									<p>Как правило, от <span>количества спален</span> зависит <span>площадь</span> недвижимости.</p>
+								</div>
+							</div>
+						</div>
+						<div class="quiz-form__decor">
+							<div class="quiz-form__badge">
+								<img class="quiz-form__book" src="@img/quiz/book.png" alt="Книга">
+								Ответьте на 5 вопросов и получите <span>каталог ТОП 10</span> новостроек для инвестиций
+							</div>
+						</div>
+					</div>
+
+				</fieldset>
+
+				<fieldset class="quiz-form__fieldset hidden" data-card="6">
+					<div class="quiz-form__content quiz-form__content_4">
+						<h4 class="quiz-form__slogan">Подберём объекты недвижимости под ваши критерии</h4>
+						<h3 class="quiz-form__title">Ваши предпочтения по этажам?</h3>
+						<div class="quiz-form__body quiz-form__body_3items">
+
+							<span class="wpcf7-form-control wpcf7-radio step4-1">
+
+								<span class="wpcf7-list-item">
+
+									<label>
+										<input type="radio" name="floor" value="1 по 10 этажи">
+										<span class=" wpcf7-list-item-label quiz-form__label">
+											1 по 10 этажи
+										</span>
+									</label>
+								</span>
+
+							</span>
+							<span class="wpcf7-form-control wpcf7-radio step4-2">
+
+								<span class="wpcf7-list-item">
+
+									<label>
+										<input type="radio" name="floor" value="10 по 20 этажи">
+										<span class="wpcf7-list-item-label quiz-form__label">
+											10 по 20 этажи
+										</span>
+									</label>
+
+								</span>
+
+							</span>
+
+							<span class="wpcf7-form-control wpcf7-radio step4-3">
+
+								<span class="wpcf7-list-item">
+
+									<label>
+										<input type="radio" name="floor" value="выше 20-ого">
+										<span class=" wpcf7-list-item-label quiz-form__label">
+											выше 20-ого
+										</span>
+									</label>
+
+								</span>
+							</span>
+
+						</div>
+						<div class="quiz-form__footer">
+							<div class="quiz-form__progress progress-quiz-form" data-da=".quiz-form__content_4,580, 0">
+								<div class="progress-quiz-form__answer">
+									<p>Вопрос</p>
+									<div class="progress-quiz-form__number">4<span></span>5</div>
+								</div>
+								<div class="progress-quiz-form__bar">
+									<div class="progress-quiz-form__line progress-quiz-form__line_4"></div>
+								</div>
+							</div>
+
+							<button type="button" class="quiz-form__button button button_blue button_next">Далее<svg width="18"
+									height="9" viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M17.3536 4.85355C17.5488 4.65829 17.5488 4.34171 17.3536 4.14645L14.1716 0.964467C13.9763 0.769205 13.6597 0.769205 13.4645 0.964467C13.2692 1.15973 13.2692 1.47631 13.4645 1.67157L16.2929 4.5L13.4645 7.32843C13.2692 7.52369 13.2692 7.84027 13.4645 8.03554C13.6597 8.2308 13.9763 8.2308 14.1716 8.03554L17.3536 4.85355ZM-4.37114e-08 5L17 5L17 4L4.37114e-08 4L-4.37114e-08 5Z"
+										fill="white" />
+								</svg>
+							</button>
+
+						</div>
+					</div>
+					<div class="quiz-form__side">
+						<div class="quiz-form__manager">
+							<img src="@img/quiz/icon-photo.png" alt="Фото менеджера" class="quiz-form__icon-photo">
+							<div class="quiz-form__descr">
+								<p class="quiz-form__name manager__name">Сергей</p>
+								<p class="quiz-form__positon manager__position">АН «Buy Rent»</p>
+								<div class="quiz-form__text manager__text">
+									<p>
+										От этажа в Новостройке зависит вид из окна и <span>стоимость квартиры/апартаментов.</span>
+									</p>
+									<p>Чем выше этаж, тем привлекательнее вид, но и <span>больше стоимость</span> за м2.
+									</p>
+									<p>
+										В таунхаусах и виллах этажность также имеет <span>большое</span> значение.
+
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="quiz-form__decor">
+							<div class="quiz-form__badge">
+								<img class="quiz-form__book" src="@img/quiz/book.png" alt="Книга">
+								Ответьте на 5 вопросов и получите <span>каталог ТОП 10</span> новостроек для инвестиций
+							</div>
+						</div>
+					</div>
+
+				</fieldset>
+
+				<fieldset class="quiz-form__fieldset hidden" data-card="7">
+					<div class="quiz-form__content quiz-form__content_4a">
+						<h4 class="quiz-form__slogan">Подберём объекты недвижимости под ваши критерии</h4>
+						<h3 class="quiz-form__title">Ваши предпочтения по этажам?</h3>
+						<div class="quiz-form__body quiz-form__body_3items">
+
+							<span class="wpcf7-form-control wpcf7-radio step4-1a">
+
+								<span class="wpcf7-list-item">
+
+									<label>
+										<input type="radio" name="floor" value="1 этаж">
+										<span class=" wpcf7-list-item-label quiz-form__label">
+											1 этаж
+										</span>
+									</label>
+								</span>
+
+							</span>
+							<span class="wpcf7-form-control wpcf7-radio step4-2a">
+
+								<span class="wpcf7-list-item">
+
+									<label>
+										<input type="radio" name="floor" value="2 этажа">
+										<span class="wpcf7-list-item-label quiz-form__label">
+											2 этажа
+										</span>
+									</label>
+
+								</span>
+
+							</span>
+
+							<span class="wpcf7-form-control wpcf7-radio step4-3a">
+
+								<span class="wpcf7-list-item">
+
+									<label>
+										<input type="radio" name="floor" value="3 и более этажей">
+										<span class=" wpcf7-list-item-label quiz-form__label">
+											3 и более этажей
+										</span>
+									</label>
+
+								</span>
+							</span>
+
+						</div>
+						<div class="quiz-form__footer">
+							<div class="quiz-form__progress progress-quiz-form" data-da=".quiz-form__content_4a,580, 0">
+								<div class="progress-quiz-form__answer">
+									<p>Вопрос</p>
+									<div class="progress-quiz-form__number">4<span></span>5</div>
+								</div>
+								<div class="progress-quiz-form__bar">
+									<div class="progress-quiz-form__line progress-quiz-form__line_4"></div>
+								</div>
+							</div>
+
+							<button type="button" class="quiz-form__button button button_blue button_next">Далее<svg width="18"
+									height="9" viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M17.3536 4.85355C17.5488 4.65829 17.5488 4.34171 17.3536 4.14645L14.1716 0.964467C13.9763 0.769205 13.6597 0.769205 13.4645 0.964467C13.2692 1.15973 13.2692 1.47631 13.4645 1.67157L16.2929 4.5L13.4645 7.32843C13.2692 7.52369 13.2692 7.84027 13.4645 8.03554C13.6597 8.2308 13.9763 8.2308 14.1716 8.03554L17.3536 4.85355ZM-4.37114e-08 5L17 5L17 4L4.37114e-08 4L-4.37114e-08 5Z"
+										fill="white" />
+								</svg>
+							</button>
+
+						</div>
+					</div>
+					<div class="quiz-form__side">
+						<div class="quiz-form__manager">
+							<img src="@img/quiz/icon-photo.png" alt="Фото менеджера" class="quiz-form__icon-photo">
+							<div class="quiz-form__descr">
+								<p class="quiz-form__name manager__name">Сергей</p>
+								<p class="quiz-form__positon manager__position">АН «Buy Rent»</p>
+								<div class="quiz-form__text manager__text">
+									<p>
+										От этажа в Новостройке зависит вид из окна и <span>стоимость квартиры/апартаментов.</span>
+									</p>
+									<p>Чем выше этаж, тем привлекательнее вид, но и <span>больше стоимость</span> за м2.
+									</p>
+									<p>
+										В таунхаусах и виллах этажность также имеет <span>большое</span> значение.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="quiz-form__decor">
+							<div class="quiz-form__badge">
+								<img class="quiz-form__book" src="@img/quiz/book.png" alt="Книга">
+								Ответьте на 5 вопросов и получите <span>каталог ТОП 10</span> новостроек для инвестиций
+							</div>
+						</div>
+					</div>
+
+				</fieldset>
+
+				<fieldset class="quiz-form__fieldset hidden quiz-form__fieldset_price" data-card="8">
+					<div class="quiz-form__content quiz-form__content_5">
+						<h4 class="quiz-form__slogan">Подберём объекты недвижимости под ваши критерии</h4>
+						<h3 class="quiz-form__title">Укажите ваш примерный бюджет на приобретение недвижимости?</h3>
+						<div class="quiz-form__body quiz-form__body_number-items">
+
+							<span class="wpcf7-form-control wpcf7-radio step5">
+
+								<span class="wpcf7-list-item">
+
+									<label>
+										<input type="radio" name="price" value="до $40 000">
+										<span class=" wpcf7-list-item-label quiz-form__label">
+											до $40 000
+										</span>
+									</label>
+								</span>
+
+							</span>
+
+							<span class="wpcf7-form-control wpcf7-radio step5">
+
+								<span class="wpcf7-list-item">
+
+									<label>
+										<input type="radio" name="price" value="$40 000 - $100 000">
+										<span class="wpcf7-list-item-label quiz-form__label">
+											$40 000 - $100 000
+										</span>
+									</label>
+
+								</span>
+
+							</span>
+
+							<span class="wpcf7-form-control wpcf7-radio step5">
+
+								<span class="wpcf7-list-item">
+
+									<label>
+										<input type="radio" name="price" value="$100 000 - $300 000">
+										<span class=" wpcf7-list-item-label quiz-form__label">
+											$100 000 - $300 000
+										</span>
+									</label>
+
+								</span>
+							</span>
+
+							<span class="wpcf7-form-control wpcf7-radio step5">
+
+								<span class="wpcf7-list-item">
+
+									<label>
+										<input type="radio" name="price" value="свыше $300 000">
+										<span class=" wpcf7-list-item-label quiz-form__label">
+											свыше $300 000
+										</span>
+									</label>
+
+								</span>
+							</span>
+
+						</div>
+						<div class="quiz-form__footer">
+							<div class="quiz-form__progress progress-quiz-form" data-da=".quiz-form__content_5,580, 0">
+								<div class="progress-quiz-form__answer">
+									<p>Вопрос</p>
+									<div class="progress-quiz-form__number">5<span></span>5</div>
+								</div>
+								<div class="progress-quiz-form__bar">
+									<div class="progress-quiz-form__line progress-quiz-form__line_5"></div>
+								</div>
+							</div>
+
+							<button type="button" class="quiz-form__button button button_blue button_next">Далее<svg width="18"
+									height="9" viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M17.3536 4.85355C17.5488 4.65829 17.5488 4.34171 17.3536 4.14645L14.1716 0.964467C13.9763 0.769205 13.6597 0.769205 13.4645 0.964467C13.2692 1.15973 13.2692 1.47631 13.4645 1.67157L16.2929 4.5L13.4645 7.32843C13.2692 7.52369 13.2692 7.84027 13.4645 8.03554C13.6597 8.2308 13.9763 8.2308 14.1716 8.03554L17.3536 4.85355ZM-4.37114e-08 5L17 5L17 4L4.37114e-08 4L-4.37114e-08 5Z"
+										fill="white" />
+								</svg>
+							</button>
+
+						</div>
+					</div>
+					<div class="quiz-form__side">
+						<div class="quiz-form__manager">
+							<img src="@img/quiz/icon-photo.png" alt="Фото менеджера" class="quiz-form__icon-photo">
+							<div class="quiz-form__descr">
+								<p class="quiz-form__name manager__name">Сергей</p>
+								<p class="quiz-form__positon manager__position">АН «Buy Rent»</p>
+								<div class="quiz-form__text manager__text">
+									<p>
+										Вам необязательно иметь всю сумму прямо сейчас, застройщики в Грузии предлагают <span>беспроцентную
+											рассрочку </span> со взносом от 10% и сроком до 36 мес, а также <span>ипотеку.</span></p>
+								</div>
+							</div>
+						</div>
+						<div class="quiz-form__decor">
+							<div class="quiz-form__badge">
+								<img class="quiz-form__book" src="@img/quiz/book.png" alt="Книга">
+								Ответьте на 5 вопросов и получите <span>каталог ТОП 10</span> новостроек для инвестиций
+							</div>
+						</div>
+					</div>
+
+				</fieldset>
+
+				<fieldset class="quiz-form__fieldset hidden quiz-form__fieldset_finish" data-card="9">
+					<div class="quiz-form__content">
+						<h3 class="quiz-form__title quiz-form__title_finish">Заполните форму, и мы отправим Вам актуальный каталог с
+							лучшими объектами по вашим запросам</h3>
+						<div class="quiz-form__submit-form">
+
+							<div class="quiz-form__line form__line quiz-form__line_name">
+								<label class="form__label" for="name">Ваше имя</label>
+								<input autocomplete="off" type="text" name="name" data-error="Введите имя" placeholder="" class="input">
+							</div>
+							<div class="quiz-form__line form__line quiz-form__line_social">
+								<input autocomplete="off" type="text" name="social"
+									data-error="Введите Телефон или мессенджер WhatsApp/Telegram"
+									placeholder="Телефон или мессенджер WhatsApp/Telegram" class="input">
+							</div>
+
+							<button type="submit" class="quiz-form__button quiz-form__button_send button button_blue">Получить
+								каталог<svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M17.3536 4.35355C17.5488 4.15829 17.5488 3.84171 17.3536 3.64645L14.1716 0.464467C13.9763 0.269205 13.6597 0.269205 13.4645 0.464467C13.2692 0.659729 13.2692 0.976312 13.4645 1.17157L16.2929 4L13.4645 6.82843C13.2692 7.02369 13.2692 7.34027 13.4645 7.53554C13.6597 7.7308 13.9763 7.7308 14.1716 7.53554L17.3536 4.35355ZM-4.37114e-08 4.5L17 4.5L17 3.5L4.37114e-08 3.5L-4.37114e-08 4.5Z"
+										fill="white" />
+								</svg>
+							</button>
+						</div>
+
+					</div>
+					<div class="quiz-form__right">
+
+						<div class="quiz-form__descr">
+							<p class="quiz-form__name manager__name">Сергей</p>
+							<p class="quiz-form__positon manager__position">АН «Buy Rent»</p>
+							<div class="quiz-form__text manager__text">
+								<p>
+									Вы почти у цели. Заполните форму и мы вышлем вам каталог лучших объектов!</p>
+							</div>
+						</div>
+
+						<img src="@img/quiz/book-big.png" alt="Книга" class="quiz-form__book-img">
+						<img src="@img/buy-home/man.png" alt="Фото директора" class="quiz-form__director">
+					</div>
+
+					<img class="quiz-form__director_mobile" src="@img/quiz/man-full.png" alt="Фото директора">
+
+				</fieldset>
+
+			</form>
+		</div> 
+	</div>
+</div>
+
+<div id="quiz-thanks-popup" aria-hidden="true" class="popup quiz-popup quiz-thanks-popup popup_show1">
+	<div class="quiz-popup__wrapper popup__wrapper">
+		<div class="quiz-popup__content popup__content">
+			<button data-close type="button" class="popup__close">
+				<svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path opacity="0.5" d="M10 1L1 10M1 1L10 10" stroke="white" stroke-linecap="square" stroke-linejoin="round" />
+				</svg>
+			</button>
+			<div class="quiz-form__fieldset quiz-form__fieldset_send">
+				<div class="quiz-form__content quiz-thanks-popup__content">
+					<button data-close type="button" class="popup__close"></button>
+					<div class="quiz-form__check">
+						<svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1 5L5.66667 9L15 1" stroke="white" stroke-width="2" stroke-linecap="round"
+								stroke-linejoin="round" />
+						</svg>
+					</div>
+					<h3 class="quiz-form__title quiz-form__title_finish">Спасибо! Мы получили вашу заявку на каталог лучших
+						объектов.</h3>
+
+					<p class="quiz-thanks-popup__text">
+						Мы свяжемся с Вами в ближайшее время по указанным контактам.
+					</p>
+
+				</div>
+
+				<div class="quiz-form__right">
+
+					<img src="@img/quiz/book-finish.png" alt="Книга" class="quiz-thanks-popup__book-img">
+
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div id="object-popup" aria-hidden="true" class="popup popup_show1">
+	<div class="popup__wrapper object-popup__wrapper">
+		<div class="object-popup__content popup__content">
+			<button data-close type="button" class="popup__close">
+				<svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path opacity="0.5" d="M10 1L1 10M1 1L10 10" stroke="white" stroke-linecap="square" stroke-linejoin="round" />
+				</svg>
+			</button>
+			<div class="object-popup__body">
+
+				<div class="object-popup__media">
+
+					<div class="object-popup__image-ibg">
+						<img src="@img/projects/obj-1.jpg" alt="Фото объекта">
+					</div>
+					<div class="object-popup__image-ibg">
+						<img src="@img/projects/obj-2.jpg" alt="Фото объекта">
+					</div>
+					<div class="object-popup__image-ibg">
+						<img src="@img/projects/obj-3.jpg" alt="Фото объекта">
+					</div>
+					<div class="object-popup__image-ibg">
+						<img src="@img/projects/obj-4.jpg" alt="Фото объекта">
+					</div>
+					<div class="object-popup__image-ibg">
+						<img src="@img/projects/obj-2.jpg" alt="Фото объекта">
+					</div>
+
+					<div class="object-popup__btns">
+						<button id="btnPrev" type="submit" class="button-media-prev"><svg width="17" height="12" viewBox="0 0 17 12"
+								fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M0.434315 6.56569C0.121895 6.25327 0.121895 5.74674 0.434315 5.43432L5.52548 0.343147C5.8379 0.0307274 6.34443 0.0307274 6.65685 0.343147C6.96927 0.655566 6.96927 1.1621 6.65685 1.47452L2.13137 6L6.65686 10.5255C6.96927 10.8379 6.96927 11.3444 6.65686 11.6569C6.34444 11.9693 5.8379 11.9693 5.52548 11.6569L0.434315 6.56569ZM17 6.8L1 6.8L1 5.2L17 5.2L17 6.8Z"
+									fill="#13161D" />
+							</svg>
+						</button>
+						<button id="btnNext" type="submit" class="button-media-next"><svg width="17" height="12" viewBox="0 0 17 12"
+								fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M16.5657 6.56569C16.8781 6.25327 16.8781 5.74674 16.5657 5.43432L11.4745 0.343147C11.1621 0.0307272 10.6556 0.0307272 10.3431 0.343147C10.0307 0.655566 10.0307 1.1621 10.3431 1.47452L14.8686 6L10.3431 10.5255C10.0307 10.8379 10.0307 11.3444 10.3431 11.6569C10.6556 11.9693 11.1621 11.9693 11.4745 11.6569L16.5657 6.56569ZM-6.99382e-08 6.8L16 6.8L16 5.2L6.99382e-08 5.2L-6.99382e-08 6.8Z"
+									fill="#13161D" />
+							</svg>
+						</button>
+					</div>
+
+				</div>
+
+				<h3 class="object-popup__title item-projects__title">Black sea tower</h3>
+				<div class="object-popup__building-block">
+
+					<div class="object-popup__descr">
+						<div class="object-popup__text">
+							<p>
+								Жилой комплекс Calligraphy Towers – многоэтажная новостройка премиум-класса, которая отлично подойдет
+								для бизнеса, отдыха, жизни и инвестиций.
+							</p>
+							<p>
+								Три небоскреба: A B C-Tower и трехэтажная платформа с общей инфраструктурой.
+							</p>
+							<p>
+								Международный партнер застройщика - мировой гостиничный бренд Hilton Worldwide, который будет
+								представлен в виде гостиницы Hampton by Hilton, в Блоке А, по 10-й этаж.
+							</p>
+						</div>
+					</div>
+
+					<div class="object-popup__build-features build-features">
+						<div class="build-features__finish">
+							<h5 class="build-features__title object-popup__subtitle">Завершение строительства:</h5>
+
+							<div class="build-features__specifications item-projects__specifications">
+								<div class="build-features__item item-projects__item">
+									<div class="build-features__label item-projects__label">Блок А</div>
+									<div class="build-features__value item-projects__value">декабрь 2024</div>
+								</div>
+								<div class="build-features__item item-projects__item">
+									<div class="build-features__label item-projects__label">Блок Б</div>
+									<div class="build-features__value item-projects__value">декабрь 2023</div>
+								</div>
+								<div class="build-features__item item-projects__item">
+									<div class="build-features__label item-projects__label">Блок С</div>
+									<div class="build-features__value item-projects__value">декабрь 2025</div>
+								</div>
+							</div>
+
+							<div class="build-features__descr">
+								<div class="build-features__block">
+									<div class="build-features__num-floors-title build-features__name">Количество этажей:</div>
+									<div class="build-features__num-floors">от 35 до 45</div>
+								</div>
+								<div class="build-features__block">
+									<div class="build-features__num-flat-title build-features__name">Всего квартир:</div>
+									<div class="build-features__num-flat">2600</div>
+								</div>
+								<div class="build-features__block">
+									<div class="build-features__area-flat-title build-features__name">Площадь квартир:</div>
+									<div class="build-features__area-flat">29–68 м<sup>2</sup></div>
+								</div>
+								<div class="build-features__block">
+									<div class="build-features__area-price-title build-features__name">Цена за м<sup>2</sup>:</div>
+									<div class="build-features__area-price">от 850$</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+
+				<div class="object-popup__installment">
+					<h5 class="object-popup__subtitle">Условия рассрочки:</h5>
+					<div class="object-popup__text">
+						<p>
+							Беспроцентная, первый взнос – 30%, срок 12-24 месяца
+						</p>
+					</div>
+				</div>
+
+				<div class="object-popup__complex complex-object">
+					<h5 class="object-popup__subtitle">Инфраструктура комплекса Calligraphy Tower включает в себя:</h5>
+
+					<div class="complex-object__body">
+						<ul class="complex-object__list">
+							<li class="complex-object__item">Кинотеатр Calligraphy Cinema</li>
+							<li class="complex-object__item">Piano & Lounge Bar с живой музыкой</li>
+							<li class="complex-object__item">Coworking зона</li>
+							<li class="complex-object__item">Конференц-зал</li>
+							<li class="complex-object__item">Открытый и закрытый бассейн</li>
+						</ul>
+
+						<ul class="complex-object__list">
+							<li class="complex-object__item">SPA-центр</li>
+							<li class="complex-object__item">Фитнес зал</li>
+							<li class="complex-object__item">Более 300 парковочных мест</li>
+							<li class="complex-object__item">Казино</li>
+							<li class="complex-object__item">Террасы общего пользования и услуги гольф-машин</li>
+						</ul>
+
+					</div>
+
+				</div>
+
+				<div class="object-popup__apartments">
+					<h5 class="object-popup__subtitle">Апартаменты в управление:</h5>
+					<div class="object-popup__text">
+						<p>
+							Апартаменты можно сдавать на долгосрочную или краткосрочную аренду с управляющей компанией застройщика.
+						</p>
+						<p>
+							Управление 40/60, где 40% - доля компании, налог, коммунальные услуги, уборка и обслуживание номеров,
+							реклама и заселение, расходы на операционный и административный персонал, а 60% - ваша чистая прибыль.
+						</p>
+					</div>
+				</div>
+
+				<div class="object-popup__contacts">
+					<div class="object-popup__button">
+						<button class="button button_blue" data-watch btn-anim-to_right-blue data-popup="#feedback-popup">Задать
+							вопрос</button>
+
+					</div>
+
+					<div class="object-popup__tel questions__tel">
+						<div class="questions__label questions__label_tel">
+							Звоните нам по телефону
+						</div>
+						<a href="tel:+995579208920" class="questions__number tel">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path opacity="0.39"
+									d="M3.6 7.8C5 10.6 7.4 12.9 10.2 14.4L12.4 12.2C12.7 11.9 13.1 11.8 13.4 12C14.5 12.4 15.7 12.6 17 12.6C17.6 12.6 18 13 18 13.6V17C18 17.6 17.6 18 17 18C7.6 18 0 10.4 0 1C0 0.4 0.4 0 1 0H4.5C5.1 0 5.5 0.4 5.5 1C5.5 2.2 5.7 3.4 6.1 4.6C6.2 4.9 6.1 5.3 5.9 5.6L3.6 7.8Z"
+									fill="#B2B6B8" />
+							</svg>
+							+995 579 208 920</a>
+					</div>
+
+					<div class="object-popup__whatsapp questions__label questions__label_whatsapp">
+						Пишите нам в WhatsApp
+						<a href="https://wa.me/message/" target="_blank" class="questions__whatsapp">
+							<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M29.0253 4.98318C25.8151 1.77093 21.5481 0.00107721 17.0065 0C7.63013 0 0.00430995 7.62234 9.67606e-07 16.9919C-0.00107628 20.2031 0.897346 23.3291 2.59939 26.0362L3.00444 26.6793L1.28623 32.9497L7.72061 31.2628L8.34218 31.6312C10.9513 33.1802 13.9439 33.9989 16.9946 34H17.0011C26.371 34 33.9968 26.3766 34 17.0059C34.0011 12.4655 32.2355 8.19542 29.0253 4.98318Z"
+									fill="url(#paint0_linear_1_167)" />
+								<path opacity="0.05"
+									d="M21.7744 24.3713C21.0565 24.3713 20.0758 24.188 18.1038 23.4108C15.8957 22.5392 13.7267 20.6472 11.9963 18.0827L11.9408 18.0011C11.4775 17.3828 10.4023 15.7592 10.4023 14.0325C10.4023 12.1708 11.3317 11.1801 11.7286 10.7565L11.7899 10.6908C12.3376 10.0912 12.9827 10.027 13.2345 10.027C13.5008 10.0299 13.7267 10.027 13.9222 10.0356C14.3941 10.0544 14.9317 10.1908 15.3192 11.0523C15.4996 11.455 15.807 12.2105 16.0473 12.8029C16.201 13.1832 16.3258 13.492 16.364 13.5743C16.5762 13.9971 16.5863 14.4163 16.39 14.811L16.3431 14.907C16.2507 15.0961 16.1548 15.2916 15.9506 15.5297L15.781 15.7332C15.6641 15.8754 15.5465 16.0168 15.4419 16.1265C15.7225 16.589 16.3121 17.4657 17.1239 18.1902C18.1297 19.0857 18.9913 19.4602 19.4538 19.6615C19.5455 19.7012 19.622 19.7351 19.6826 19.764C19.9748 19.4248 20.4561 18.8468 20.6221 18.5993C21.1777 17.7652 21.9765 18.0545 22.2384 18.1505C22.649 18.2992 24.6362 19.2877 24.6557 19.2971L24.8397 19.3873C25.142 19.5338 25.4263 19.6716 25.606 19.9703C25.891 20.4473 25.733 21.4662 25.4668 22.2108C25.0814 23.2954 23.4261 24.2349 22.5415 24.3142L22.3784 24.3316C22.1872 24.3539 21.9931 24.3713 21.7744 24.3713ZM13.3486 11.4701C13.2475 11.4701 13.0707 11.4283 12.8535 11.665L12.7807 11.7436C12.4538 12.0921 11.8448 12.7416 11.8448 14.0325C11.8448 15.3623 12.8016 16.7434 13.0946 17.1353C13.114 17.1612 13.1458 17.2081 13.192 17.2752C14.7614 19.6009 16.6938 21.3031 18.6334 22.068C21.0752 23.0313 21.7023 22.9584 22.2095 22.8985L22.4101 22.8769C22.8496 22.8372 23.9413 22.1906 24.1066 21.7267C24.2574 21.3045 24.3057 20.9423 24.3137 20.7352C24.2819 20.7201 24.2473 20.7042 24.2105 20.6869L24.0063 20.5866C23.5466 20.3557 22.001 19.6009 21.747 19.5078C21.4281 19.9465 20.8364 20.6371 20.6798 20.8168C20.3861 21.1537 19.8666 21.4727 19.0714 21.0722C19.0238 21.0484 18.9588 21.021 18.878 20.9856C18.3794 20.7684 17.341 20.3174 16.1627 19.2682C15.1027 18.3223 14.3775 17.1728 14.1149 16.7218C13.7938 16.1727 13.8825 15.643 14.379 15.1487C14.4656 15.0622 14.5644 14.9388 14.6654 14.8168L14.8545 14.5902C14.9396 14.4914 14.9707 14.4272 15.0471 14.272L15.0724 14.2208C15.006 14.0736 14.8718 13.7453 14.7102 13.3455C14.4771 12.7704 14.1791 12.0359 14.0037 11.6448C13.9568 11.5409 13.9215 11.4896 13.9042 11.468C13.9078 11.4788 13.8832 11.4795 13.8623 11.4781C13.7021 11.4701 13.5268 11.4701 13.3486 11.4701Z"
+									fill="black" />
+								<path opacity="0.07"
+									d="M21.7701 24.015C21.1597 24.015 20.2151 23.8562 18.2351 23.0755C16.0942 22.2312 13.9843 20.3862 12.2944 17.8816L12.2316 17.7892C11.7871 17.1961 10.7617 15.6519 10.7617 14.0326C10.7617 12.3138 11.6226 11.396 11.9906 11.0035L12.0548 10.9342C12.5058 10.4413 13.0296 10.3887 13.2338 10.3887C13.5059 10.3908 13.7151 10.3887 13.9056 10.3973C14.2607 10.4118 14.6683 10.4868 14.9895 11.2012C15.1691 11.6009 15.4736 12.3514 15.7118 12.9395C15.8741 13.3399 16.004 13.6625 16.0379 13.731C16.0971 13.8501 16.2818 14.2174 16.066 14.651L16.0177 14.7492C15.9275 14.9332 15.8496 15.0926 15.675 15.2961L15.5003 15.5047C15.3755 15.6562 15.2507 15.807 15.1424 15.9152C14.9866 16.0704 14.9866 16.0704 15.0486 16.1765C15.2853 16.5827 15.9376 17.6182 16.8822 18.4603C17.9306 19.3947 18.8275 19.7836 19.3088 19.9929C19.4127 20.0376 19.4957 20.0744 19.557 20.1055C19.7685 20.2108 19.7901 20.1892 19.8652 20.104C20.073 19.8673 20.708 19.1198 20.9208 18.8001C21.3206 18.2012 21.8365 18.3888 22.1143 18.4891C22.4794 18.6219 24.3072 19.526 24.4927 19.6191L24.6817 19.7115C24.9559 19.8442 25.1724 19.9489 25.2965 20.1545C25.4798 20.4619 25.404 21.3112 25.1269 22.0891C24.7748 23.0784 23.2176 23.8909 22.509 23.9544L22.3366 23.9731C22.1684 23.9933 21.9917 24.015 21.7701 24.015ZM13.3363 11.1103C13.3176 11.1103 13.2988 11.1103 13.28 11.1103C13.148 11.1103 12.8507 11.1326 12.5859 11.422L12.5159 11.497C12.1803 11.8549 11.4826 12.5996 11.4826 14.0326C11.4826 15.4347 12.4069 16.8208 12.8045 17.3519C12.8225 17.3757 12.8507 17.4169 12.8918 17.4775C14.5017 19.863 16.4932 21.6121 18.4999 22.4044C21.0291 23.4016 21.7074 23.3215 22.25 23.258L22.4426 23.2371C22.9427 23.1924 24.2112 22.5062 24.4457 21.8481C24.686 21.1756 24.6961 20.6142 24.6593 20.4937C24.6644 20.498 24.4919 20.423 24.3671 20.3623L24.1679 20.2642C23.7184 20.0384 22.1432 19.2677 21.8675 19.1674C21.6078 19.0736 21.6071 19.0714 21.5212 19.2006C21.2694 19.5765 20.5687 20.3963 20.4085 20.5788C19.9453 21.1092 19.4098 20.8379 19.2331 20.7491C19.1811 20.7231 19.1097 20.6928 19.0216 20.6546C18.5396 20.4446 17.5373 20.0088 16.4023 18.9978C15.3805 18.0872 14.6799 16.9752 14.4259 16.5394C14.0824 15.952 14.4685 15.5674 14.633 15.4036C14.7268 15.3098 14.835 15.1778 14.944 15.045L15.128 14.8242C15.2427 14.69 15.2911 14.5919 15.3704 14.4295L15.421 14.3263C15.4563 14.2556 15.4628 14.19 15.3921 14.05C15.3546 13.9749 15.2153 13.6329 15.0436 13.2079C14.8083 12.6285 14.5089 11.8881 14.3314 11.4949C14.1661 11.1276 14.0694 11.1232 13.8753 11.116C13.7086 11.1103 13.5239 11.1103 13.3363 11.1103Z"
+									fill="black" />
+								<path fill-rule="evenodd" clip-rule="evenodd"
+									d="M14.6612 11.3485C14.405 10.7785 14.1352 10.767 13.8905 10.7569C13.6907 10.7482 13.4627 10.7489 13.2346 10.7489C13.0066 10.7489 12.6357 10.8348 12.3218 11.1775C12.0079 11.5203 11.1233 12.3479 11.1233 14.0321C11.1233 15.7163 12.35 17.3441 12.521 17.5722C12.692 17.8002 14.8892 21.367 18.3687 22.7394C21.26 23.8795 21.8488 23.6529 22.4766 23.5959C23.1044 23.5389 24.5021 22.7683 24.7871 21.9688C25.0721 21.1692 25.0721 20.4845 24.987 20.3416C24.9011 20.1987 24.6731 20.1136 24.3311 19.9418C23.989 19.7701 22.3056 18.9424 21.9917 18.8284C21.6778 18.7144 21.4498 18.6574 21.2211 19.0002C20.993 19.3422 20.3371 20.1136 20.1373 20.3416C19.9374 20.5703 19.7375 20.5992 19.3955 20.4275C19.0534 20.2557 17.9509 19.8949 16.6427 18.7289C15.6252 17.8218 14.9383 16.7012 14.7384 16.3585C14.5385 16.0164 14.7168 15.831 14.8885 15.66C15.0422 15.5063 15.2305 15.2602 15.4023 15.0604C15.5733 14.8605 15.6303 14.7176 15.7443 14.4896C15.8583 14.2608 15.8013 14.061 15.7154 13.89C15.631 13.7182 14.9657 12.0254 14.6612 11.3485Z"
+									fill="white" />
+								<defs>
+									<linearGradient id="paint0_linear_1_167" x1="8.0384" y1="2.71457" x2="22.5524" y2="33.4574"
+										gradientUnits="userSpaceOnUse">
+										<stop stop-color="#63D46D" />
+										<stop offset="1" stop-color="#21B238" />
+									</linearGradient>
+								</defs>
+							</svg>
+							Задать вопрос
+						</a>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+
+	</div>
+</div>

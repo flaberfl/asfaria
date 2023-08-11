@@ -1,0 +1,180 @@
+.profit {
+  @include adaptiveValue("padding-top", 130, 60);
+  @include adaptiveValue("padding-bottom", 150, 97);
+
+  background: linear-gradient(180deg, #1F222C 23.17%, rgba(31, 34, 44, 0) 100%), linear-gradient(0deg, rgba(2, 11, 24, 0.78), rgba(2, 11, 24, 0.78)), url('@img/profit/bgProfit.jpg') center / cover no-repeat;
+
+  /* .profit__title */
+  &__title {
+    max-width: rem(630);
+    @include adaptiveValue("margin-bottom", 30, 11);
+  }
+
+  /* .profit__body */
+  &__body {
+    display: grid;
+    grid-template-columns: 56.65% 1fr;
+    @include adaptiveValue("gap", 90, 0, 1440, 767, 1);
+
+    @media (max-width:$mobile) {
+      grid-template-columns: 1fr;
+      row-gap: rem(30);
+    }
+  }
+
+  /* .profit__text */
+  &__text {
+    padding-right: rem(40);
+
+    &:not(:last-child) {
+      margin-bottom: rem(14);
+    }
+
+    font-size: rem(16);
+    line-height: math.div(27, 16);
+    font-weight: 300;
+
+    @media (max-width:$mobile) {
+      font-size: rem(14);
+      padding-right: 0;
+    }
+  }
+
+  /* .profit__values */
+  &__values {
+    display: flex;
+    padding-top: rem(6);
+
+    @media (max-width:$mobile) {
+      justify-content: center;
+      padding-top: rem(16);
+    }
+  }
+
+  /* .profit__value */
+  &__value {
+    @include adaptiveValue("padding-top", 100, 55, 1440, 600, 1);
+    @include adaptiveValue("width", 254, 158);
+    @include adaptiveValue("height", 254, 158);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 50%;
+    gap: rem(20);
+
+    @media (max-width:$mobile) {
+      gap: rem(15);
+    }
+
+    &:last-child {
+      margin-left: rem(-30);
+
+      @media (max-width:$mobile) {
+        margin-left: rem(-15);
+      }
+    }
+
+    /* .profit__value_prc */
+    &_prc {
+      border: rem(1) solid $borderColor;
+    }
+
+    /* .profit__value_top */
+    &_top {
+      border: rem(1) solid $hoverColor;
+    }
+  }
+
+  /* .profit__prc */
+  &__prc {
+    color: $borderColor;
+    font-size: rem(59);
+    font-weight: 500;
+    font-family: "SangBleuEmpireTrial";
+    line-height: math.div(27, 59);
+
+    @media (max-width:$mobile) {
+      font-size: rem(36);
+    }
+  }
+
+  /* .profit__label */
+  &__label {
+    max-width: rem(130);
+
+    font-size: rem(14);
+    line-height: math.div(21, 14);
+
+    @media (max-width:$mobile) {
+      font-size: rem(12);
+      padding-left: rem(15);
+    }
+  }
+
+  /* .profit__top */
+  &__top {
+    font-family: "SangBleuEmpireTrial";
+    font-size: rem(38);
+    font-weight: 500;
+    line-height: math.div(27, 38);
+    color: $hoverColor;
+
+    @media (max-width:$mobile) {
+      font-size: rem(27);
+    }
+  }
+
+  /* .profit__avantages */
+  &__advangages {
+    margin-bottom: rem(66);
+  }
+
+  /* .profit__item */
+  &__item {
+    display: flex;
+    gap: rem(25);
+    align-items: start;
+  }
+
+  /* .profit__list */
+  &__list {
+    display: grid;
+    @include adaptiveValue("margin-bottom", 40, 20);
+    padding-left: rem(17);
+    @include adaptiveValue("padding-right", 80, 30, 1440, 767, 2);
+    @include adaptiveValue("gap", 38, 20);
+
+    @media (max-width:$mobile) {
+      padding-left: 0;
+      justify-content: center;
+    }
+  }
+
+  /* .profit__rubric */
+  &__rubric {
+    font-size: rem(14);
+    line-height: math.div(23, 14);
+    font-weight: 300;
+
+    @media (max-width:$mobile) {
+      font-size: rem(13);
+    }
+  }
+
+  /* .profit__button */
+  &__button {
+    @include adaptiveValue("width", 372, 300);
+    letter-spacing: 0.06em;
+
+    span {
+      @media (max-width:$mobile) {
+        display: none;
+      }
+    }
+
+    @media (max-width:$mobile) {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+//<BUTTONS (a.btn+tab)>
+// Сніппет (HTML): btn
+
+.button {
+	position: relative;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0px 0px;
+	@include adaptiveValue("height", 66, 57);
+	z-index: 10;
+
+	border: rem(1) solid $borderColor;
+
+	font-size: rem(12);
+	line-height: math.div(14.4, 12);
+	font-weight: 700;
+	text-transform: uppercase;
+	transition: all 0.3s ease 0s;
+
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: $btnColor;
+		}
+	}
+
+	&_blue {
+		background-color: $btnColor;
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $hoverColor;
+				border-color: $hoverColor;
+			}
+		}
+	}
+}

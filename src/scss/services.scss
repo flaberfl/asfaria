@@ -1,0 +1,235 @@
+.services {
+  @include adaptiveValue("padding-top", 120, 55);
+  @include adaptiveValue("padding-bottom", 110, 70);
+
+  /* .services__container */
+  &__container {}
+
+  /* .services__header */
+  &__header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @include adaptiveValue("margin-bottom", 73, 53);
+
+    @media (max-width:$mobile) {
+      grid-template-columns: 1fr;
+      margin-bottom: rem(73);
+    }
+  }
+
+  /* .services__title */
+  &__title {
+    @media (max-width:$mobile) {
+      margin-bottom: rem(10);
+    }
+  }
+
+  /* .services__slogan */
+  &__slogan {
+    justify-self: end;
+    align-self: flex-end;
+
+    @include adaptiveValue("font-size", 22, 15);
+    line-height: math.div(24, 15);
+    font-weight: 400;
+    opacity: .8;
+
+    @media (max-width:$mobile) {
+      justify-self: center;
+      max-width: rem(220);
+      text-align: center;
+    }
+  }
+
+  /* .services__wrapper */
+  &__wrapper {
+    display: grid;
+    @include adaptiveValue("row-gap", 126, 40);
+  }
+
+  /* .services__item */
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    column-gap: rem(15);
+
+    @media (max-width:$mobile) {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+
+    &:nth-child(odd) {
+      .services__descr {
+        padding-right: rem(20);
+        @include adaptiveValue("padding-left", 55, 25, 1440, 768, 1);
+
+        @media (max-width:$mobile) {
+          padding: 0;
+        }
+      }
+    }
+
+    &:nth-child(even) {
+      .services__descr {
+        padding-left: rem(32);
+        padding-right: rem(35);
+
+        @media (max-width:$mobile) {
+          padding: 0;
+        }
+      }
+    }
+
+    &_title {
+      align-items: end;
+
+      .services__descr {
+        padding-bottom: rem(55);
+        @include adaptiveValue("padding-bottom", 55, 0);
+      }
+    }
+  }
+
+  /* .services__image */
+  &__image {
+    position: relative;
+
+    @media (max-width:$mobile) {
+      grid-row-start: 1;
+      margin-bottom: rem(15);
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  /* .services__badge */
+  &__badge {
+    position: absolute;
+    @include adaptiveValue("width", 144, 100);
+    @include adaptiveValue("height", 144, 100);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: rem(10) rem(12) 0;
+    gap: rem(15);
+
+    top: 29%;
+    left: -8%;
+
+    text-align: center;
+    background-color: $borderColor;
+    border-radius: 50%;
+    z-index: 10;
+
+    @media (max-width: em(1170)) {
+      left: -3%;
+    }
+
+    @media (max-width:$mobile) {
+      gap: rem(9);
+      left: 50%;
+      transform: translate(-50%, 0);
+      @include adaptiveValue("top", 160, 112, 768, 320, 1);
+    }
+  }
+
+  /* .services__label */
+  &__label {
+    @include adaptiveValue("font-size", 14, 10);
+    line-height: math.div(15, 14);
+    font-weight: 300;
+  }
+
+  /* .services__value */
+  &__value {
+    @include adaptiveValue("font-size", 34, 25);
+    line-height: math.div(19, 34);
+    font-weight: 500;
+
+    span {
+      display: inline-block;
+      transform: translate(0, rem(-10));
+
+      @include adaptiveValue("font-size", 25, 17);
+      line-height: math.div(19, 25);
+    }
+  }
+
+  /* .services__descr */
+  &__descr {
+    @media (max-width:$mobile) {
+      text-align: center;
+    }
+  }
+
+  /* .services__name */
+  &__name {
+    margin-bottom: rem(20);
+    max-width: rem(400);
+
+    @include adaptiveValue("font-size", 32, 22);
+    line-height: math.div(41, 32);
+    font-weight: 300;
+
+    @media (max-width:$mobile) {
+      max-width: rem(370);
+      margin: 0 auto rem(20);
+    }
+  }
+
+  /* .services__text */
+  &__text {
+    @include adaptiveValue("margin-bottom", 28, 18);
+
+    @include adaptiveValue("font-size", 18, 14);
+    font-weight: 300;
+    line-height: math.div(28, 18);
+    color: $textCoolor;
+
+    span {
+      font-weight: 600;
+    }
+
+    @media (max-width:$mobile) {
+      max-width: rem(450);
+    }
+
+    /* .services__text_list */
+    &_list {
+      @media (min-width:$tablet) {
+        padding-left: rem(20);
+      }
+
+      text-align: left;
+
+      p {
+        &:not(:last-child) {
+          margin-bottom: rem(9);
+        }
+
+        padding-left: rem(20);
+
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 0.7rem;
+          height: 0.7rem;
+          left: 0;
+          top: 0.9rem;
+          background: #A48B6C;
+          box-shadow: 0px 1px 9px rgba(216, 167, 124, 0.41);
+        }
+      }
+    }
+  }
+
+  /* .services__button */
+  &__button {
+    width: rem(230);
+  }
+}
