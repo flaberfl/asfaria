@@ -117,8 +117,8 @@
 			opacity: 0;
 			overflow: auto;
 
-			background: linear-gradient(270deg, #272B30 0%, #1F2326 100%);
 			transition: all .8s ease 0s;
+			background: linear-gradient(270deg, #272B30 0%, #1F2326 100%);
 
 			.menu-open & {
 				visibility: visible;
