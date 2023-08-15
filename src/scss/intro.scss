@@ -1,6 +1,7 @@
 .intro {
   position: relative;
   padding-top: rem(130);
+  @include adaptiveValue("padding-bottom", 172, 72);
 
   &::before {
     content: '';
@@ -29,7 +30,9 @@
 
   /* .intro__container */
   &__container {
-    display: flex;
+    // display: flex;
+    display: grid;
+    grid-template-columns: 51% 1fr;
   }
 
   /* .intro__scroll-btn */
@@ -113,13 +116,16 @@
 
   /* .intro__image */
   &__image {
-
-    margin-right: -19rem;
-    margin-left: -49rem;
+    position: relative;
+    // margin-right: -19rem;
+    // margin-left: -49rem;
 
     img {
+      position: absolute;
+      right: rem(-200);
+      top: 0;
       // max-width: 100%;
-      @include adaptiveValue("width", 974, 474);
+      // @include adaptiveValue("width", 974, 474);
     }
   }
 }

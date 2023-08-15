@@ -1,3 +1,11 @@
+.title {
+  @include adaptiveValue("font-size", 50, 30);
+  color: #FFF;
+  font-weight: 700;
+  text-align: center;
+  line-height: 120%;
+  text-transform: uppercase;
+}
 
 
 [anim-left-right] {

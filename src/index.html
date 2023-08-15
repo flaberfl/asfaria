@@ -10,16 +10,16 @@
 		<main class="page">
 
 			<section class="page__intro intro">
-				<div class="intro__container">
-					<a href="" class="intro__scroll-btn" data-goto=".features">
-						<svg width="35" height="28" viewBox="0 0 35 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<rect x="34" y="1" width="26" height="33" rx="11.5" transform="rotate(90 34 1)" stroke="#4C5661" />
-							<rect x="28.5" y="12.5" width="3" height="8" rx="1.5" transform="rotate(90 28.5 12.5)" fill="#4C5661" />
-							<line x1="33.5" y1="14" x2="14.5" y2="14" stroke="#4C5661" />
-						</svg>
+				<a href="" class="intro__scroll-btn" data-goto=".features">
+					<svg width="35" height="28" viewBox="0 0 35 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<rect x="34" y="1" width="26" height="33" rx="11.5" transform="rotate(90 34 1)" stroke="#4C5661" />
+						<rect x="28.5" y="12.5" width="3" height="8" rx="1.5" transform="rotate(90 28.5 12.5)" fill="#4C5661" />
+						<line x1="33.5" y1="14" x2="14.5" y2="14" stroke="#4C5661" />
+					</svg>
 
-						<span>scroll down</span>
-					</a>
+					<span>scroll down</span>
+				</a>
+				<div class="intro__container">
 					<div class="intro__content">
 						<h1 class="intro__title"><span><svg xmlns="http://www.w3.org/2000/svg" width="72" height="73"
 									viewBox="0 0 72 73" fill="none">
@@ -38,8 +38,26 @@
 						</div>
 					</div>
 					<div class="intro__image">
-						<img src="@img/intro-bg.png" alt="">
+						<img src="@img/intro-img.png" alt="">
 					</div>
+				</div>
+			</section>
+
+			<section class="about-us">
+				<div class='about-us__container_big'>
+					<h2 class="about-us__title title">About us</h2>
+					<ul class="about-us__row">
+						<li class="about-us__column">
+							<p>We have wide experience in this field. Our staff has regular training and briefings conducted on all
+								the latest developments and cases.</p>
+						</li>
+						<li class="about-us__column">
+							<p>We use only professional specialized equipment.</p>
+						</li>
+						<li class="about-us__column">
+							<p>We don’t gather any client data.100% confidentiality is guaranteed.</p>
+						</li>
+					</ul>
 				</div>
 			</section>
 
@@ -49,7 +67,7 @@
 				</div>
 			</section>
 
-			<section class="page__feedback feedback">
+			<!-- <section class="page__feedback feedback">
 				<div class="feedback__container">
 					<div class="feedback__question">
 						<h2 class="feedback__title title">Задать <span>вопрос</span></h2>
@@ -105,7 +123,7 @@
 						</ul>
 					</div>
 				</div>
-			</section>
+			</section> -->
 
 		</main>
 		@@include('html/_footer.htm',{})

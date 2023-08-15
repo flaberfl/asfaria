@@ -122,8 +122,8 @@ body {
     }
   }
 
-  [class*="__container_small"] {
-    max-width: rem(1080);
+  [class*="__container_big"] {
+    max-width: rem(1920);
     margin: 0 auto;
     padding: 0;
   }
@@ -173,6 +173,7 @@ body {
 // Подключение стилей отдельных блоков
 @import "header";
 @import "intro";
+@import "about-us";
 
 // @import "feedback";
 // @import "contacts";
