@@ -1,5 +1,6 @@
 .about-us {
   @include adaptiveValue("margin-top", -66, -51);
+  @include adaptiveValue("font-size", 40, 30);
 
   /* .about-us__container-big */
   &__container_big {}

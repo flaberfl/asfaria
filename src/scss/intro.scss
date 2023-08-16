@@ -123,15 +123,7 @@
 
   /* .intro__link */
   &__link {
-    display: flex;
-    align-items: center;
-    @include adaptiveValue("gap", 14, 9);
-
     @include adaptiveValue("font-size", 14, 10);
-
-    img {
-      @include adaptiveValue("width", 23, 17);
-    }
 
     @media (max-width:$mobile) {
       letter-spacing: 2px;
