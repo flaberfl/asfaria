@@ -45,11 +45,22 @@
     align-items: center;
     gap: rem(23);
     position: absolute;
-    position: fixed;
     transform: rotate(-90deg);
 
     left: 1.4%;
-    top: 54.5%;
+    top: 46.5%;
+
+    @media (max-width: em(1720)) {
+      left: -3.6%;
+    }
+
+    @media (max-width: em(1550)) {
+      left: -5%;
+    }
+
+    @media (max-width: em(1490)) {
+      display: none;
+    }
 
     span {
       font-size: rem(14);
