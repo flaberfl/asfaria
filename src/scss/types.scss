@@ -24,11 +24,16 @@
 
   /* .types__item */
   &__item {
+
     text-align: center;
   }
 
   /* .types__image */
-  &__image {}
+  &__image {
+    @include adaptiveValue("border-radius", 50, 30);
+    background: linear-gradient(196deg, #196FC5 0%, #7F3F96 100%);
+
+  }
 
   /* .types__name */
   &__name {}
