@@ -1,6 +1,7 @@
 .intro {
   position: relative;
-  padding-top: rem(130);
+  // padding-top: rem(80);
+  @include adaptiveValue("padding-top", 130, 8);
   @include adaptiveValue("padding-bottom", 172, 72);
 
   &::before {
@@ -24,15 +25,18 @@
 
     .loaded & {
       opacity: 1;
-
     }
   }
 
   /* .intro__container */
   &__container {
-    // display: flex;
     display: grid;
     grid-template-columns: 51% 1fr;
+
+    @media (max-width:$mobile) {
+      grid-template-columns: auto;
+      grid-template-rows: 1fr 1fr;
+    }
   }
 
   /* .intro__scroll-btn */
@@ -55,9 +59,6 @@
       letter-spacing: 2.8px;
       text-transform: uppercase;
     }
-
-
-
   }
 
   /* .intro__content */
@@ -79,8 +80,6 @@
     span {
       display: flex;
       align-items: center;
-      // margin-bottom: rem(-2);
-      // margin-bottom: rem(-18);
       @include adaptiveValue("margin-bottom", -2, -18);
 
       svg {
@@ -102,6 +101,10 @@
   &__contacts {
     display: flex;
     @include adaptiveValue("gap", 29, 21);
+
+    @media (max-width:$tablet) {
+      flex-direction: column;
+    }
   }
 
   /* .intro__button */
@@ -112,20 +115,33 @@
     display: flex;
     align-items: center;
     @include adaptiveValue("gap", 14, 9);
+
+    @include adaptiveValue("font-size", 14, 10);
+
+    img {
+      @include adaptiveValue("width", 23, 17);
+    }
+
+    @media (max-width:$mobile) {
+      letter-spacing: 2px;
+    }
   }
 
   /* .intro__image */
   &__image {
     position: relative;
-    // margin-right: -19rem;
-    // margin-left: -49rem;
 
     img {
       position: absolute;
       right: rem(-200);
       top: 0;
-      // max-width: 100%;
-      // @include adaptiveValue("width", 974, 474);
+      @include adaptiveValue("width", 974, 474);
+
+      @media (max-width:$mobile) {
+        top: rem(8);
+        left: 50%;
+        transform: translate(-50%, 0px);
+      }
     }
   }
 }
