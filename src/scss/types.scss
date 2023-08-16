@@ -1,0 +1,51 @@
+.types {
+  @include adaptiveValue("padding-top", 125, 67);
+
+  /* .types__container */
+  &__container {}
+
+  /* .types__title */
+  &__title {
+    @include adaptiveValue("margin-bottom", 29, 36);
+  }
+
+  /* .types__subtitle */
+  &__subtitle {
+    @include adaptiveValue("margin-bottom", 56, 38);
+  }
+
+  /* .types__items */
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    @include adaptiveValue("gap", 30, 20);
+  }
+
+  /* .types__item */
+  &__item {
+    text-align: center;
+  }
+
+  /* .types__image */
+  &__image {}
+
+  /* .types__name */
+  &__name {}
+
+  /* .types__descr */
+  &__descr {}
+
+  /* .types__link */
+  &__link {}
+}
+
+.title {}
+
+.subtitle {}
+
+.link {
+
+  /* .link_r */
+  &_r {}
+}
