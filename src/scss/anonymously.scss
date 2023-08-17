@@ -1,13 +1,24 @@
 .anonymously {
+  background: url('@img/anon/anon-bg.png'), linear-gradient(270deg, #272B30 0%, rgba(39, 43, 48, 0.39) 100%);
+  // background: url('@img/anon/anon-bg.png') 0 0 no-repeat;
+  background-size: cover;
+  background-position: top right;
 
   /* .anonymously__container */
-  &__container {}
+  &__container {
+    display: grid;
+    grid-template-columns: 50.85% 1fr;
+    // justify-content: center;
+    align-items: center;
+  }
 
   /* .anonymously__content */
   &__content {}
 
   /* .anonymously__title */
-  &__title {}
+  &__title {
+    @include adaptiveValue("margin-bottom", 102, 44);
+  }
 
   /* .anonymously__list */
   &__list {}
