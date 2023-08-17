@@ -88,6 +88,8 @@
     @include adaptiveValue("font-size", 18, 14);
     color: #FFF;
     font-weight: 700;
+    line-height: 120%;
+
   }
 
   /* .types__descr */
@@ -109,6 +111,7 @@
       @media (max-width:$mobile) {
         display: flex;
         grid-column: 2 span;
+        margin-top: rem(10);
       }
     }
   }
