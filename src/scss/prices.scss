@@ -1,0 +1,32 @@
+.prices {
+  @include adaptiveValue("padding-top", 128, 82);
+  @include adaptiveValue("padding-bottom", 140, 82);
+
+  /* .prices__container */
+  &__container {}
+
+  /* .prices__title */
+  &__title {}
+
+  /* .prices__list */
+  &__list {}
+
+  /* .prices__item */
+  &__item {}
+
+  /* .prices__name */
+  &__name {}
+
+  /* .prices__price */
+  &__price {}
+
+  /* .prices__text */
+  &__text {
+
+    /* .prices__text_null */
+    &_null {}
+  }
+
+  /* .prices__date */
+  &__date {}
+}
