@@ -122,4 +122,39 @@
       }
     }
   }
+
+  &__img {
+    top: 0;
+    position: absolute;
+    // z-index: -1;
+
+    img {
+      &:first-child {
+        position: relative;
+        z-index: 50;
+      }
+    }
+
+    &_1 {
+      right: -11%;
+      top: -17.5%;
+      @include adaptiveValue("width", 556, 224);
+
+      @media (max-width:$tablet) {
+        right: -23%;
+        top: -27.5%;
+      }
+
+      @media (max-width:$mobile) {
+        right: -3%;
+        top: -12.5%;
+      }
+    }
+
+    &_2 {
+      left: -3%;
+      top: 64%;
+      @include adaptiveValue("width", 408, 176);
+    }
+  }
 }
