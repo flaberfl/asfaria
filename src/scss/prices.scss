@@ -17,6 +17,10 @@
     grid-template-rows: repeat(6, 1fr);
     gap: rem(7) rem(8);
     align-content: center;
+
+    @media (max-width: em(600)){
+        row-gap: rem(3);
+    }
   }
 
   /* .prices__cell */
@@ -26,6 +30,8 @@
     min-height: rem(74);
     @include adaptiveValue("padding-left", 37, 22);
     padding-right: rem(15);
+    padding-top: rem(17);
+    padding-bottom: rem(17);
 
     background: #28333E;
 
@@ -51,6 +57,16 @@
         margin-bottom: rem(6);
       }
     }
+
+    @media (max-width: em(600)) {
+      &_car {
+        margin-bottom: rem(0);
+      }
+    }
+
+    @media (max-width: em(600)) {
+      grid-column: span 12;
+    }
   }
 
   /* .prices__price */
@@ -65,6 +81,10 @@
       &_car {
         margin-bottom: rem(6);
       }
+    }
+
+    @media (max-width: em(600)) {
+      grid-column: span 12;
     }
   }
 
