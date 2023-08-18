@@ -4,7 +4,6 @@
   background-position: top right;
 
   @media (max-width: em(1300)) {
-    // padding-top: rem(50);
     @include adaptiveValue("padding-top", 50, 74);
   }
 
@@ -26,8 +25,6 @@
 
   /* .anonymously__content */
   &__content {
-    // padding-top: rem(132);
-
     @media (min-width:em(1300)) {
       margin-top: rem(-19);
     }
@@ -67,7 +64,6 @@
         margin-bottom: rem(13);
       }
     }
-
   }
 
   /* .anonymously__icon */
@@ -88,7 +84,6 @@
 
     @media (min-width:em(601)) {
       padding-top: rem(14);
-
     }
   }
 
@@ -116,8 +111,8 @@
     }
 
     @media (max-width:$mobileSmall) {
-      margin-left: -55px;
-      margin-right: -55px;
+      margin-left: rem(-55);
+      margin-right: rem(-55);
     }
 
     img {
