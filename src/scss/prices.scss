@@ -6,7 +6,9 @@
   &__container {}
 
   /* .prices__title */
-  &__title {}
+  &__title {
+    @include adaptiveValue("margin-bottom", 107, 42);
+  }
 
   /* .prices__list */
   &__list {
@@ -19,7 +21,11 @@
 
   /* .prices__cell */
   &__cell {
+    display: flex;
+    align-items: center;
     min-height: rem(74);
+    @include adaptiveValue("padding-left", 37, 22);
+    padding-right: rem(15);
 
     background: #28333E;
 
@@ -42,6 +48,8 @@
   /* .prices__price */
   &__price {
     grid-column: span 3;
+
+    color: #00F0FF; 
   }
 
   /* .prices__text */
