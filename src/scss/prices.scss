@@ -9,29 +9,53 @@
   &__title {}
 
   /* .prices__list */
-  &__list {}
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: rem(7) rem(8);
+    align-content: center;
+  }
 
   /* .prices__cell */
   &__cell {
+    min-height: rem(74);
+
     background: #28333E;
+
+    @media (max-width:$mobile) {
+      min-height: rem(61);
+    }
   }
 
   /* .prices__item */
   &__item {}
 
   /* .prices__name */
-  &__name {}
+  &__name {
+    grid-column: span 3;
+
+    font-size: rem(18);
+    line-height: 120%;
+  }
 
   /* .prices__price */
-  &__price {}
+  &__price {
+    grid-column: span 3;
+  }
 
   /* .prices__text */
   &__text {
+    grid-column: span 6;
 
     /* .prices__text_null */
-    &_null {}
+    &_null {
+      background: rgba(40, 51, 62, 0.50);
+    }
   }
 
   /* .prices__date */
-  &__date {}
+  &__date {
+    grid-column: span 6;
+  }
 }
