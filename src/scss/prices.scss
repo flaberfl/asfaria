@@ -43,27 +43,59 @@
 
     font-size: rem(18);
     line-height: 120%;
+
+    @media (max-width:$tablet) {
+      grid-column: span 6;
+
+      &_car {
+        margin-bottom: rem(6);
+      }
+    }
   }
 
   /* .prices__price */
   &__price {
     grid-column: span 3;
 
-    color: #00F0FF; 
+    color: #00F0FF;
+
+    @media (max-width:$tablet) {
+      grid-column: span 6;
+
+      &_car {
+        margin-bottom: rem(6);
+      }
+    }
   }
 
   /* .prices__text */
   &__text {
     grid-column: span 6;
 
+    @media (max-width:$tablet) {
+      grid-column: span 12;
+
+      &:not(:last-child) {
+        margin-bottom: rem(6);
+      }
+    }
+
     /* .prices__text_null */
     &_null {
       background: rgba(40, 51, 62, 0.50);
+
+      @media (max-width:$tablet) {
+        display: none;
+      }
     }
   }
 
   /* .prices__date */
   &__date {
     grid-column: span 6;
+
+    @media (max-width:$tablet) {
+      grid-column: span 12;
+    }
   }
 }
