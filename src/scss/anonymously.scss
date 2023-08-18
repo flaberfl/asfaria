@@ -18,22 +18,44 @@
   /* .anonymously__title */
   &__title {
     @include adaptiveValue("margin-bottom", 102, 44);
+
+    text-align: left;
   }
 
   /* .anonymously__list */
   &__list {}
 
   /* .anonymously__item */
-  &__item {}
+  &__item {
+
+    &:nth-child(odd) {
+      span {
+        display: block;
+      }
+    }
+
+  }
 
   /* .anonymously__icon */
   &__icon {}
 
   /* .anonymously__text-block */
-  &__text-block {}
+  &__text-block {
+    max-width: rem(596);
+  }
 
   /* .anonymously__text */
-  &__text {}
+  &__text {
+    @include adaptiveValue("font-size", 18, 14);
+    line-height: 120%;
+
+    span {
+      color: #fff;
+      font-weight: 600;
+    }
+
+
+  }
 
   /* .anonymously__image */
   &__image {}
