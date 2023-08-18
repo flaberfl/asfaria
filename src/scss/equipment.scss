@@ -1,7 +1,7 @@
 .equipment {
   position: relative;
   @include adaptiveValue("padding-top", 164, 61);
-  @include adaptiveValue("padding-bottom", 70, 100, 1920, 767, 2);
+  @include adaptiveValue("padding-bottom", 65, 100, 1920, 767, 2);
 
   &::before {
     content: '';
@@ -55,10 +55,10 @@
   }
 
   &__decor {
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: -1;
+    // position: absolute;
+    // right: 0;
+    // top: 0;
+    // z-index: -1;
   }
 
   /* .equipment__content */

@@ -1,29 +1,52 @@
 .anonymously {
   background: url('@img/anon/anon-bg.png'), linear-gradient(270deg, #272B30 0%, rgba(39, 43, 48, 0.39) 100%);
-  // background: url('@img/anon/anon-bg.png') 0 0 no-repeat;
   background-size: cover;
   background-position: top right;
+
+  @media (max-width: em(1300)) {
+    // padding-top: rem(50);
+    @include adaptiveValue("padding-top", 50, 74);
+  }
+
+  @media (min-width:$mobile) and (max-width:$tablet) {
+    @include adaptiveValue("padding-bottom", 30, 86);
+  }
+
 
   /* .anonymously__container */
   &__container {
     display: grid;
     grid-template-columns: 50.85% 1fr;
-    // justify-content: center;
     align-items: center;
+
+    @media (max-width:$mobile) {
+      grid-template-columns: auto;
+    }
   }
 
   /* .anonymously__content */
-  &__content {}
+  &__content {
+    // padding-top: rem(132);
+
+    @media (min-width:em(1300)) {
+      margin-top: rem(-19);
+    }
+  }
 
   /* .anonymously__title */
   &__title {
-    @include adaptiveValue("margin-bottom", 102, 44);
+    @include adaptiveValue("margin-bottom", 92, 44);
 
     text-align: left;
   }
 
   /* .anonymously__list */
-  &__list {}
+  &__list {
+
+    @media (min-width:em(601)) {
+      margin-left: rem(-19);
+    }
+  }
 
   /* .anonymously__item */
   &__item {
@@ -34,14 +57,39 @@
       }
     }
 
+    @media (min-width:em(601)) {
+      display: flex;
+      gap: rem(22);
+    }
+
+    @media (max-width: em(600)) {
+      &:not(:last-child) {
+        margin-bottom: rem(13);
+      }
+    }
+
   }
 
   /* .anonymously__icon */
-  &__icon {}
+  &__icon {
+    align-self: start;
+    @include adaptiveValue("width", 91, 50);
+
+    @media (max-width: em(600)) {
+      &:not(:last-child) {
+        margin-bottom: rem(-5);
+      }
+    }
+  }
 
   /* .anonymously__text-block */
   &__text-block {
     max-width: rem(596);
+
+    @media (min-width:em(601)) {
+      padding-top: rem(14);
+
+    }
   }
 
   /* .anonymously__text */
@@ -53,12 +101,30 @@
       color: #fff;
       font-weight: 600;
     }
-
-
   }
 
   /* .anonymously__image */
-  &__image {}
-}
+  &__image {
+    position: relative;
 
-.title {}
+    @media (min-width:$tablet) {
+      margin-left: rem(-60);
+    }
+
+    @media (max-width: em(600)) {
+      margin-top: rem(-47);
+    }
+
+    @media (max-width:$mobileSmall) {
+      margin-left: -55px;
+      margin-right: -55px;
+    }
+
+    img {
+
+      @media (max-width: em(1300)) {
+        max-width: 100%;
+      }
+    }
+  }
+}

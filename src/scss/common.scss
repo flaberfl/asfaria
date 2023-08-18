@@ -39,6 +39,17 @@
   }
 }
 
+.decore-ellipse {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+
+  @media (max-width: em(600)){
+      display: none;
+  }
+}
+
 
 
 [anim-left-right] {
