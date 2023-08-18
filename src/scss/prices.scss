@@ -79,7 +79,7 @@
       grid-column: span 6;
 
       &_car {
-        margin-bottom: rem(6);
+        margin-bottom: rem(12);
       }
     }
 
@@ -96,7 +96,7 @@
       grid-column: span 12;
 
       &:not(:last-child) {
-        margin-bottom: rem(6);
+        margin-bottom: rem(12);
       }
     }
 
