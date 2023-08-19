@@ -70,13 +70,35 @@
       }
     }
 
+    &:nth-child(3) {
+      .item-how-work__arrow {
+        top: auto;
+        bottom: -20%;
+        right: auto;
+        left: -40%;
+        transform: scale(-1, -1) rotate(235deg);
+      }
+    }
+
+    &:nth-child(4) {
+      .item-how-work__arrow {
+        top: auto;
+        bottom: 10%;
+        right: auto;
+        left: calc(60% - 50vw);
+        transform: scale(-1, 1) rotate(327deg);
+      }
+    }
+
     &:nth-child(4) {
       grid-column-start: 3;
+      // justify-self: start;
     }
 
     &:nth-child(5) {
       grid-column-start: 1;
       grid-row-start: 2;
+      // justify-self: end;
     }
   }
 
