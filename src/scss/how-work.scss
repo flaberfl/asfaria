@@ -18,8 +18,11 @@
     // display: grid;
     // grid-template-columns: repeat(5, auto);
     counter-reset: numbers;
-    margin-left: rem(-45);
-    margin-right: rem(-11);
+
+    @media (min-width:em(1201)) {
+      margin-left: rem(-45);
+      margin-right: rem(-11);
+    }
   }
 
   /* .how-work__item */
@@ -45,8 +48,30 @@
   align-items: center;
 
   @media (max-width: em(1200)) {
-    // flex: 0 1 33.33333%;
-    flex: 0 1 50%;
+    flex: 0 1 33.33333%;
+
+    &:nth-child(4) {
+
+      order: 8;
+
+    }
+
+    &:nth-child(1) {
+      .item-how-work__arrow {
+        top: 5%;
+        right: -50%;
+      }
+    }
+
+    &:nth-child(2) {
+      .item-how-work__arrow {
+        top: -44%;
+        right: -40%;
+        transform: scale(-1, -1) rotate(115deg);
+      }
+    }
+
+
   }
 
   &__arrow {
@@ -54,36 +79,39 @@
     top: 3%;
     right: -63%;
     @include adaptiveValue("width", 365, 180);
+
+
+
+    // @media (max-width: em(1200)) {
+
+    //   &:nth-child(1) {
+    //     top: 5%;
+    //     right: -50%;
+    //     transform: scale(-1, -1) rotate(115deg);
+
+    //   }
+
+    //   &:nth-child(2) {
+
+    //     top: -44%;
+    //     right: -40%;
+
+    //   }
+
+    // }
+
+
   }
 
-  &:nth-child(even) {
-    .item-how-work__arrow {
-      transform: scale(-1, -1) rotate(115deg);
-      top: -34%;
-      right: -62%;
+  @media (min-width:em(1201)) {
+    &:nth-child(even) {
+      .item-how-work__arrow {
+        transform: scale(-1, -1) rotate(115deg);
+        top: -34%;
+        right: -62%;
+      }
     }
-
   }
-
-  // &:not(:last-child) {
-  //   &::before {
-  //     content: '';
-  //     position: absolute;
-  //     background: url('@img/how-work/arrow.svg') 0 0 no-repeat;
-  //     background-size: cover;
-  //     // @include adaptiveValue("width", 257, 209);
-  //     // @include adaptiveValue("height", 257, 209);
-  //     width: 100%;
-  //     height: 100%;
-  //     top: 0;
-  //     right: rem(-30);
-  //     z-index: 100;
-  //   }
-
-  // }
-
-
-
 
   /* .item-how-work__img */
   &__img {
