@@ -178,6 +178,10 @@
     }
   }
 
+  &__block {
+    display: none;
+    position: absolute;
+  }
 
   &__arrow {
     position: absolute;
@@ -191,8 +195,9 @@
       right: -70%;
     }
 
-    @media (max-width: em(630)){
-       width: rem(150); 
+    @media (max-width: em(630)) {
+      //  width: rem(150);
+      display: none;
     }
   }
 
