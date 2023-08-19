@@ -13,15 +13,27 @@
 
   /* .how-work__items */
   &__items {
-    display: flex;
-    flex-wrap: wrap;
-    // display: grid;
-    // grid-template-columns: repeat(5, auto);
+    // display: flex;
+    // flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+
     counter-reset: numbers;
 
     @media (min-width:em(1201)) {
       margin-left: rem(-45);
       margin-right: rem(-11);
+    }
+
+    // @media (min-width:em(1251)) {
+    //   margin-left: -2.5rem;
+    //   margin-right: -3.1rem;
+    // }
+
+    @media (max-width: em(1200)) {
+      grid-template-columns: repeat(3, 1fr);
+
     }
   }
 
@@ -42,20 +54,11 @@
 .item-how-work {
   position: relative;
   @include adaptiveValue("width", 250, 193);
-  flex: 0 1 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media (max-width: em(1200)) {
-    flex: 0 1 33.33333%;
-
-    &:nth-child(4) {
-
-      order: 8;
-
-    }
-
     &:nth-child(1) {
       .item-how-work__arrow {
         top: 5%;
@@ -71,36 +74,29 @@
       }
     }
 
+    &:nth-child(4) {
+      grid-column-start: 3;
+    }
+
+    &:nth-child(5) {
+      grid-column-start: 1;
+      grid-row-start: 2;
+
+    }
 
   }
 
   &__arrow {
     position: absolute;
     top: 3%;
-    right: -63%;
+    right: -76%;
     @include adaptiveValue("width", 365, 180);
 
 
-
-    // @media (max-width: em(1200)) {
-
-    //   &:nth-child(1) {
-    //     top: 5%;
-    //     right: -50%;
-    //     transform: scale(-1, -1) rotate(115deg);
-
-    //   }
-
-    //   &:nth-child(2) {
-
-    //     top: -44%;
-    //     right: -40%;
-
-    //   }
-
-    // }
-
-
+    @media (max-width: em(1270)) {
+      top: 4%;
+      right: -70%;
+    }
   }
 
   @media (min-width:em(1201)) {
@@ -108,7 +104,15 @@
       .item-how-work__arrow {
         transform: scale(-1, -1) rotate(115deg);
         top: -34%;
-        right: -62%;
+        right: -80%;
+      }
+    }
+  }
+
+  @media (max-width:em(1270)) {
+    &:nth-child(even) {
+      .item-how-work__arrow {
+        right: -75%;
       }
     }
   }
