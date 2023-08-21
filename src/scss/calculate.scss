@@ -53,7 +53,13 @@
           stroke: white;
         }
       }
+
+      .calculate__img {
+        // transform: translate(0, rem(10));
+        transform: scale(1.06);
+      }
     }
+
 
     &:nth-child(1),
     &:nth-child(2),
@@ -63,12 +69,24 @@
 
     &:nth-child(4),
     &:nth-child(5) {
+      margin-top: -16%;
       grid-column: span 6;
     }
 
+    &:nth-child(1) {
+      margin-left: rem(-15);
+    }
+
+    &:nth-child(3) {
+      margin-right: rem(-25);
+    }
+
     &:nth-child(4) {
-      margin-top: -20%;
       margin-left: rem(230);
+    }
+
+    &:nth-child(5) {
+      margin-right: rem(200);
     }
   }
 
@@ -108,23 +126,26 @@
   /* .calculate__img */
   &__img {
     position: absolute;
+    transition: all 0.3s ease 0s;
 
     &_office {
       width: rem(295);
       @include adaptiveValue("width", 295, 153);
     }
-    
+
     &_apartments {
       @include adaptiveValue("width", 366, 170);
       top: -10%;
     }
-    
+
     &_cars {
       @include adaptiveValue("width", 400, 188);
     }
+
     &_yachts {
       @include adaptiveValue("width", 380, 174);
     }
+
     &_planes {
       @include adaptiveValue("width", 350, 165);
     }
