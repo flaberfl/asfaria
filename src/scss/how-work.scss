@@ -201,16 +201,6 @@
   &__arrow_mob {
     width: rem(150);
 
-    // &:last-child{
-    //   @media (max-width: em(630)) {
-    //     top: 20%;
-    //   }
-    // }
-
-    // @media (max-width:$mobileSmall){
-    //    width: rem(120); 
-    // }
-
     &:nth-child(2) {
       margin-top: rem(-30);
     }
@@ -222,16 +212,9 @@
     }
 
     &:nth-child(even) {
-      // display: none;
       transform: scale(-1, 1);
       margin-left: rem(50);
-
-      justify-self: start;
     }
-
-    // &:nth-child(odd) {
-    //   justify-self: start;
-    // }
   }
 
   &__arrow {
