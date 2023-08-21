@@ -8,47 +8,82 @@
   /* .calculate__title */
   &__title {
     @include adaptiveValue("margin-bottom", 29, 24);
+  }
+
+  /* .calculate__subtitle */
+  &__subtitle {
+    @include adaptiveValue("margin-bottom", 54, 30);
 
     span {
       font-weight: 600;
       color: #fff;
+      transition: color 0.3s ease 0s;
+
+      &:hover {
+        color: $hoverColor;
+      }
     }
   }
-
-  /* .calculate__subtitle */
-  &__subtitle {}
 
   /* .calculate__list */
   &__list {
     display: grid;
-    grid-template-columns: repeat(5, 1fr)
+    grid-template-columns: repeat(5, 1fr);
   }
 
   /* .calculate__item */
   &__item {
+    text-align: center;
 
     &:nth-child(even) {
       margin-top: rem(157);
     }
-
   }
 
   /* .calculate__image */
-  &__image {}
+  &__image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include adaptiveValue("margin-bottom", 45, 10);
+
+    @include adaptiveValue("width", 289, 150);
+    @include adaptiveValue("height", 289, 150);
+    background-color: #272B30;
+    border-radius: 50%;
+  }
 
   /* .calculate__img */
   &__img {
     position: absolute;
+
+    &_apartments {
+      top: -10%;
+    }
   }
 
   /* .calculate__check */
-  &__check {}
+  &__check {
+    position: absolute;
+    bottom: -8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include adaptiveValue("width", 49, 52);
+    @include adaptiveValue("height", 49, 52);
+
+    background-color: #fff;
+    border-radius: 50%;
+  }
 
   /* .calculate__name */
   &__name {
     @include adaptiveValue("font-size", 18, 14);
     font-weight: 700;
     color: #fff;
+    line-height: 120%;
+
   }
 }
 
