@@ -1,0 +1,57 @@
+.calculate {
+  @include adaptiveValue("padding-top", 108, 70);
+  @include adaptiveValue("padding-bottom", 137, 74);
+
+  /* .calculate__container */
+  &__container {}
+
+  /* .calculate__title */
+  &__title {
+    @include adaptiveValue("margin-bottom", 29, 24);
+
+    span {
+      font-weight: 600;
+      color: #fff;
+    }
+  }
+
+  /* .calculate__subtitle */
+  &__subtitle {}
+
+  /* .calculate__list */
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr)
+  }
+
+  /* .calculate__item */
+  &__item {
+
+    &:nth-child(even) {
+      margin-top: rem(157);
+    }
+
+  }
+
+  /* .calculate__image */
+  &__image {}
+
+  /* .calculate__img */
+  &__img {
+    position: absolute;
+  }
+
+  /* .calculate__check */
+  &__check {}
+
+  /* .calculate__name */
+  &__name {
+    @include adaptiveValue("font-size", 18, 14);
+    font-weight: 700;
+    color: #fff;
+  }
+}
+
+.title {}
+
+.subtitle {}
