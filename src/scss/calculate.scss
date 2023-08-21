@@ -29,7 +29,9 @@
   /* .calculate__list */
   &__list {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
   }
 
   /* .calculate__item */
@@ -39,15 +41,11 @@
     text-align: center;
     transition: all 0.8s ease 0s;
 
-    &:nth-child(even) {
-      margin-top: rem(157);
-    }
+    // &:nth-child(even) {
+    //   margin-top: rem(157);
+    // }
 
     &:hover {
-
-      .calculate__image {}
-
-
       .calculate__svg {
         fill: #28333E;
 
@@ -55,7 +53,22 @@
           stroke: white;
         }
       }
+    }
 
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3) {
+      grid-column: span 4;
+    }
+
+    &:nth-child(4),
+    &:nth-child(5) {
+      grid-column: span 6;
+    }
+
+    &:nth-child(4) {
+      margin-top: -20%;
+      margin-left: rem(230);
     }
   }
 
@@ -96,8 +109,24 @@
   &__img {
     position: absolute;
 
+    &_office {
+      width: rem(295);
+      @include adaptiveValue("width", 295, 153);
+    }
+    
     &_apartments {
+      @include adaptiveValue("width", 366, 170);
       top: -10%;
+    }
+    
+    &_cars {
+      @include adaptiveValue("width", 400, 188);
+    }
+    &_yachts {
+      @include adaptiveValue("width", 380, 174);
+    }
+    &_planes {
+      @include adaptiveValue("width", 350, 165);
     }
   }
 
@@ -126,7 +155,3 @@
 
   }
 }
-
-.title {}
-
-.subtitle {}
