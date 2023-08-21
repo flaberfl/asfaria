@@ -1,0 +1,74 @@
+.help-you {
+  @include adaptiveValue("padding-top", 171, 68);
+  @include adaptiveValue("padding-bottom", 150, 70);
+  background: linear-gradient(270deg, #272B30 0%, rgba(39, 43, 48, 0.39) 100%);
+  overflow: hidden;
+
+
+  /* .help-you__container */
+  &__container {
+    display: grid;
+    grid-template-columns: 51.428% 1fr;
+  }
+
+  /* .help-you__content */
+  &__content {}
+
+  /* .help-you__title */
+  &__title {
+    @include adaptiveValue("margin-bottom", 74, 37);
+
+    text-align: left;
+  }
+
+  /* .help-you__subtitle */
+  &__subtitle {
+    @include adaptiveValue("margin-bottom", 41, 37);
+
+    text-align: left;
+  }
+
+  /* .help-you__list */
+  &__list {
+    display: grid;
+    @include adaptiveValue("row-gap", 52, 16);
+    @include adaptiveValue("margin-top", 58, 35);
+  }
+
+  /* .help-you__item */
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    // @include adaptiveValue("gap", 42, 22);
+    @include adaptiveValue("padding-left", 89, 50);
+
+    &::before {
+      content: '';
+      position: absolute;
+      @include adaptiveValue("width", 13, 7);
+      height: rem(4);
+      background-color: #00F0FF;
+      left: 7.9%;
+      top: 28%;
+    }
+
+    img {
+      position: absolute;
+      left: rem(4);
+      top: rem(-12);
+    }
+
+  }
+
+  &__media {
+    position: relative;
+  }
+
+  &__image {
+    position: absolute;
+    top: -19.3%;
+    left: -9.3%;
+    // max-width: 100%;
+  }
+}
