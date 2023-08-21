@@ -1,6 +1,24 @@
 .calculate {
+  position: relative;
   @include adaptiveValue("padding-top", 108, 70);
   @include adaptiveValue("padding-bottom", 137, 74);
+
+  &::before {
+    content: '';
+    position: absolute;
+    background: url('@img/calculate/calculate-bg.jpg') lightgray;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: -1;
+  }
+
 
   /* .calculate__container */
   &__container {}
@@ -14,6 +32,8 @@
   &__subtitle {
     @include adaptiveValue("margin-bottom", 54, 30);
 
+    @include adaptiveValue("font-size", 24, 14);
+
     span {
       font-weight: 600;
       color: #fff;
@@ -22,6 +42,11 @@
       &:hover {
         color: $hoverColor;
       }
+    }
+
+    i {
+      font-style: normal;
+      white-space: nowrap;
     }
   }
 
@@ -32,6 +57,10 @@
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(2, 1fr);
     justify-items: center;
+
+    @media (max-width:$mobile) {
+      @include adaptiveValue("row-gap", 50, 18);
+    }
   }
 
   /* .calculate__item */
@@ -39,7 +68,7 @@
     position: relative;
     cursor: pointer;
     text-align: center;
-    transition: all 0.8s ease 0s;
+    transition: all 0.5s ease 0s;
 
     &:hover {
       .calculate__svg {
@@ -76,11 +105,16 @@
     }
 
     &:nth-child(3) {
-      margin-right: rem(-25);
+      @media (min-width:$mobile) {
+        margin-right: rem(-25);
+      }
+
+      @media (max-width:$mobile) {
+        margin-left: rem(-15);
+      }
     }
 
     &:nth-child(4) {
-
       @media (min-width:$mobile) {
         margin-left: rem(80);
       }
@@ -98,6 +132,15 @@
       @media (min-width:em(1301)) {
         margin-right: rem(200);
       }
+
+      @media (max-width:$mobile) {
+        grid-column: span 12 !important;
+        margin-top: rem(-40);
+      }
+    }
+
+    @media (max-width:$mobile) {
+      grid-column: span 6 !important;
     }
   }
 
@@ -107,7 +150,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    @include adaptiveValue("margin-bottom", 45, 10);
+    @include adaptiveValue("margin-bottom", 45, 27);
 
     @include adaptiveValue("width", 289, 150);
     @include adaptiveValue("height", 289, 150);
@@ -122,7 +165,7 @@
       border-radius: 50%;
       opacity: 0;
       background: linear-gradient(196deg, #196FC5 0%, #7F3F96 100%);
-      transition: opacity 0.3s ease 0s;
+      transition: opacity 0.5s ease 0s;
     }
 
     &:hover {
@@ -137,7 +180,7 @@
   /* .calculate__img */
   &__img {
     position: absolute;
-    transition: all 0.3s ease 0s;
+    transition: all 0.5s ease 0s;
 
     &_office {
       width: rem(295);
@@ -170,8 +213,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    @include adaptiveValue("width", 49, 52);
-    @include adaptiveValue("height", 49, 52);
+    @include adaptiveValue("width", 49, 25);
+    @include adaptiveValue("height", 49, 25);
 
     background-color: #fff;
     border-radius: 50%;
