@@ -1,6 +1,24 @@
 .prices {
+  position: relative;
   @include adaptiveValue("padding-top", 128, 82);
   @include adaptiveValue("padding-bottom", 140, 82);
+
+  &::before {
+    content: '';
+    position: absolute;
+    background: url('@img/prices-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    mix-blend-mode: darken;
+    z-index: -1;
+  }
 
   /* .prices__container */
   &__container {}
@@ -18,8 +36,8 @@
     gap: rem(7) rem(8);
     align-content: center;
 
-    @media (max-width: em(600)){
-        row-gap: rem(3);
+    @media (max-width: em(600)) {
+      row-gap: rem(3);
     }
   }
 
