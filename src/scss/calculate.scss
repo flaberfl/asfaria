@@ -22,10 +22,6 @@
     z-index: -1;
   }
 
-
-  /* .calculate__container */
-  &__container {}
-
   /* .calculate__title */
   &__title {
     @include adaptiveValue("margin-bottom", 29, 24);
@@ -86,7 +82,6 @@
         transform: scale(1.06);
       }
     }
-
 
     &:nth-child(1),
     &:nth-child(2),
@@ -176,8 +171,6 @@
         opacity: 1;
       }
     }
-
-
   }
 
   /* .calculate__img */
@@ -223,13 +216,11 @@
     border-radius: 50%;
   }
 
-
   /* .calculate__name */
   &__name {
     @include adaptiveValue("font-size", 18, 14);
     font-weight: 700;
     color: #fff;
     line-height: 120%;
-
   }
 }
