@@ -1,0 +1,27 @@
+.faq {
+  @include adaptiveValue("padding-top", 138, 79);
+  @include adaptiveValue("padding-bottom", 154, 104);
+
+  /* .faq__container */
+  &__container {}
+
+  /* .faq__title */
+  &__title {}
+
+  /* .faq__body */
+  &__body {}
+}
+
+.title {}
+
+.spollers {
+
+  /* .spollers__item */
+  &__item {}
+
+  /* .spollers__title */
+  &__title {}
+
+  /* .spollers__body */
+  &__body {}
+}
