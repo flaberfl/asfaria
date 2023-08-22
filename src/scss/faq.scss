@@ -1,12 +1,33 @@
 .faq {
+  position: relative;
   @include adaptiveValue("padding-top", 138, 79);
   @include adaptiveValue("padding-bottom", 154, 104);
+
+  &::before {
+    content: "";
+    position: absolute;
+    background: url('@img/faq-bg.jpg') lightgray;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    // mix-blend-mode: darken;
+    z-index: -1;
+    opacity: .2;
+  }
 
   /* .faq__container */
   &__container {}
 
   /* .faq__title */
-  &__title {}
+  &__title {
+    @include adaptiveValue("margin-bottom", 133, 28);
+  }
 
   /* .faq__body */
   &__body {}
