@@ -45,12 +45,41 @@
   top: 0;
   z-index: -1;
 
-  @media (max-width: em(600)){
-      display: none;
+  @media (max-width: em(600)) {
+    display: none;
   }
 }
 
+.back-image {
+  position: absolute;
+}
 
+.back-image_1 {
+  bottom: rem(-170);
+  right: rem(-220);
+
+  @media (max-width:$tablet) {
+    display: none;
+  }
+}
+
+.back-image_2 {
+  bottom: -226px;
+  left: -274px;
+
+  @media (max-width:$tablet) {
+    display: none;
+  }
+}
+
+.back-image_3 {
+  bottom: -166px;
+  left: 36px;
+
+  @media (max-width:em(1800)) {
+    display: none;
+  }
+}
 
 [anim-left-right] {
   position: relative;

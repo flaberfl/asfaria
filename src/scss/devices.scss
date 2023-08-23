@@ -1,6 +1,7 @@
 .devices {
   @include adaptiveValue("padding-top", 133, 77);
   @include adaptiveValue("padding-bottom", 150, 86);
+  position: relative;
 
   /* .devices__container */
   &__container {}
@@ -17,7 +18,7 @@
 
   /* .devices__items */
   &__items {
-    display: grid; 
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: rem(30);
     row-gap: rem(34);
@@ -68,15 +69,8 @@
     @media (max-width:$mobile) {
       font-size: rem(16);
     }
-
   }
 
   /* .item-devices__link */
   &__link {}
-}
-
-.link {
-
-  /* .link_r */
-  &_r {}
 }
