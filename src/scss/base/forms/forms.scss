@@ -17,7 +17,7 @@
 
 			font-size: rem(14);
 			font-weight: 500;
-			color: #fff; 
+			color: #fff;
 			line-height: 120%;
 			letter-spacing: 1.4px;
 
@@ -48,11 +48,26 @@
 			}
 		}
 
+		&_tel {
+			.input {
+				position: relative;
+				@include adaptiveValue("padding-left", 112, 77);
+
+				&::before {
+					content: '';
+					position: absolute;
+					@include adaptiveValue("height", 36, 25);
+					width: rem(1);
+					background-color: #2C4A67;
+					left: 0;
+					top: 0;
+				}
+			}
+		}
+
 	}
 
-	&__input {
-		
-	}
+	&__input {}
 
 	&__button {}
 
