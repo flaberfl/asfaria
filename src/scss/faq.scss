@@ -35,8 +35,24 @@
 
 
   &__decor {
-    right: -14%;
-    top: -30%;
+    position: absolute;
+    top: 0;
+
+    &_img {
+      position: absolute;
+      // left: -16.7%;
+      // bottom: -45.3%;
+      left: rem(-239);
+      bottom: rem(-321);
+      background: url('@img/faq-img.png') 0 0 no-repeat;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+
+      @media (max-width: em(1100)) {
+        bottom: rem(-290);
+      }
+    }
   }
 }
 
