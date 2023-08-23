@@ -1,6 +1,7 @@
 .contacts {
   position: relative;
   z-index: 5;
+  @include adaptiveValue("padding-bottom", 0, 233, 1400, 360);
 
   iframe {
     position: absolute;
@@ -30,6 +31,17 @@
 
     @media (max-width: em(1400)) {
       margin-left: rem(-20);
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 60%;
+
+    @media (max-width: em(600)) {
+      top: 80%;
     }
   }
 
