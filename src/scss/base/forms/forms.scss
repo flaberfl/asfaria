@@ -38,6 +38,7 @@
 			display: flex;
 			align-items: center;
 			gap: rem(25);
+			margin-top: rem(44);
 
 			@media (max-width:$mobileSmall) {
 				gap: rem(18);
@@ -50,13 +51,14 @@
 
 		&_tel {
 			.input {
-				position: relative;
+				// position: relative;
 				@include adaptiveValue("padding-left", 112, 77);
 
-				&::before {
+				&:before {
 					content: '';
 					position: absolute;
 					@include adaptiveValue("height", 36, 25);
+					height: rem(36);
 					width: rem(1);
 					background-color: #2C4A67;
 					left: 0;

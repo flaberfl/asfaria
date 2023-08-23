@@ -24,9 +24,15 @@ textarea {
 
 	@include adaptiveValue("padding-left", 37, 20);
 	@include adaptiveValue("padding-top", 29, 18);
+	height: rem(148);
+
+	@media (max-width:$mobile) {
+		height: rem(100);
+	}
 }
 
 .input {
+	position: relative;
 	@include adaptiveValue("height", 74, 50);
 	// max-width: rem(383);
 
@@ -34,7 +40,7 @@ textarea {
 	display: block;
 	width: 100%;
 	// padding: 0 rem(9);
-	@include adaptiveValue("padding-left", 37, 20); 
+	@include adaptiveValue("padding-left", 37, 20);
 	border: 1px solid #2C4A67;
 	background-color: transparent;
 
