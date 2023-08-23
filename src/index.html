@@ -540,14 +540,31 @@
 								data-placeholder="Type your question here" placeholder="Type your question here"></textarea>
 						</div>
 						<div class="form__line form__line_send">
-							<label class="form__label" class="checkbox checkbox_cf7">
-								<span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><input type="checkbox"
-											name="accept" value="1" class="checkbox__input checkbox-real__input" id="accept"
-											aria-invalid="false"><span></span></span></span>
 
-								<span class="checkbox__text checkbox__text_subm">I agree with <a href="#!       ">the privacy
-										policy</a></span>
-							</label>
+
+							<!-- <label class="checkbox checkbox_cf7">
+
+								<span class="wpcf7-form-control wpcf7-acceptance">
+									<span class="wpcf7-list-item">
+										<input type="checkbox" name="accept" value="1" class="checkbox__input checkbox-real__input"
+											id="accept" aria-invalid="false">
+										<span>
+
+										</span>
+									</span>
+								</span>
+
+								<span class="checkbox__text checkbox__text_subm">I agree with <a href="#!">the privacy
+										policy</a>
+								</span>
+
+							</label> -->
+
+							<div class="checkbox">
+								<input id="c_1" data-error="Помилка" class="checkbox__input" type="checkbox" value="1" name="form[]">
+								<label for="c_1" class="checkbox__label"><span class="checkbox__text">Текст</span></label>
+							</div>
+
 							<button type="submit" class="feedback__button button">Submit</button>
 						</div>
 					</form>

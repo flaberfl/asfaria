@@ -60,9 +60,6 @@
 
 				@include adaptiveValue("left", 38, 21);
 				@include adaptiveValue("top", 60, 38);
-				// top: 46.1%;
-				// bottom: 50%;
-				// transform: translate(0, 50%);
 			}
 
 			&:before {
@@ -119,7 +116,7 @@
 
 // <CHECK>
 // Сніппет (HTML): chk
-// @import "checkbox";
+@import "checkbox";
 
 // <RADIO>
 // Сніппет (HTML): opt
