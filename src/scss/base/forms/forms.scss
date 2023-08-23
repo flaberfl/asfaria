@@ -10,21 +10,6 @@
 			@include adaptiveValue("margin-bottom", 20, 17);
 		}
 
-		label {
-			display: block;
-			@include adaptiveValue("margin-bottom", 15, 9);
-
-			font-size: rem(14);
-			font-weight: 500;
-			color: #fff;
-			line-height: 120%;
-			letter-spacing: 1.4px;
-
-			@media (max-width:$mobile) {
-				font-size: rem(12);
-			}
-		}
-
 		/* .form__line_text */
 		&_text {
 			@media (min-width:$mobile) {
@@ -75,12 +60,24 @@
 			}
 
 			.input {
-				// position: relative;
 				@include adaptiveValue("padding-left", 112, 77);
-
 			}
 		}
+	}
 
+	&__label {
+		display: block;
+		@include adaptiveValue("margin-bottom", 15, 9);
+
+		font-size: rem(14);
+		font-weight: 500;
+		color: #fff;
+		line-height: 120%;
+		letter-spacing: 1.4px;
+
+		@media (max-width:$mobile) {
+			font-size: rem(12);
+		}
 	}
 
 	&__input {}
@@ -124,7 +121,7 @@
 
 // <SELECT>
 // Сніппет (HTML): sel
-@import "select";
+// @import "select";
 
 // <RATING>
 // Сніппет (HTML): rating
