@@ -3,7 +3,7 @@
 
   /* .footer__container */
   &__container {
-    @include adaptiveValue("min-height", 66, 114);
+    @include adaptiveValue("min-height", 96, 143);
     display: flex;
     align-items: center;
     justify-content: space-between;
