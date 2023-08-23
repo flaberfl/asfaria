@@ -41,31 +41,31 @@ window.addEventListener('scroll', function () {
 
 // Скрипт квиза
 
-const quiz = document.getElementById('quiz-form');
-const quizItems = quiz.querySelectorAll('.quiz-form__fieldset');
-const btnsNext = quiz.querySelectorAll('.button_next');
+// const quiz = document.getElementById('quiz-form');
+// const quizItems = quiz.querySelectorAll('.quiz-form__fieldset');
+// const btnsNext = quiz.querySelectorAll('.button_next');
 
-btnsNext.forEach((btn) => {
-  btn.disabled = true;
-});
+// btnsNext.forEach((btn) => {
+//   btn.disabled = true;
+// });
 
 
-quizItems.forEach((quizItem, quizItemIndex) => {
+// quizItems.forEach((quizItem, quizItemIndex) => {
 
-  quizItem.addEventListener('change', (e) => {
-    const target = e.target;
-    const inputsChecked = quizItem.querySelectorAll('input:checked');
+//   quizItem.addEventListener('change', (e) => {
+//     const target = e.target;
+//     const inputsChecked = quizItem.querySelectorAll('input:checked');
 
-    if (inputsChecked.length > 0) {
-      // разблокировать кнопку именно эту
-      btnsNext[quizItemIndex].disabled = false;
-    } else {
-      // заблокировать эту кнопку
-      btnsNext[quizItemIndex].disabled = true;
-    }
+//     if (inputsChecked.length > 0) {
+//       // разблокировать кнопку именно эту
+//       btnsNext[quizItemIndex].disabled = false;
+//     } else {
+//       // заблокировать эту кнопку
+//       btnsNext[quizItemIndex].disabled = true;
+//     }
 
-  })
-});
+//   })
+// });
 
 
 // Для Wordpress добавления порядкового номера объектам слайдера и попапам, зависящих от нимх
