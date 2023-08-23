@@ -6,7 +6,6 @@
 	&__column {}
 
 	&__line {
-
 		&:not(:last-child) {
 			margin-bottom: rem(20);
 		}
@@ -50,20 +49,36 @@
 		}
 
 		&_tel {
+			position: relative;
+
+			&::after {
+				content: '+1';
+				position: absolute;
+				font-size: rem(14);
+				font-weight: 500;
+				color: #fff;
+				top: 50%;
+				transform: translate(0, 50%);
+			}
+
+			&:before {
+				content: '';
+				position: absolute;
+				@include adaptiveValue("height", 36, 25);
+				width: rem(1);
+				@include adaptiveValue("margin-top", 36, 30);
+				margin-top: rem(30);
+
+				background-color: #2C4A67;
+				left: rem(80);
+				top: 50%;
+				transform: translate(0, -50%);
+			}
+
 			.input {
 				// position: relative;
 				@include adaptiveValue("padding-left", 112, 77);
 
-				&:before {
-					content: '';
-					position: absolute;
-					@include adaptiveValue("height", 36, 25);
-					height: rem(36);
-					width: rem(1);
-					background-color: #2C4A67;
-					left: 0;
-					top: 0;
-				}
 			}
 		}
 

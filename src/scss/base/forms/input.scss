@@ -32,7 +32,6 @@ textarea {
 }
 
 .input {
-	position: relative;
 	@include adaptiveValue("height", 74, 50);
 	// max-width: rem(383);
 
