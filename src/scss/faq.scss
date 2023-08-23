@@ -6,7 +6,7 @@
   &::before {
     content: "";
     position: absolute;
-    background: url('@img/faq-bg.jpg') lightgray;
+    background: url('@img/faq-bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top 0;
@@ -16,9 +16,8 @@
     right: 0;
     bottom: 0;
     top: 0;
-    // mix-blend-mode: darken;
+    mix-blend-mode: darken;
     z-index: -1;
-    opacity: .2;
   }
 
   /* .faq__container */
@@ -33,7 +32,14 @@
 
   /* .faq__body */
   &__body {}
+
+
+  &__decor {
+    right: -14%;
+    top: -30%;
+  }
 }
+
 
 
 .spollers {
