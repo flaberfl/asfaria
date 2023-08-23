@@ -21,15 +21,12 @@
 		&_send {
 			display: flex;
 			align-items: center;
-			gap: rem(25);
-			margin-top: rem(44);
-
-			@media (max-width:$mobileSmall) {
-				gap: rem(18);
-			}
+			@include adaptiveValue("gap", 110, 0);
+			@include adaptiveValue("margin-top", 44, 20);
 
 			@media (max-width:$mobileSmall) {
 				flex-direction: column;
+				gap: rem(42);
 			}
 		}
 
