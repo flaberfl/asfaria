@@ -6,7 +6,9 @@
 
 
   /* .feedback__container */
-  &__container {}
+  &__container {
+    position: relative;
+  }
 
   /* .feedback__question */
   &__question {}
