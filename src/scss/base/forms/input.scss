@@ -9,23 +9,44 @@ textarea {
 	appearance: none;
 }
 
-.input {
-	height: rem(36);
-	max-width: rem(383);
-
-	border-radius: 0 !important;
+textarea {
+	background: transparent;
+	border-radius: rem(10);
+	border: rem(1) solid #2C4A67;
 	width: 100%;
+	resize: none;
+
+	font-size: rem(14);
+	line-height: 120%;
+	font-weight: 500;
+	color: #fff;
+	letter-spacing: 1.4px;
+
+	@include adaptiveValue("padding-left", 37, 20);
+	@include adaptiveValue("padding-top", 29, 18);
+}
+
+.input {
+	@include adaptiveValue("height", 74, 50);
+	// max-width: rem(383);
+
+	border-radius: rem(10) !important;
 	display: block;
-	padding: 0 rem(9);
-	border-bottom: rem(2) solid #1F2427;
+	width: 100%;
+	// padding: 0 rem(9);
+	@include adaptiveValue("padding-left", 37, 20);
+	border: 1px solid #2C4A67;
 	background-color: transparent;
 
-	font-size: rem(17);
-	line-height: math.div(26, 17);
-	font-weight: 400;
+	font-size: rem(14);
+	line-height: 120%;
+	font-weight: 500;
 	color: #fff;
+	letter-spacing: 1.4px;
 
-	&._form-focus {}
+	&._form-focus {
+		border: 1px solid #fff;
+	}
 
 	&._form-error {}
 }
@@ -42,4 +63,11 @@ textarea {
 
 textarea.input {
 	padding: 0px 0px;
+
+}
+
+textarea {
+	&:focus::placeholder {
+		opacity: 0;
+	}
 }

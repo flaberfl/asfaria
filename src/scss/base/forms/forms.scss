@@ -8,19 +8,21 @@
 	&__line {
 
 		&:not(:last-child) {
-			margin-bottom: rem(22);
+			margin-bottom: rem(20);
 		}
 
 		label {
-			padding: 0 rem(9);
+			display: block;
+			@include adaptiveValue("margin-bottom", 15, 9);
 
 			font-size: rem(14);
-			line-height: math.div(20, 14);
-			font-weight: 300;
-			color: #5D616D;
+			font-weight: 500;
+			color: #fff; 
+			line-height: 120%;
+			letter-spacing: 1.4px;
 
 			@media (max-width:$mobile) {
-				font-size: rem(13);
+				font-size: rem(12);
 			}
 		}
 
@@ -48,7 +50,9 @@
 
 	}
 
-	&__input {}
+	&__input {
+		
+	}
 
 	&__button {}
 

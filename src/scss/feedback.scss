@@ -1,82 +1,80 @@
 .feedback {
-  margin-top: rem(-295);
-  position: relative;
+  @include adaptiveValue("padding-top", 122, 55);
+  @include adaptiveValue("padding-bottom", 118, 78);
 
-  background-color: transparent !important;
-  z-index: 100;
+  background: linear-gradient(270deg, #272B30 0%, rgba(39, 43, 48, 0.39) 100%);
+
 
   /* .feedback__container */
-  &__container {
-    padding-bottom: rem(42);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: rem(20);
-
-    background-color: $darkColor;
-
-    @media (max-width:$mobile) {
-      grid-template-columns: 1fr;
-    }
-  }
+  &__container {}
 
   /* .feedback__question */
-  &__question {
-    @include adaptiveValue("padding-top", 45, 30);
-    padding-left: rem(56);
-    @include adaptiveValue("padding-left", 56, 0, 1440, 992, 1);
-  }
+  &__question {}
 
   /* .feedback__title */
   &__title {
-    margin-bottom: rem(14);
+    @include adaptiveValue("margin-bottom", 46, 34);
   }
 
   /* .feedback__form */
   &__form {
-    @media (max-width:$mobile) {
-      @include adaptiveValue("padding-left", 120, 10, 767, 480, 2);
-    }
+    max-width: rem(924);
+    margin: 0 auto;
   }
 
   /* .feedback__button */
-  &__button {
-    @include adaptiveValue("width", 240, 270);
+  &__button {}
+}
+
+
+.form {
+
+  /* .form__line */
+  &__line {
+
+    /* .form__line_name */
+    &_name {}
+
+    /* .form__line_tel */
+    &_tel {}
+
+    /* .form__line_mail */
+    &_mail {}
+
+    /* .form__line_text */
+    &_text {}
+
+    /* .form__line_send */
+    &_send {}
   }
+}
 
-  /* .feedback__policy */
-  &__policy {
-    max-width: rem(200);
+.input {}
 
-    font-size: rem(11);
-    line-height: math.div(15, 11);
-    font-weight: 300;
-    color: #73767C;
+.checkbox {
 
-    span {
-      color: #fff;
-    }
+  /* .checkbox_cf7 */
+  &_cf7 {}
 
-    @media (max-width:$mobileSmall) {
-      max-width: rem(260);
-      text-align: center;
-    }
+  /* .checkbox__input */
+  &__input {}
+
+  /* .checkbox__text */
+  &__text {
+
+    /* .checkbox__text_subm */
+    &_subm {}
   }
+}
 
-  /* .feedback__image */
-  &__image {
-    position: relative;
-    background: url('@img/feedback/back-feed.jpg') center / cover no-repeat;
-    margin-right: rem(-14);
+.wpcf7-form-control {}
 
-    img {
-      position: absolute;
-      max-width: 100%;
-      left: 0;
-      bottom: rem(-42);
-    }
+.wpcf7-acceptance {}
 
-    @media (max-width:$mobile) {
-      display: none;
-    }
-  }
+.wpcf7-list-item {}
+
+.checkbox-real {
+
+  /* .checkbox-real__input */
+  &__input {}
 }

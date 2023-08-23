@@ -10,9 +10,8 @@
 	box-sizing: border-box;
 }
 
-:focus,
-:active {
-	// outline: none;
+:focus {
+	outline: none;
 }
 
 a:focus,

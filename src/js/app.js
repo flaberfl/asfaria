@@ -95,7 +95,7 @@ flsForms.formSubmit();
 // flsForms.formRating();
 
 /* Модуль роботи з select. */
-import './libs/select.js'
+// import './libs/select.js'
 
 /* Модуль роботи з календарем */
 // import './files/forms/datepicker.js'
@@ -107,7 +107,7 @@ import './libs/select.js'
 Документація плагіна: https://github.com/RobinHerbots/inputmask
 Сніппет(HTML):
 */
-// import "./files/forms/inputmask.js";
+import "./files/forms/inputmask.js";
 
 /* Модуль роботи з повзунком */
 /*
@@ -154,7 +154,7 @@ import './libs/select.js'
 // Документація по роботі у шаблоні: https://template.fls.guru/template-docs/modul-lenivaya-podgruzka-lazy-loading.html
 // Документація плагіна: https://github.com/verlok/vanilla-lazyload
 // Сніппет(HTML):
-// import './files/scroll/lazyload.js';
+import './files/scroll/lazyload.js';
 
 // Спостерігач за об'єктами з атрибутом data-watch
 // Документація: https://template.fls.guru/template-docs/modul-nabljudatel-za-poyavleniem-elementa-pri-skrolle.html

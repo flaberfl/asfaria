@@ -2,6 +2,7 @@
   position: relative;
   @include adaptiveValue("padding-top", 138, 79);
   @include adaptiveValue("padding-bottom", 154, 104);
+  overflow: hidden;
 
   &::before {
     content: "";

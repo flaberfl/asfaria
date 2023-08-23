@@ -514,41 +514,48 @@
 				</div>
 			</section>
 
-			<!-- <section class="page__feedback feedback">
+			<section class="feedback">
 				<div class="feedback__container">
-					<div class="feedback__question">
-						<h2 class="feedback__title title">Задать <span>вопрос</span></h2>
-						<form action="#!" class="feedback__form form">
-							<div class="form__line form__line_name">
-								<label for="name">Your Name*</label>
-								<input data-required="text" type="text" name="name" data-error="Type your name here"
-									data-placeholder="Type your name here" placeholder="Type your name here" class="input">
-							</div>
-							<div class="form__line form__line_tel">
-								<label for="tel">Phone Number*</label>
-								<input autocomplete="off" type="text" name="tel" data-error="Введите корректный номер телефона"
-									data-required="number" data-placeholder="(___) ___-__-__" placeholder="(___) ___-__-__" class="input">
-							</div>
-							<div class="form__line form__line_mail">
-								<label for="name">Your Email*</label>
-								<input data-required="text" type="text" name="name" data-error="Type your Email here"
-									data-placeholder="Type your Email here" placeholder="Type your Email here" class="input">
-							</div>
-							<div class="form__line form__line_text">
-								<label for="feedback-text">Description</label>
-								<textarea name="feedback-text" id="feedback-text" cols="30" rows="10"
-									data-placeholder="Type your question here" placeholder="Type your question here"></textarea>
-							</div>
-							<div class="form__line form__line_send">
 
-								<button type="submit" class="feedback__button button" data-watch btn-anim-to_right-trans>Submit</button>
-							</div>
-						</form>
-					</div>
+					<h2 class="feedback__title title">Do you Still have a question?</h2>
+					<form action="#!" class="feedback__form form">
+						<div class="form__line form__line_name">
+							<label class="form__label" for="name">Your Name*</label>
+							<input data-required="text" type="text" name="name" data-error="Type your name here"
+								data-placeholder="Type your name here" placeholder="Type your name here" class="input">
+						</div>
+						<div class="form__line form__line_tel">
+							<label class="form__label" for="tel">Phone Number*</label>
+							<input autocomplete="off" type="text" name="tel" data-error="Введите корректный номер телефона"
+								data-required="number" data-placeholder="(___) ___-__-__" placeholder="(___) ___-__-__" class="input">
+						</div>
+						<div class="form__line form__line_mail">
+							<label class="form__label" for="name">Your Email*</label>
+							<input data-required="text" type="text" name="mail" data-error="Type your Email here"
+								data-placeholder="Type your Email here" placeholder="Type your Email here" class="input">
+						</div>
+						<div class="form__line form__line_text">
+							<label class="form__label" for="feedback-text">Description</label>
+							<textarea name="feedback-text" id="feedback-text" cols="30" rows="10"
+								data-placeholder="Type your question here" placeholder="Type your question here"></textarea>
+						</div>
+						<div class="form__line form__line_send">
+							<label class="form__label" class="checkbox checkbox_cf7">
+								<span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><input type="checkbox"
+											name="accept" value="1" class="checkbox__input checkbox-real__input" id="accept"
+											aria-invalid="false"><span></span></span></span>
+
+								<span class="checkbox__text checkbox__text_subm">I agree with <a href="#!       ">the privacy
+										policy</a></span>
+							</label>
+							<button type="submit" class="feedback__button button">Submit</button>
+						</div>
+					</form>
+
 				</div>
 			</section>
 
-			<section class="page__contacts contacts">
+			<!-- <section class="page__contacts contacts">
 				<div class="contacts__container">
 					<div class="contacts__body">
 						<h2 class="contacts__title title">Contact information</h2>
