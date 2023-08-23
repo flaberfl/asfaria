@@ -34,7 +34,7 @@ textarea {
 	display: block;
 	width: 100%;
 	// padding: 0 rem(9);
-	@include adaptiveValue("padding-left", 37, 20);
+	@include adaptiveValue("padding-left", 37, 20); 
 	border: 1px solid #2C4A67;
 	background-color: transparent;
 
