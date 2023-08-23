@@ -26,29 +26,6 @@
   &__button {}
 }
 
-.form {
-
-  /* .form__line */
-  &__line {
-
-    /* .form__line_name */
-    &_name {}
-
-    /* .form__line_tel */
-    &_tel {}
-
-    /* .form__line_mail */
-    &_mail {}
-
-    /* .form__line_text */
-    &_text {}
-
-    /* .form__line_send */
-    &_send {}
-  }
-}
-
-
 .checkbox {
 
   /* .checkbox_cf7 */
@@ -64,6 +41,12 @@
     &_subm {}
   }
 }
+
+
+.checkbox__input:checked~span:before {
+  background: #fff url(assets/img/icons/chksvg.svg) center center no-repeat;
+}
+
 
 .wpcf7-form-control {}
 
