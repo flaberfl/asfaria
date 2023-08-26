@@ -79,7 +79,8 @@
       }
 
       .calculate__img {
-        transform: scale(1.06);
+        transform: perspective(300px) rotateY(15deg);
+        // transform: perspective(300px) rotateX(-15deg);
       }
     }
 
@@ -155,6 +156,7 @@
     background-color: #272B30;
     border-radius: 50%;
 
+
     &::before {
       content: '';
       position: absolute;
@@ -177,6 +179,8 @@
   &__img {
     position: absolute;
     transition: all 0.5s ease 0s;
+    filter: drop-shadow(3px 5px 15px #272B30);
+
 
     &_office {
       width: rem(295);

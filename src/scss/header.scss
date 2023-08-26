@@ -60,8 +60,20 @@
 			margin-right: 0;
 			row-gap: rem(15);
 		}
+	}
 
+	&__whatsapp {
+		transition: all 0.3s ease 0s;
 
+		&:hover {
+			color: #43d854;
+
+			svg {
+				path {
+					fill: #43d854;
+				}
+			}
+		}
 	}
 
 	&__label {
