@@ -133,6 +133,7 @@
   /* .intro__image */
   &__image {
     position: relative;
+    animation: moving 3s infinite linear;
 
     img {
       position: absolute;

@@ -196,6 +196,14 @@
 }
 
 
+@keyframes moving {
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg)
+  }
+}
+
+
 [anim-up-down] {
   // transform: translate(rem(0), rem(20));
   transform: translate(rem(0), rem(30));
