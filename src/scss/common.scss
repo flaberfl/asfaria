@@ -196,6 +196,34 @@
 }
 
 
+[anim-up-down] {
+  // transform: translate(rem(0), rem(20));
+  transform: translate(rem(0), rem(40));
+  opacity: 0;
+  transition: all $animSpeed ease 0s;
+
+  &._watcher-view {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+[delay20] {
+  transition: all $animSpeed ease .2s;
+}
+[delay40] {
+  transition: all $animSpeed ease .4s;
+}
+
+[delay80] {
+  transition: all $animSpeed ease .8s;
+}
+
+[delay120] {
+  transition: all $animSpeed ease 1.2s;
+}
+
+
 @keyframes toRight {
   0% {
     transform: translateX(-101%)
