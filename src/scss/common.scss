@@ -198,7 +198,7 @@
 
 [anim-up-down] {
   // transform: translate(rem(0), rem(20));
-  transform: translate(rem(0), rem(40));
+  transform: translate(rem(0), rem(30));
   opacity: 0;
   transition: all $animSpeed ease 0s;
 
@@ -208,11 +208,32 @@
   }
 }
 
+[delay10] {
+  transition: all $animSpeed ease .1s;
+}
+
 [delay20] {
   transition: all $animSpeed ease .2s;
 }
+
+[delay30] {
+  transition: all $animSpeed ease .3s;
+}
+
 [delay40] {
   transition: all $animSpeed ease .4s;
+}
+
+[delay50] {
+  transition: all $animSpeed ease .5s;
+}
+
+[delay60] {
+  transition: all $animSpeed ease .6s;
+}
+
+[delay70] {
+  transition: all $animSpeed ease .7s;
 }
 
 [delay80] {
