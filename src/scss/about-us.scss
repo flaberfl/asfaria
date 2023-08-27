@@ -1,6 +1,11 @@
 .about-us {
   @include adaptiveValue("margin-top", -66, -51);
+  // @include adaptiveValue("margin-top", -66, -127);
   @include adaptiveValue("font-size", 40, 30);
+
+  @media (max-width: em(400)){
+      margin-top: rem(-100);
+  }
 
   /* .about-us__container-big */
   &__container_big {}

@@ -19,15 +19,24 @@
   /* .types__items */
   &__items {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    // grid-template-columns: repeat(3, 1fr);
+    // grid-template-rows: repeat(2, 1fr);
     // grid-template-columns: repeat(auto-fit, minmax(rem(350), 1fr));
     @include adaptiveValue("gap", 30, 20);
+    justify-items: center;
+
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+
+
+    @media (max-width: em(1300)) {
+      //  column-gap: rem(10); 
+    }
 
     @media (max-width:$mobile) {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(3, 1fr);
     }
+
   }
 
   /* .types__item */
@@ -35,22 +44,15 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    // @include adaptiveValue("width", 446, 148);
     @include adaptiveValue("gap", 33, 12);
-
+    // @include adaptiveValue("width", 446, 148);
     text-align: center;
 
-    &:last-child {
-      .types__image {
-        background: none;
-        // position: relative;
-
-
-        img {
-          // height: 100%;
-          // max-width: 100%;
-        }
-      }
+    &_last {
+      // @include adaptiveValue("height", 253, 84);
+      align-self: center;
+      @include adaptiveValue("width", 446, 148);
+      height: 100%;
     }
 
   }
@@ -58,10 +60,61 @@
   /* .types__image */
   &__image {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:not(:last-child) {
+      @include adaptiveValue("height", 253, 84);
+      @include adaptiveValue("width", 446, 148);
+      border-radius: rem(50);
+      background: linear-gradient(196deg, #196FC5 0%, #7F3F96 100%);
+
+      &::before {
+        content: '';
+        position: absolute;
+      }
+    }
 
     img {
-      max-width: 100%;
+      position: absolute;
+
     }
+
+    &_offices {
+      img {
+        @include adaptiveValue("width", 336, 114);
+        top: 27%;
+      }
+    }
+
+    &_apartmens {
+      img {
+        @include adaptiveValue("width", 426, 144);
+        top: -22.9%;
+      }
+    }
+
+    &_hotel {
+      img {
+        @include adaptiveValue("width", 187, 63);
+      }
+    }
+
+    &_bach {
+      img {
+        @include adaptiveValue("width", 273, 91);
+      }
+    }
+
+    &_cars {
+      img {
+        @include adaptiveValue("width", 479, 165);
+        left: 4.2%;
+        top: -3%;
+      }
+    }
+
   }
 
   &__text-block {
@@ -73,7 +126,7 @@
     @include adaptiveValue("gap", 53, 20);
     width: 100%;
     height: 100%;
-    top: 0;
+    top: -11%;
 
     text-align: center;
 
