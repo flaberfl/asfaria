@@ -45,16 +45,27 @@
     flex-direction: column;
     position: relative;
     @include adaptiveValue("gap", 33, 12);
-    // @include adaptiveValue("width", 446, 148);
     text-align: center;
 
     &_last {
-      // @include adaptiveValue("height", 253, 84);
       align-self: center;
       @include adaptiveValue("width", 446, 148);
       height: 100%;
+
+      img {
+        @media (max-width:$mobileSmall) {
+          height: rem(110);
+        }
+      }
     }
 
+    &:hover {
+      .types__image {
+        img {
+          transform: perspective(300px) rotateY(15deg);
+        }
+      }
+    }
   }
 
   /* .types__image */
@@ -78,7 +89,8 @@
 
     img {
       position: absolute;
-
+      transition: all 0.5s ease 0s;
+      filter: drop-shadow(3px 15px 25px #272B30);
     }
 
     &_offices {
@@ -114,7 +126,6 @@
         top: -3%;
       }
     }
-
   }
 
   &__text-block {
@@ -142,16 +153,16 @@
     color: #FFF;
     font-weight: 700;
     line-height: 120%;
-
   }
-
-  /* .types__descr */
-  &__descr {}
 
   /* .types__link */
   &__link {
     @include adaptiveValue("font-size", 14, 9, 1920, 767, 2);
     justify-content: center;
+
+    &:hover{
+      text-decoration: none;
+    }
 
     @media (max-width:$mobile) {
       display: none;

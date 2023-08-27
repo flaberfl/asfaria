@@ -72,5 +72,9 @@
   }
 
   /* .item-devices__link */
-  &__link {}
+  &__link {
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
