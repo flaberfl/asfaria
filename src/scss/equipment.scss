@@ -28,6 +28,7 @@
 
     @media (max-width:$mobile) {
       grid-template-columns: auto;
+      gap: rem(50);
     }
   }
 

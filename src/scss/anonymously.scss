@@ -2,6 +2,7 @@
   background: url('@img/anon/anon-bg.png'), linear-gradient(270deg, #272B30 0%, rgba(39, 43, 48, 0.39) 100%);
   background-size: cover;
   background-position: top right;
+  @include adaptiveValue("padding-bottom", 125, 0);
 
   @media (max-width: em(1300)) {
     @include adaptiveValue("padding-top", 50, 74);
@@ -100,6 +101,9 @@
   /* .anonymously__image */
   &__image {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     @media (min-width:$tablet) {
       // margin-left: rem(-60);
@@ -108,7 +112,7 @@
     }
 
     @media (max-width: em(600)) {
-      margin-top: rem(-47);
+      // margin-top: rem(-47);
     }
 
     @media (max-width:$mobileSmall) {
@@ -122,27 +126,46 @@
   &__main-img {
     position: relative;
     z-index: 20;
+    @include adaptiveValue("width", 640, 302);
 
-    @media (max-width: em(1300)) {
-      max-width: 100%;
-    }
+    // @media (max-width: em(1300)) {
+    //   max-width: 100%;
+    // }
 
   }
 
   &__back-img {
     position: absolute;
     // animation: moving 3s infinite linear;
-    // @include adaptiveValue("width", 760, 308);
+    @include adaptiveValue("width", 820, 308);
     // max-width: 100%;
-    top: -18.7%;
-    right: -16%;
     z-index: 1;
+
+    @media (min-width:$mobile) {
+      top: -16.7%;
+      right: -14%;
+      // right: auto;
+      // left: 50%;
+      // transform: translate(-50%, 0px);
+    }
   }
 
   &__wave-img {
     position: absolute;
     z-index: 40;
     // max-width: 100%;
+    @include adaptiveValue("width", 620, 320);
+
+    @media (min-width:$mobile) {
+      left: 4%;
+      top: 22%;
+    }
+  }
+
+  &__decor {
+    z-index: auto;
+    top: -49%;
+    right: -41%;
   }
 
 
