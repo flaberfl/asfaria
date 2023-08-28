@@ -136,24 +136,19 @@
 
   &__back-img {
     position: absolute;
-    // animation: moving 3s infinite linear;
+    animation: moving 3s infinite linear;
     @include adaptiveValue("width", 820, 308);
-    // max-width: 100%;
     z-index: 1;
 
     @media (min-width:$mobile) {
       top: -16.7%;
       right: -14%;
-      // right: auto;
-      // left: 50%;
-      // transform: translate(-50%, 0px);
     }
   }
 
   &__wave-img {
     position: absolute;
     z-index: 40;
-    // max-width: 100%;
     @include adaptiveValue("width", 620, 320);
 
     @media (min-width:$mobile) {
@@ -173,7 +168,6 @@
   &__img {
     top: 0;
     position: absolute;
-    // z-index: -1;
 
     img {
       &:first-child {
@@ -183,8 +177,8 @@
     }
 
     &_1 {
-      right: -11%;
-      top: -17.5%;
+      right: -31%;
+      top: -41.5%;
       @include adaptiveValue("width", 556, 224);
 
       @media (max-width:$tablet) {
@@ -199,9 +193,15 @@
     }
 
     &_2 {
-      left: -3%;
-      top: 64%;
-      @include adaptiveValue("width", 408, 176);
+      left: -20%;
+      top: 65%;
+      @include adaptiveValue("width", 445, 216);
+
+      @media (max-width:$mobile) {
+        left: -1%;
+        top: 71%;
+      }
     }
+
   }
 }
