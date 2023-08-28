@@ -53,6 +53,10 @@
 
     background: #28333E;
 
+    &:hover{
+      opacity: .5;
+    }
+
     @media (max-width:$mobile) {
       min-height: rem(61);
     }
