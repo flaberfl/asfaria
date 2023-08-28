@@ -62,31 +62,33 @@
     &:hover {
       .types__image {
         img {
-          transform: perspective(300px) rotateY(15deg);
+          // transform: perspective(300px) rotateY(15deg);
+          // transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+          // will-change: transform;
+          // transition: transform $transition;
         }
       }
     }
   }
-
+  
   /* .types__image */
   &__image {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-
     &:not(:last-child) {
       @include adaptiveValue("height", 253, 84);
       @include adaptiveValue("width", 446, 148);
       border-radius: rem(50);
       background: linear-gradient(196deg, #196FC5 0%, #7F3F96 100%);
-
+      
       &::before {
         content: '';
         position: absolute;
       }
     }
-
+    
     img {
       position: absolute;
       transition: all 0.5s ease 0s;
@@ -160,7 +162,7 @@
     @include adaptiveValue("font-size", 14, 9, 1920, 767, 2);
     justify-content: center;
 
-    &:hover{
+    &:hover {
       text-decoration: none;
     }
 

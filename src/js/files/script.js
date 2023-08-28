@@ -25,7 +25,6 @@ window.addEventListener('scroll', () => {
     //scroll up
     header.classList.remove('_hide');
   }
-
   lastScroll = scrollPosition();
 })
 
@@ -39,6 +38,20 @@ window.addEventListener('scroll', function () {
   }
 })
 
+// Скрипт параллакса от мыши
+
+// document.addEventListener('mouseover', e => {
+//   Object.assign(document.documentElement, {
+//     style: `
+//     --move-x: ${(e.clientX) * -.04}deg;
+//     --move-y: ${(e.clientY) * -.03}1deg;
+//     `
+//   })
+// })
+
+// --move-x: ${(e.clientX - window.innerWidth / 2) * -.005}deg;
+// --move-y: ${(e.clientY - window.innerWidth / 2) * -.01}1deg;
+
 // Скрипт квиза
 
 // const quiz = document.getElementById('quiz-form');
@@ -48,7 +61,6 @@ window.addEventListener('scroll', function () {
 // btnsNext.forEach((btn) => {
 //   btn.disabled = true;
 // });
-
 
 // quizItems.forEach((quizItem, quizItemIndex) => {
 
@@ -67,7 +79,6 @@ window.addEventListener('scroll', function () {
 //   })
 // });
 
-
 // Для Wordpress добавления порядкового номера объектам слайдера и попапам, зависящих от нимх
 
 // const objPopupNewSpan = document.querySelectorAll('.object-popup-new-span');
@@ -77,7 +88,6 @@ window.addEventListener('scroll', function () {
 
 // // console.log(objPopupNew);
 
-
 // for (var i = 0, b; b = document.getElementById('object-popup-new'); ++i) {
 //   b.id += '-' + i;
 //   console.log(b.id);
@@ -86,7 +96,6 @@ window.addEventListener('scroll', function () {
 // for (var i = 0, b; b = document.getElementById('object-popup-old'); ++i) {
 //   b.id += '-' + i;
 // }
-
 
 // objPopupNewSpan.forEach((element, i) =>
 //   element.setAttribute('data-popup', '#object-popup-new' + '-' + i));
@@ -99,9 +108,6 @@ window.addEventListener('scroll', function () {
 
 // objPopupOld.forEach((element, i) =>
 //   element.setAttribute('data-popup', '#object-popup-old' + '-' + i));
-
-
-
 
 // const objects = document.querySelector('.object-popup__media');
 // const objectItems = objects.querySelectorAll('.object-popup__image-ibg');
