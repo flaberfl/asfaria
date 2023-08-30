@@ -34,7 +34,6 @@
 		}
 	}
 
-
 	&::before {
 		transition: opacity .4s ease 0s;
 		content: '';
@@ -47,7 +46,9 @@
 		bottom: 0;
 		opacity: 0;
 		border-radius: rem(10);
-		background: radial-gradient(79.22% 100.00% at 50.20% -0.00%, #00F0FF 0%, #7F3F96 40%);
+
+		background: radial-gradient(79.22% 100.00% at -68.20% -0.00%, #00F0FF 0%, #7F3F96 100%);
+
 		// z-index: 10;
 	}
 
