@@ -65,6 +65,12 @@
 	&__whatsapp {
 		transition: all 0.3s ease 0s;
 
+		svg {
+			path {
+				transition: all 0.3s ease .0s;
+			}
+		}
+
 		&:hover {
 			color: #43d854;
 
