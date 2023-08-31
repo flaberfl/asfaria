@@ -1,69 +1,44 @@
 .wpcf7-radio input[type="radio"]+span:before {
   display: block;
-  position: absolute;
   content: '';
-  border-radius: 100%;
+  position: absolute;
 
-  @include adaptiveValue("height", 40, 32);
-  @include adaptiveValue("width", 40, 32);
+  @include adaptiveValue("height", 47, 30);
+  @include adaptiveValue("width", 47, 30);
+
+  border-radius: 100%;
   top: rem(14);
   right: rem(-9);
-  background: #fff;
-  background: url('@img/quiz/icon-n_active.svg') center / cover no-repeat;
+  background-color: transparent;
+  border: rem(1) solid #2C4A67;
 }
 
-// .wpcf7-form .wpcf7-radio input[type=radio]:checked+span:after {
-//   background: #FA982F;
-//   visibility: visible;
-// }
 
-// .wpcf7-form .wpcf7-radio input[type=radio] {
-//   position: relative;
-//   visibility: hidden;
-// }
-.wpcf7-radio input[type=radio]:checked+span:after {
-  visibility: visible;
-}
+.wpcf7-radio input[type=radio]+span {}
 
-.wpcf7-radio input[type=radio]+span {
-  border: rem(3) solid $darkColor;
-}
+.wpcf7-radio input[type=radio]:checked+span {}
 
-.wpcf7-radio.step5 input[type=radio]+span {
-  border: rem(1) solid rgba(255, 255, 255, 0.09);
-}
-
-.wpcf7-radio input[type=radio]:checked+span {
-  border: rem(3) solid $btnColor;
-}
-
-.wpcf7-radio.step1-1,
-.wpcf7-radio.step3-1a {
-  @media (min-width:em(581)) and (max-width:$tablet) {
-    grid-column-start: 2;
-  }
-}
-
-.wpcf7-radio.step5 input[type=radio]:checked+span {
-  border: rem(1) solid $btnColor;
-}
-
+// Прячем нативные кнопки RADIO
 .wpcf7-radio input[type=radio] {
   position: relative;
   visibility: hidden;
 }
 
+.wpcf7-radio input[type=radio]:checked+span:after {
+  visibility: visible;
+}
+
 .wpcf7-radio input[type="radio"]+span:after {
-  background: url('@img/quiz/icon-active.svg') center / cover no-repeat;
+  background: url('@img/icons/check-quiz.svg') center / cover no-repeat;
   position: absolute;
   content: '';
-  @include adaptiveValue("height", 40, 32);
-  @include adaptiveValue("width", 40, 32);
+  @include adaptiveValue("height", 17, 11);
+  @include adaptiveValue("width", 24, 15);
   top: rem(14);
   right: rem(-9);
-
+  background-color: transparent;
   visibility: hidden;
-  // transition: all .2s ease-in 0s;
+  transition: all .2s ease-in 0s;
 }
 
 .wpcf7-radio label {
@@ -73,221 +48,9 @@
 
 .quiz-form {
 
-  &__fieldset {
-    // min-height: 100%;!
-    display: grid;
-    grid-template-columns: 1fr 41.544%;
-    // display: none;
-    transition: all 0.3s ease 0s;
 
-    @media (min-width:$tablet) {
-      height: rem(550);
-    }
+  &__content {}
 
-    @media (max-width:$tablet) {
-      padding-bottom: rem(26);
-    }
-
-    &_finish {
-      grid-template-columns: 42% auto;
-
-      @media (min-width:em(501)) and (max-width:em(1000)) {
-        overflow: hidden;
-      }
-
-      @media (max-width: em(500)) {
-        min-height: rem(940);
-        // height: rem(940);
-        display: flex;
-        flex-direction: column;
-      }
-    }
-
-    &_send {
-      grid-template-columns: 1fr 54.444%;
-      opacity: 1;
-      position: relative;
-      z-index: 100;
-
-      @media (max-width: em(1360)) {
-        overflow: hidden;
-      }
-
-      @media (max-width:$tablet) {
-        grid-template-columns: 1fr 1fr !important;
-      }
-
-      @media (max-width:$mobile) {
-        grid-template-columns: 1fr !important;
-        grid-template-rows: 1fr 1fr;
-      }
-    }
-
-    // &._active {
-    //   opacity: 1;
-    //   position: relative;
-    //   z-index: 100;
-    // }
-
-    &.hidden {
-      position: absolute;
-      opacity: 0;
-      z-index: -20;
-    }
-
-    @media (max-width:$tablet) {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  &__content {
-    @include adaptiveValue("padding-top", 52, 20);
-    @include adaptiveValue("padding-left", 68, 20, 1230, 991, 1);
-    @include adaptiveValue("padding-bottom", 42, 30);
-    padding-right: rem(48);
-    @include adaptiveValue("padding-right", 48, 20, 1230, 991, 1);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    .quiz-form__fieldset_finish & {
-      // padding-top: rem(79);
-      @include adaptiveValue("padding-top", 79, 45);
-      padding-right: 0;
-      padding-bottom: rem(91);
-
-      @media (max-width:$tablet) {
-        padding-right: rem(20);
-      }
-
-      @media (max-width: em(500)) {
-        padding-bottom: rem(20);
-      }
-    }
-  }
-
-  &__side {
-    display: flex;
-    flex-direction: column;
-    @include adaptiveValue("padding-top", 52, 0);
-
-    padding-left: rem(43);
-    @include adaptiveValue("padding-left", 43, 20, 1230, 991, 1);
-    padding-bottom: rem(73);
-    @include adaptiveValue("padding-bottom", 73, 20, 1230, 991, 2);
-    @include adaptiveValue("padding-right", 54, 20, 1230, 991, 1);
-
-    background-color: #14161D;
-  }
-
-  &__slogan {
-    margin-bottom: rem(5);
-
-    @include adaptiveValue("font-size", 16, 13);
-    line-height: math.div(29, 16);
-    font-weight: 400;
-    color: #9FA0A5;
-
-    @media (max-width:$tablet) {
-      margin: 0 auto rem(10);
-    }
-
-    @media (max-width: em(580)) {
-      margin-top: rem(20);
-      text-align: center;
-    }
-  }
-
-  &__title {
-
-    @include adaptiveValue("font-size", 25, 17);
-    line-height: math.div(33, 25);
-    font-weight: 500;
-    opacity: .8;
-
-    @media (min-width:$tablet) {
-      flex: 1 1 auto;
-      max-width: rem(620);
-    }
-
-    @media (max-width:$tablet) {
-      margin: 0 auto rem(30);
-      text-align: center;
-    }
-
-    .quiz-form__fieldset_send & {
-      @media (min-width:$mobile) and (max-width:$tablet) {
-        text-align: left;
-      }
-    }
-
-    &_finish {
-      flex: 0 1 auto;
-
-      @media (max-width:$tablet) {
-        // margin-bottom: rem(20);
-
-      }
-
-      @media (max-width:$mobile) {
-        margin: 0;
-      }
-
-    }
-  }
-
-  &__body {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    @include adaptiveValue("gap", 44, 12);
-
-
-    &_2items {
-      grid-template-columns: 1fr 1fr;
-      gap: rem(40);
-      @include adaptiveValue("gap", 40, 0);
-
-      @media (max-width:$tablet) {
-        grid-template-columns: 1fr auto auto 1fr;
-      }
-
-      @media (max-width: em(580)) {
-        grid-template-columns: auto;
-        justify-content: center;
-      }
-    }
-
-    &_3items {
-      @media (max-width: em(580)) {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    &_number-items {
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      @include adaptiveValue("row-gap", 49, 26);
-      @include adaptiveValue("colimn-gap", 43, 26);
-      flex: 1 1 auto;
-
-      @media (max-width: em(580)) {
-        grid-template-columns: auto;
-      }
-    }
-  }
-
-  &__list {}
-
-  &__progress {
-    @media (max-width: em(580)) {
-      margin: 0 auto;
-    }
-  }
-
-  // &__list {
-  //   position: relative;
-  // }
 
   &__button {
     width: rem(163);
@@ -317,51 +80,6 @@
     }
   }
 
-  &__manager {
-    display: flex;
-    flex: 1 1 auto;
-    align-items: flex-start;
-
-    gap: rem(24)
-  }
-
-  &__descr {
-    padding-top: rem(20);
-
-    .quiz-form__fieldset_finish & {
-      @media (max-width: em(500)) {
-        text-align: center;
-      }
-    }
-  }
-
-  &__icon-photo {
-    @include adaptiveValue("width", 86, 58);
-  }
-
-  &__positon {
-    margin-bottom: rem(15);
-  }
-
-  &__text {
-    p {
-      &:not(:last-child) {
-        margin-bottom: rem(9);
-      }
-
-      .quiz-form__right & {
-        max-width: rem(230);
-
-        @media (max-width: em(500)) {
-          max-width: none;
-        }
-      }
-    }
-
-    span {
-      font-weight: 700;
-    }
-  }
 
   &__footer {
     display: flex;
@@ -388,398 +106,28 @@
     }
   }
 
-  &__decor {
-    padding-left: rem(18);
-
-    @media (max-width:$tablet) {
-      display: none;
-    }
-  }
-
-  &__badge {
-    position: relative;
-    padding: rem(29) rem(26) rem(29) rem(133);
-    @include adaptiveValue("padding-top", 29, 10);
-    @include adaptiveValue("padding-right", 26, 10);
-    @include adaptiveValue("padding-bottom", 29, 10);
-    @include adaptiveValue("padding-left", 133, 50);
-
-    background-color: $hoverColor;
-    border-radius: rem(600);
-    z-index: 10;
-
-    font-size: rem(16);
-    @include adaptiveValue("font-size", 16, 12);
-    line-height: math.div(20, 16);
-    font-weight: 400;
-
-    &::before {
-      content: '';
-      position: absolute;
-      opacity: 0.14;
-      border: rem(1) dashed #fff;
-      border-radius: rem(600);
-      transform: translate(-50%, 0) scale(1.1);
-      width: 95%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      left: 50%;
-    }
-
-    span {
-      font-weight: 700;
-    }
-  }
-
-  &__book {
-    position: absolute;
-    left: rem(-90);
-    top: rem(-47);
-  }
 
   .wpcf7-list-item-label,
   &__label {
-    display: flex;
-    align-items: flex-end;
-    height: rem(163);
-    padding: 0;
 
-    width: 100%;
-    height: 100%;
-
-    font-size: rem(15);
-    line-height: math.div(22, 15);
-    font-weight: 500;
-
-    transition: all 0.3s ease 0s;
-
-    .quiz-form__body_2items & {
-      height: rem(167);
-      max-width: rem(280);
-      padding: 0 rem(100) rem(8) rem(17);
-    }
-
-    .quiz-form__body_3items & {
-      height: rem(163);
-      @include adaptiveValue("height", 163, 117);
-      padding: 0 0 rem(16) rem(17);
-      @include adaptiveValue("padding-left", 17, 12);
-    }
-
-    .quiz-form__body_number-items & {
-      align-items: center;
-      padding-left: rem(17);
-    }
-
-    @media (max-width:$mobile) {
-      font-size: rem(14);
-    }
-
-    .step1-1 & {
-      background: linear-gradient(180deg, rgba(21, 24, 32, 0.23) 38.86%, rgba(21, 24, 32, 0.86) 100%), url('@img/quiz/step-1/01.jpg') center / cover no-repeat;
-    }
-
-    .step1-2 & {
-      background: linear-gradient(180deg, rgba(21, 24, 32, 0.23) 38.86%, rgba(21, 24, 32, 0.86) 100%), url('@img/quiz/step-1/02.jpg') center / cover no-repeat;
-    }
-
-    .step2-1 & {
-      background: linear-gradient(180deg, rgba(21, 24, 32, 0.23) 38.86%, rgba(21, 24, 32, 0.86) 100%), url('@img/quiz/step-2/01.png') center / cover no-repeat;
-    }
-
-    .step2-2 & {
-      background: linear-gradient(180deg, rgba(21, 24, 32, 0.23) 38.86%, rgba(21, 24, 32, 0.86) 100%), url('@img/quiz/step-2/02.jpg') center / cover no-repeat;
-    }
-
-    .step2-2a & {
-      background: linear-gradient(180deg, rgba(21, 24, 32, 0.23) 38.86%, rgba(21, 24, 32, 0.86) 100%), url('@img/quiz/step-2/02a.jpg') center / cover no-repeat;
-    }
-
-    .step2-3 & {
-      background: linear-gradient(180deg, rgba(21, 24, 32, 0.23) 38.86%, rgba(21, 24, 32, 0.86) 100%), url('@img/quiz/step-2/03.jpg') center / cover no-repeat;
-    }
-
-    .step3-1 & {
-      background: linear-gradient(180deg, rgba(21, 24, 32, 0.23) 38.86%, rgba(21, 24, 32, 0.86) 100%), url('@img/quiz/step-3/01.jpg') center / cover no-repeat;
-    }
-
-    .step3-1a & {
-      background: linear-gradient(180deg, rgba(21, 24, 32, 0.23) 38.86%, rgba(21, 24, 32, 0.86) 100%), url('@img/quiz/step-3/01a.jpg') center / cover no-repeat;
-    }
-
-    .step3-2 & {
-      background: linear-gradient(180deg, rgba(21, 24, 32, 0.23) 38.86%, rgba(21, 24, 32, 0.86) 100%), url('@img/quiz/step-3/02.jpg') center / cover no-repeat;
-    }
-
-    .step3-2a & {
-      background: linear-gradient(180deg, rgba(21, 24, 32, 0.23) 38.86%, rgba(21, 24, 32, 0.86) 100%), url('@img/quiz/step-3/02a.jpg') center / cover no-repeat;
-    }
-
-    .step3-3 & {
-      background: linear-gradient(180deg, rgba(21, 24, 32, 0.23) 38.86%, rgba(21, 24, 32, 0.86) 100%), url('@img/quiz/step-3/03.jpg') center / cover no-repeat;
-    }
-
-    .step4-1 & {
-      background: linear-gradient(180deg, rgba(21, 24, 32, 0.23) 38.86%, rgba(21, 24, 32, 0.86) 100%), url('@img/quiz/step-4/01.jpg') center / cover no-repeat;
-    }
-
-    .step4-1a & {
-      background: linear-gradient(180deg, rgba(21, 24, 32, 0.23) 38.86%, rgba(21, 24, 32, 0.86) 100%), url('@img/quiz/step-4/01a.jpg') center / cover no-repeat;
-    }
-
-    .step4-2 & {
-      background: linear-gradient(180deg, rgba(21, 24, 32, 0.23) 38.86%, rgba(21, 24, 32, 0.86) 100%), url('@img/quiz/step-4/02.jpg') center / cover no-repeat;
-    }
-
-    .step4-2a & {
-      background: linear-gradient(180deg, rgba(21, 24, 32, 0.23) 38.86%, rgba(21, 24, 32, 0.86) 100%), url('@img/quiz/step-4/02a.jpg') center / cover no-repeat;
-    }
-
-    .step4-3 & {
-      background: linear-gradient(180deg, rgba(21, 24, 32, 0.23) 38.86%, rgba(21, 24, 32, 0.86) 100%), url('@img/quiz/step-4/03.jpg') center / cover no-repeat;
-    }
-
-    .step4-3a & {
-      background: linear-gradient(180deg, rgba(21, 24, 32, 0.23) 38.86%, rgba(21, 24, 32, 0.86) 100%), url('@img/quiz/step-4/03a.jpg') center / cover no-repeat;
-    }
-  }
-
-  &__right {
-    position: relative;
-    @include adaptiveValue("padding-left", 151, 20, 1230, 991, 1);
-    padding-top: rem(58);
-
-    @media (max-width: em(500)) {
-      padding-top: 0;
-      padding-right: rem(20);
-    }
-
-  }
-
-  &__label {}
-
-  &__line {
-
-    &_name {
-      // margin-bottom: rem(40) !important;
-      @include adaptiveValue("margin-bottom", 40, 22);
-
-
-      .form__label {
-        font-size: rem(12);
-        line-height: math.div(18, 12);
-      }
-
-      input {
-        height: rem(45);
-      }
-    }
-
-    &_social {
-      margin-bottom: rem(40) !important;
-
-      input {
-        height: auto;
-        padding-top: 0;
-        padding-bottom: rem(21);
-        border-bottom: 0.2rem solid #D1D6DE;
-      }
-
-      input::placeholder {
-
-        font-size: rem(15);
-        line-height: math.div(22, 15);
-        color: #8A8C92;
-      }
-    }
-  }
-
-  &__book-img {
-    position: absolute;
-    // left: 36%;
-    left: -10%;
-    top: 36%;
-
-    @media (max-width:$tablet) {
-      left: 30%;
-      top: -85%;
-    }
-
-    @media (max-width:$mobile) {
-      top: -60%;
-    }
-
-    @media (max-width: em(500)) {
-      top: 130%;
-      left: -12%;
-      width: 90%;
-    }
-  }
-
-  &__director {
-    position: absolute;
-    bottom: rem(-36);
-    right: rem(-71);
-    max-width: 100%;
-
-    @media (max-width:$tablet) {
-      width: 61%;
-      bottom: rem(-61);
-      // bottom: 20%;
-    }
-
-    @media (max-width: em(500)) {
-      display: none;
-    }
-
-    &_mobile {
-      display: none;
-
-      @media (max-width: em(500)) {
-        position: absolute;
-        display: block;
-        z-index: 100;
-        right: rem(-83);
-        bottom: rem(-432);
-      }
-    }
-  }
-
-  &__check {
-    background-color: $btnColor;
-    width: rem(82);
-    height: rem(82);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    @media (max-width:$mobile) {
-      margin: 0 auto;
-    }
-  }
-
-  &__submit-form {
-    @media (min-width: em(441)) and (max-width: em(650)) {
-      margin: 0 auto;
-    }
   }
 }
 
-.progress-quiz-form {
-
-  &__answer {
-    margin-bottom: rem(9);
-    display: flex;
-    gap: rem(12);
-
-    p {
-      font-size: rem(13);
-      line-height: math.div(16, 13);
-      font-weight: 400;
-    }
-  }
-
-  &__number {
-    display: flex;
-    gap: rem(12);
-    align-items: center;
-    opacity: .5;
-
-    span {
-      width: rem(21);
-      height: rem(1);
-      background-color: #fff;
-      opacity: .3;
-    }
-  }
-
-  &__bar {
-
-    @include adaptiveValue("width", 407, 260);
-    height: rem(9);
-    padding: rem(2);
-
-    background-color: #27292D;
-  }
-
-  &__line {
-    height: rem(5);
-
-    background-color: #A48B6C;
-
-    &_1 {
-      width: 2.48%;
-    }
-
-    &_2 {
-      width: 20.09%;
-    }
-
-    &_3 {
-      width: 40.44%;
-    }
-
-    &_4 {
-      width: 61.04%;
-    }
-
-    &_5 {
-      width: 100%;
-    }
-  }
+.wpcf7-list-item {
+  position: relative;
 }
 
-.quiz-thanks-popup__book-img {
+.wpcf7-list-item:before {
+  content: "";
   position: absolute;
-  bottom: rem(-9);
-  left: rem(-90);
-
-  @media (max-width: em(1360)) {
-    left: rem(-110);
-  }
-
-  @media (max-width:$tablet) {
-    width: 95%;
-    left: 0;
-    top: 30%;
-    // transform: translate(0, 130%);
-  }
-
-  @media (max-width:$mobile) {
-    width: 90%;
-    left: 50%;
-    top: -6%;
-    transform: translate(-50%, 0);
-  }
-
-  @media (max-width:$mobileSmall) {
-    width: 163%;
-  }
+  background-color: #2C4A67;
+  width: 2.5rem;
+  width: rem(14);
+  height: rem(1);
+  left: 42px;
+  top: 50%;
 }
 
-.quiz-thanks-popup__text {
-  max-width: rem(424);
-  font-size: rem(16);
-  line-height: math.div(26, 16);
-  font-weight: 300;
-  font-style: italic;
-
-  @media (max-width:$mobile) {
-    font-size: rem(15);
-    max-width: none;
-
-    text-align: center;
-  }
-}
-
-.quiz-thanks-popup__content {
-  gap: rem(19);
-  justify-content: center;
-
-  @media (min-width:$tablet) {
-    padding-bottom: rem(180);
-  }
+.quiz-popup {
+  height: 100vh;
 }
