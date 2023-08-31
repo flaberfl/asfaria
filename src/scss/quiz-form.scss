@@ -47,17 +47,35 @@
 }
 
 .quiz-form {
-
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  justify-items: center;
+
+
+  &__header {
+    @include adaptiveValue("margin-bottom", 54, 40);
+  }
+
 
   &__title {
     @include adaptiveValue("margin-bottom", 29, 17);
   }
 
+
   &__fieldset {
     flex: 1 1 auto;
+  }
+
+  &__item {
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.5s ease 0s;
+  }
+
+  &__image {
+    display: inline-flex;
   }
 
   &__content {}
