@@ -1,48 +1,38 @@
 .wpcf7-radio input[type="radio"]+span:before {
   display: block;
-  content: '';
   position: absolute;
+  content: '';
 
   @include adaptiveValue("height", 47, 30);
   @include adaptiveValue("width", 47, 30);
 
-  border-radius: 100%;
-  // top: rem(14);
-  // right: rem(-9);
-  left: rem(-45);
+  border-radius: 50%;
+  left: 0;
 
   top: 50%;
+  transform: translate(0, -50%);
   background-color: transparent;
   border: rem(1) solid #2C4A67;
 }
 
-.wpcf7-radio input[type="radio"]+span:after {
-  background: url('@img/icons/check-quiz.svg') center / cover no-repeat;
-  position: absolute;
-  content: '';
-  @include adaptiveValue("height", 17, 11);
-  @include adaptiveValue("width", 24, 15);
-  left: rem(20);
+// .wpcf7-radio input[type="radio"]+span:after {
+//   position: absolute;
+//   content: '';
+//   display: block;
+//   // left: rem(20);
 
-  top: 50%;
-  transform: translate(0, 50%);
+//   // top: 50%;
+//   // transform: translate(0, 50%);
 
-  background-color: transparent;
-  visibility: hidden;
-  transition: all .2s ease-in 0s;
+//   background-color: transparent;
+//   // visibility: hidden;
+//   // transition: all .2s ease-in 0s;
+// }
+
+.wpcf7-radio input[type=radio]:checked+span:before {
+  background: url('@img/icons/check-quiz.svg') center center no-repeat;
+  // visibility: visible;
 }
-
-.wpcf7-radio input[type=radio]:checked+span:after {
-  visibility: visible;
-}
-
-.wpcf7-radio {
-  // margin: 0 auto;
-}
-
-.wpcf7-radio input[type=radio]+span {}
-
-.wpcf7-radio input[type=radio]:checked+span {}
 
 // Прячем нативные кнопки RADIO
 .wpcf7-radio input[type=radio] {
@@ -50,18 +40,46 @@
   visibility: hidden;
 }
 
-
-
 .wpcf7-radio label {
   position: relative;
   cursor: pointer;
 }
 
+.wpcf7-list-item-label {
+  margin-left: rem(67);
+
+  font-size: rem(14);
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: rem(1.4);
+}
+
+.wpcf7-list-item {
+  position: relative;
+  display: inline-block;
+}
+
+.wpcf7-list-item:before {
+  content: "";
+  position: absolute;
+  background-color: #2C4A67;
+  width: rem(14);
+  height: rem(1);
+  left: rem(57);
+  top: 50%;
+}
+
 .quiz-form {
+  // display: flex;
+  // flex-direction: column;
+  // justify-items: center;
+  padding-top: rem(32);
+  // overflow: auto;
   min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
+
+  @media (max-width:$mobile) {
+    // min-height: 100vh;
+  }
 
 
   &__header {
@@ -70,11 +88,16 @@
 
 
   &__title {
-    @include adaptiveValue("margin-bottom", 29, 17);
+    @include adaptiveValue("margin-bottom", 32, 17);
+  }
+
+  &__subtitle {
+    margin: 0;
   }
 
   &__fieldset {
     flex: 1 1 auto;
+    min-height: 100%;
   }
 
   &__item {
@@ -97,17 +120,35 @@
 
   &__label {}
 
+
+  &__block {
+    display: grid;
+    justify-items: center;
+  }
+
   &__options {
 
     display: grid;
-    justify-items: center;
-    gap: rem(30);
+    // justify-items: center;
+    gap: rem(38);
     // align-self: start;
-    @include adaptiveValue("margin-top", 40, 30);
+    @include adaptiveValue("margin-top", 48, 30);
     // text-align: center;
   }
 
   &__content {}
+
+
+  &__buttons {
+    display: flex;
+    @include adaptiveValue("margin-top", 36, 48);
+    @include adaptiveValue("margin-bottom", 94, 41);
+
+    &_first {
+      justify-content: end;
+    }
+  }
+
 
 
   &__button {
@@ -126,8 +167,8 @@
     @media (max-width: em(360)) {
       width: 100%;
     }
-
   }
+
 
 
 
@@ -135,35 +176,21 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    // height: rem(97);
+    flex: 1 1 auto;
+
+    .footer__copyright {
+      letter-spacing: 1.4px;
+    }
   }
 
-
-  .wpcf7-list-item-label,
-  &__label {
-    font-size: rem(14);
-    font-weight: 500;
-    line-height: 120%;
-    letter-spacing: rem(1.4);
-  }
 }
 
-.wpcf7-list-item {
-  position: relative;
-  display: inline-block;
-}
 
-.wpcf7-list-item:before {
-  content: "";
-  position: absolute;
-  background-color: #2C4A67;
-  width: 2.5rem;
-  width: rem(14);
-  height: rem(1);
-  left: 42px;
-  top: 50%;
-}
 
 .quiz-popup {
+
+  &__planes {}
 
   &__label {
     font-size: rem(14);
