@@ -48,6 +48,17 @@
 
 .quiz-form {
 
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    @include adaptiveValue("margin-bottom", 29, 17);
+  }
+
+  &__fieldset {
+    flex: 1 1 auto;
+  }
 
   &__content {}
 
@@ -108,9 +119,7 @@
 
 
   .wpcf7-list-item-label,
-  &__label {
-
-  }
+  &__label {}
 }
 
 .wpcf7-list-item {
@@ -129,5 +138,5 @@
 }
 
 .quiz-popup {
-  height: 100vh;
+  // height: 100vh;
 }
