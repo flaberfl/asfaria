@@ -87,6 +87,11 @@
 
   }
 
+  &__options {
+    display: grid;
+    @include adaptiveValue("margin-top", 40, 30);
+  }
+
   &__content {}
 
 
@@ -117,6 +122,7 @@
 
     }
   }
+
 
 
   &__footer {
