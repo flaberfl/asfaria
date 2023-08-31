@@ -89,6 +89,8 @@
 
   &__options {
     display: grid;
+    gap: rem(30);
+    align-self: start;
     @include adaptiveValue("margin-top", 40, 30);
   }
 
@@ -152,11 +154,14 @@
 
 
   .wpcf7-list-item-label,
-  &__label {}
+  &__label {
+    margin-right: rem(20);
+  }
 }
 
 .wpcf7-list-item {
   position: relative;
+  display: inline-block;
 }
 
 .wpcf7-list-item:before {
