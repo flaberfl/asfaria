@@ -109,6 +109,16 @@
   &__fieldset {
     flex: 1 1 auto;
     min-height: 100%;
+
+    // opacity: 0;
+    // position: absolute;
+    // z-index: -20;
+
+    ._active {
+      opacity: 1;
+      position: relative;
+      z-index: 100;
+    }
   }
 
   &__form {
