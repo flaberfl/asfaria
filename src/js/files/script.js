@@ -54,30 +54,89 @@ window.addEventListener('scroll', function () {
 
 // Скрипт квиза
 
-// const quiz = document.getElementById('quiz-form');
-// const quizItems = quiz.querySelectorAll('.quiz-form__fieldset');
-// const btnsNext = quiz.querySelectorAll('.button_next');
+const quiz = document.getElementById('quiz-form');
+const quizItems = quiz.querySelectorAll('.quiz-form__fieldset');
+const btnsNext = quiz.querySelectorAll('.button_next');
+const btnsPrev = quiz.querySelectorAll('.button_back');
+const answer = document.getElementById('answer');
+const inputCheck = document.getElementById('input-check');
 
-// btnsNext.forEach((btn) => {
-//   btn.disabled = true;
-// });
+let count = 0;
+quizItems[count].classList.add('_active');
 
-// quizItems.forEach((quizItem, quizItemIndex) => {
+btnsNext.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    count++;
+    initQuiz();
+  });
 
-//   quizItem.addEventListener('change', (e) => {
-//     const target = e.target;
-//     const inputsChecked = quizItem.querySelectorAll('input:checked');
+  console.log(count);
+  btn.disabled = true;
 
-//     if (inputsChecked.length > 0) {
-//       // разблокировать кнопку именно эту
-//       btnsNext[quizItemIndex].disabled = false;
-//     } else {
-//       // заблокировать эту кнопку
-//       btnsNext[quizItemIndex].disabled = true;
-//     }
+  inputCheck.disabled = true;
+  answer.oninput = ValueInp;
 
-//   })
-// });
+  function ValueInp() {
+    console.log(this.value);
+
+    if (this.value !== '') {
+      inputCheck.disabled = false;
+      console.log(inputCheck);
+
+    } else {
+      inputCheck.disabled = true;
+    }
+  }
+
+});
+
+
+btnsPrev.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    count--;
+    initQuiz();
+  });
+});
+
+function initQuiz() {
+  quizItems.forEach((element, i) => {
+    element.classList.remove('_active')
+    if (i === count) {
+      element.classList.add('_active')
+    }
+  })
+}
+
+
+quizItems.forEach((quizItem, quizItemIndex) => {
+
+  quizItem.addEventListener('change', (e) => {
+    const target = e.target;
+    const inputsChecked = quizItem.querySelectorAll('input:checked:not(.not-input)');
+
+
+
+
+
+    if (inputsChecked.length > 0) {
+      // разблокировать кнопку именно эту
+      btnsNext[quizItemIndex].disabled = false;
+    } else {
+      // заблокировать эту кнопку
+      btnsNext[quizItemIndex].disabled = true;
+    }
+
+
+
+    if (answer.value !== '') {
+      btnsNext[quizItemIndex].disabled = false;
+    }
+  })
+});
+
+
 
 // Для Wordpress добавления порядкового номера объектам слайдера и попапам, зависящих от нимх
 

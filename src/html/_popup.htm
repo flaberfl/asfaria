@@ -182,7 +182,7 @@
 						<div class="quiz-form__block quiz-form__block_inp">
 							<div class="quiz-form__line">
 								<label for="length" class="quiz-form__label">Specify the length of the plane:</label>
-								<input autocomplete="off" type="text" name="length" data-error="" placeholder=""
+								<input id="answer" autocomplete="off" type="text" name="length" data-error="" placeholder=""
 									class="input quiz-form__input">
 
 							</div>
@@ -192,7 +192,7 @@
 
 									<span class="wpcf7-list-item">
 										<label>
-											<input type="radio" name="units" value="ft">
+											<input class="not-input" id="units-ft" type="radio" name="units" value="ft" checked>
 											<span class="wpcf7-list-item-label">
 												ft
 											</span>
@@ -207,7 +207,7 @@
 									<span class="wpcf7-list-item">
 
 										<label>
-											<input type="radio" name="units" value="m">
+											<input class="not-input" id="units-m" type="radio" name="units" value="m">
 											<span class="wpcf7-list-item-label">
 												m
 											</span>
@@ -227,7 +227,7 @@
 							</button>
 							<div class="button__wrap">
 								<span>Find out the cost</span>
-								<button type="button" class="quiz-form__button button button_next"><span>Next</span>
+								<button id="input-check" type="button" class="quiz-form__button button button_next"><span>Next</span>
 								</button>
 							</div>
 
