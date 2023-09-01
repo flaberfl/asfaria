@@ -127,6 +127,10 @@
 
 		@media (min-width:$mobileSmall) {
 			max-width: rem(230);
+
+			.quiz-form__form & {
+				max-width: none;
+			}
 		}
 	}
 }
