@@ -164,6 +164,7 @@
     display: flex;
     @include adaptiveValue("margin-top", 36, 48);
     @include adaptiveValue("margin-bottom", 94, 41);
+    justify-content: space-between;
 
     &_first {
       justify-content: end;
