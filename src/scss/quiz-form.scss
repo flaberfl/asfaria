@@ -93,6 +93,17 @@
 
   &__subtitle {
     margin: 0;
+
+    .quiz-form__buttons_half & {
+      span {
+        &:first-child {
+          margin-bottom: rem(15);
+          display: block;
+          font-weight: inherit;
+          color: inherit;
+        }
+      }
+    }
   }
 
   &__fieldset {
@@ -102,7 +113,7 @@
 
   &__form {
     max-width: rem(685);
-    margin: 0 auto;
+    margin: 0 auto rem(70) auto;
   }
 
   &__item {
@@ -172,21 +183,22 @@
     &_first {
       justify-content: end;
     }
+
+    &_half {
+      justify-content: start;
+      gap: rem(100);
+    }
   }
 
 
 
   &__button {
-    width: rem(163);
-    height: rem(61);
-    gap: rem(24);
+    // width: rem(163);
+    // height: rem(61);
+    // gap: rem(24);
 
     &:disabled {
       opacity: .3;
-
-      &:hover {
-        background-color: red;
-      }
     }
 
     @media (max-width: em(360)) {
