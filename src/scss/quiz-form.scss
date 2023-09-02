@@ -20,6 +20,12 @@
     border: rem(1) solid #2C4A67;
   }
 
+  .wpcf7-list-item-label {
+    ._swither & {
+      color: #fff;
+    }
+  }
+
   ._swither & {
     display: block;
     position: absolute;
@@ -33,9 +39,6 @@
     height: rem(30);
     z-index: -1;
 
-    &:nth-child(3) {
-      height: 100%;
-    }
   }
 }
 
@@ -53,7 +56,9 @@
 //   // transition: all .2s ease-in 0s;
 // }
 
-
+.wpcf7-radio input[type=radio]:checked+.wpcf7-list-item-label {
+  color: #28333E;
+}
 
 // Галочка при нажатии на кнопку
 .wpcf7-radio input[type=radio]:checked+span:before {
@@ -89,8 +94,11 @@
   line-height: 120%;
   letter-spacing: rem(1.4);
 
+
   ._swither & {
     margin-left: 0;
+    color: #3B638B;
+    font-weight: 600;
   }
 }
 
@@ -229,7 +237,7 @@
 
     &._swither {
       grid-template-columns: 1fr 1fr;
-      gap: 50px;
+      gap: rem(2);
     }
   }
 
