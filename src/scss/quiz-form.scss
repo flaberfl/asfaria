@@ -1,3 +1,5 @@
+// Бэкграунд радио кнопки
+
 .wpcf7-radio input[type="radio"]+span:before {
   display: block;
   position: absolute;
@@ -29,8 +31,11 @@
 //   // transition: all .2s ease-in 0s;
 // }
 
+
+
+// Галочка при нажатии на кнопку
 .wpcf7-radio input[type=radio]:checked+span:before {
-  background: url('@img/icons/check-quiz.svg') center center no-repeat;
+  // background: url('@img/icons/check-quiz.svg') center center no-repeat;
   // visibility: visible;
 }
 
@@ -45,6 +50,7 @@
   cursor: pointer;
 }
 
+// Текст радио кнопки
 .wpcf7-list-item-label {
   margin-left: rem(67);
 
@@ -52,29 +58,37 @@
   font-weight: 500;
   line-height: 120%;
   letter-spacing: rem(1.4);
+
+  ._swither & {
+    margin-left: 0;
+  }
 }
 
 .wpcf7-list-item {
   position: relative;
   display: inline-block;
-}
 
-.wpcf7-list-item:before {
-  content: "";
-  position: absolute;
-  background-color: #2C4A67;
-  width: rem(14);
-  height: rem(1);
-  left: rem(57);
-  top: 50%;
+  &::before {
+    content: '';
+    position: absolute;
+    background-color: #2C4A67;
+    width: rem(14);
+    height: rem(1);
+    left: rem(57);
+    top: 50%;
+  }
+
+  ._swither &{
+    &::before{
+      content:'';
+      display: none;
+    }
+  }
+
 }
 
 .quiz-form {
-  // display: flex;
-  // flex-direction: column;
-  // justify-items: center;
   padding-top: rem(32);
-  // overflow: auto;
   min-height: 100%;
 
   @media (max-width:$mobile) {
@@ -120,7 +134,7 @@
       opacity: 1;
       position: relative;
       z-index: 100;
-      transform: translate(0px,0px);
+      transform: translate(0px, 0px);
     }
   }
 
@@ -182,6 +196,11 @@
     // align-self: start;
     @include adaptiveValue("margin-top", 48, 30);
     // text-align: center;
+
+    &._swither {
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
   }
 
   &__content {}
