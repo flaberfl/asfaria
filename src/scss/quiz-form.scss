@@ -1,20 +1,42 @@
 // Бэкграунд радио кнопки
 
 .wpcf7-radio input[type="radio"]+span:before {
-  display: block;
-  position: absolute;
-  content: '';
 
-  @include adaptiveValue("height", 47, 30);
-  @include adaptiveValue("width", 47, 30);
+  ._def & {
 
-  border-radius: 50%;
-  left: 0;
+    display: block;
+    position: absolute;
+    content: '';
 
-  top: 50%;
-  transform: translate(0, -50%);
-  background-color: transparent;
-  border: rem(1) solid #2C4A67;
+    @include adaptiveValue("height", 47, 30);
+    @include adaptiveValue("width", 47, 30);
+
+    border-radius: 50%;
+    left: 0;
+
+    top: 50%;
+    transform: translate(0, -50%);
+    background-color: transparent;
+    border: rem(1) solid #2C4A67;
+  }
+
+  ._swither & {
+    display: block;
+    position: absolute;
+    content: '';
+    left: 0;
+
+    top: 50%;
+    transform: translate(0, -50%);
+    background: url('@img/icons/back-swither.svg') left top no-repeat;
+    width: 180%;
+    height: rem(30);
+    z-index: -1;
+
+    &:nth-child(3) {
+      height: 100%;
+    }
+  }
 }
 
 // .wpcf7-radio input[type="radio"]+span:after {
@@ -35,7 +57,15 @@
 
 // Галочка при нажатии на кнопку
 .wpcf7-radio input[type=radio]:checked+span:before {
-  // background: url('@img/icons/check-quiz.svg') center center no-repeat;
+
+  ._def & {
+    background: url('@img/icons/check-quiz.svg') center center no-repeat;
+  }
+
+  ._swither & {
+    background: url('@img/icons/back-swither-check.svg') center center no-repeat;
+  }
+
   // visibility: visible;
 }
 
@@ -78,9 +108,9 @@
     top: 50%;
   }
 
-  ._swither &{
-    &::before{
-      content:'';
+  ._swither & {
+    &::before {
+      content: '';
       display: none;
     }
   }
@@ -199,7 +229,7 @@
 
     &._swither {
       grid-template-columns: 1fr 1fr;
-      gap: 0;
+      gap: 50px;
     }
   }
 
