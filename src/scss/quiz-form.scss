@@ -1,4 +1,11 @@
 // Бэкграунд радио кнопки
+.wpcf7-radio:nth-child(2)+label {
+  display: none;
+}
+
+// .wpcf7-radio:nth-child(2) input[type="radio"]+span:before {
+//   display: none;
+// }
 
 .wpcf7-radio input[type="radio"]+span:before {
 
