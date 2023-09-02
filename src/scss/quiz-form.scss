@@ -38,7 +38,6 @@
     width: 180%;
     height: rem(30);
     z-index: -2;
-
   }
 }
 
@@ -57,7 +56,11 @@
 // }
 
 .wpcf7-radio input[type=radio]:checked+.wpcf7-list-item-label {
-  color: #28333E;
+
+  ._swither & {
+    color: #28333E;
+  }
+
 }
 
 // Галочка при нажатии на кнопку
