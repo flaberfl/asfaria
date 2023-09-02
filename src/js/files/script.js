@@ -78,16 +78,23 @@ btnsNext.forEach((btn) => {
   answer.oninput = ValueInp;
 
   function ValueInp() {
-    console.log(this.value);
 
     if (this.value !== '') {
       inputCheck.disabled = false;
-      console.log(inputCheck);
 
     } else {
       inputCheck.disabled = true;
     }
   }
+
+  let elementForm = document.querySelector('.quiz-form__fieldset_finish');
+
+  if (elementForm.classList.contains('_active')) {
+    // Выполнить действие, если элемент имеет класс _active
+    document.querySelector('.quiz-form__title').innerText = 'estimated cost of service $12,000';
+    console.log('Finish!');
+  }
+
 
 });
 
@@ -119,7 +126,6 @@ quizItems.forEach((quizItem, quizItemIndex) => {
 
 
 
-
     if (inputsChecked.length > 0) {
       // разблокировать кнопку именно эту
       btnsNext[quizItemIndex].disabled = false;
@@ -135,6 +141,9 @@ quizItems.forEach((quizItem, quizItemIndex) => {
     }
   })
 });
+
+
+
 
 
 
