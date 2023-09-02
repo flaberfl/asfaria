@@ -150,8 +150,13 @@ quizItems.forEach((quizItem, quizItemIndex) => {
   })
 });
 
+// answer.oninput = function () {
+//   this.value = this.value.substr(0, 5);
+// };
 
-
+// input.onchange = function() {
+//   this.value = this.value.substring(0, 5); // ограничить ввод до 5 цифр
+// };
 
 
 
