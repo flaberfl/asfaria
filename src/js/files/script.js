@@ -112,21 +112,19 @@ function initQuiz() {
     if (elementForm.classList.contains('_active')) {
       // Выполнить действие, если элемент имеет класс _active
       document.querySelector('.quiz-form__title').innerText = 'estimated cost of service $12,000';
-      document.querySelector('.quiz-form__subtitle').innerText = 'The final cost will be applied after the calculation by our operator before the start of work.';
-    } else {
-      document.querySelector('.quiz-form__title').innerText = 'calculate the cost';
-      document.querySelector('.quiz-form__subtitle').innerText = 'If you need an urgent check, write to
-      us on
-        <span span >
-        <a href="https://wa.me/13473008286" target="_blank">Whatsapp </a>
-      </span > <i>+1 (347) 300-82-86</i> or <span span > <a
-        href="mailto:nyasfaria@gmail.com">nyasfaria@gmail.com</a></span >';
-    }
+      document.getElementById('sub-visible').hidden = true;
+      document.getElementById('sub-hidden').hidden = false;
 
+    }
+    else {
+      document.querySelector('.quiz-form__title').innerText = 'CALCULATE THE COST';
+      document.getElementById('sub-visible').hidden = false;
+      document.getElementById('sub-hidden').hidden = true;
+    }
   })
 }
 
-
+// myText.removeAttribute("hidden");
 quizItems.forEach((quizItem, quizItemIndex) => {
 
   quizItem.addEventListener('change', (e) => {
