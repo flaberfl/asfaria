@@ -37,7 +37,7 @@
     background: url('@img/icons/back-swither.svg') left top no-repeat;
     width: 180%;
     height: rem(30);
-    z-index: -1;
+    z-index: -2;
 
   }
 }
@@ -69,6 +69,7 @@
 
   ._swither & {
     background: url('@img/icons/back-swither-check.svg') center center no-repeat;
+    z-index: -1;
   }
 
   // visibility: visible;
