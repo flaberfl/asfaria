@@ -87,15 +87,6 @@ btnsNext.forEach((btn) => {
     }
   }
 
-  let elementForm = document.querySelector('.quiz-form__fieldset_finish');
-
-  if (elementForm.classList.contains('_active')) {
-    // Выполнить действие, если элемент имеет класс _active
-    document.querySelector('.quiz-form__title').innerText = 'estimated cost of service $12,000';
-    console.log('Finish!');
-  }
-
-
 });
 
 
@@ -113,6 +104,25 @@ function initQuiz() {
     if (i === count) {
       element.classList.add('_active')
     }
+
+    // Замена текста header popup на последнем слайде
+
+    let elementForm = document.querySelector('.quiz-form__fieldset_finish');
+
+    if (elementForm.classList.contains('_active')) {
+      // Выполнить действие, если элемент имеет класс _active
+      document.querySelector('.quiz-form__title').innerText = 'estimated cost of service $12,000';
+      document.querySelector('.quiz-form__subtitle').innerText = 'The final cost will be applied after the calculation by our operator before the start of work.';
+    } else {
+      document.querySelector('.quiz-form__title').innerText = 'calculate the cost';
+      document.querySelector('.quiz-form__subtitle').innerText = 'If you need an urgent check, write to
+      us on
+        <span span >
+        <a href="https://wa.me/13473008286" target="_blank">Whatsapp </a>
+      </span > <i>+1 (347) 300-82-86</i> or <span span > <a
+        href="mailto:nyasfaria@gmail.com">nyasfaria@gmail.com</a></span >';
+    }
+
   })
 }
 
@@ -227,6 +237,19 @@ quizItems.forEach((quizItem, quizItemIndex) => {
 
 
 
+// // Получаем элемент text
+// const text = document.getElementById("text");
 
+// // Получаем элемент element
+// const element = document.getElementsByClassName("_active")[0];
+
+// // Проверяем, есть ли у элемента class _active
+// if (element.classList.contains("_active")) {
+//   // Если есть, меняем текст элемента text на новый
+//   text.innerHTML = "Новый текст";
+// } else {
+//   // Иначе оставляем старый текст элемента text
+//   text.innerHTML = "Старый текст";
+// }
 
 
