@@ -52,7 +52,7 @@
 
 .wpcf7-radio-m input[type="radio"]+span:before {
 
-  transform: scale(-1, 1) translate(10%,-50%) !important;
+  transform: scale(-1, 1) translate(10%, -50%) !important;
 }
 
 // .wpcf7-radio input[type="radio"]+span:after {
@@ -82,6 +82,10 @@
 
   ._def & {
     background: url('@img/icons/check-quiz.svg') center center no-repeat;
+
+    @media (max-width:$mobile) {
+      background: url('@img/icons/check-quiz-min.svg') center center no-repeat;
+    }
   }
 
   ._swither & {
@@ -105,7 +109,7 @@
 
 // Текст радио кнопки
 .wpcf7-list-item-label {
-  margin-left: rem(67);
+  @include adaptiveValue("margin-left", 67, 54);
 
   font-size: rem(14);
   font-weight: 500;
@@ -130,7 +134,7 @@
     background-color: #2C4A67;
     width: rem(14);
     height: rem(1);
-    left: rem(57);
+    @include adaptiveValue("left", 57, 43);
     top: 50%;
   }
 
@@ -163,6 +167,7 @@
 
   &__subtitle {
     margin: 0;
+    @include adaptiveValue("font-size", 24, 16);
 
     .quiz-form__buttons_half & {
       span {
@@ -174,6 +179,13 @@
         }
       }
     }
+  }
+
+  &__name {
+    font-size: rem(18);
+    font-weight: 700;
+    color: #fff;
+    line-height: 120%;
   }
 
   &__fieldset {
@@ -211,14 +223,14 @@
     justify-content: center;
     align-items: center;
 
-    @include adaptiveValue("width", 289, 150);
-    @include adaptiveValue("height", 289, 150);
+    @include adaptiveValue("width", 289, 170);
+    @include adaptiveValue("height", 289, 170);
     background: linear-gradient(196deg, #196FC5 0%, #7F3F96 100%);
     border-radius: 50%;
   }
 
   &__line {
-    .quiz-form__block_inp & {
+    .quiz-form__block_swither & {
       width: rem(327);
     }
   }
@@ -237,9 +249,16 @@
 
   &__block {
     display: grid;
-    justify-items: center;
 
-    &_inp {
+    @media (min-width:$mobileSmall) {
+      justify-items: center;
+    }
+
+    &_swither {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: rem(30);
       margin-top: rem(60);
       text-align: left;
     }
@@ -248,14 +267,13 @@
   &__options {
 
     display: grid;
-    gap: rem(38);
-    // align-self: start;
+    @include adaptiveValue("gap", 38, 19);
     @include adaptiveValue("margin-top", 48, 30);
-    // text-align: center;
 
     &._swither {
       grid-template-columns: 1fr 1fr;
-      gap: rem(2);
+      gap: rem(6);
+      margin-top: rem(34);
     }
   }
 
@@ -270,6 +288,10 @@
 
     &_first {
       justify-content: end;
+
+      @media (max-width:$mobile) {
+        justify-content: center;
+      }
     }
 
     &_half {
@@ -299,8 +321,6 @@
   }
 
 
-
-
   &__footer {
     display: flex;
     align-items: center;
@@ -310,6 +330,19 @@
 
     .footer__copyright {
       letter-spacing: 1.4px;
+    }
+  }
+
+  &__footer-wrap {
+
+    a,
+    p {
+      @include adaptiveValue("font-size", 14, 12);
+    }
+
+    @media (min-width:$mobile) {
+      display: flex;
+      @include adaptiveValue("gap", 466, 66, 1920, 767, 2);
     }
   }
 
@@ -325,7 +358,7 @@
     font-size: rem(14);
     line-height: 120%;
     color: $hoverColor;
-    margin-top: rem(27); // Проверить на мобилке
+    @include adaptiveValue("margin-top", 27, 31);
     pointer-events: none;
   }
 
