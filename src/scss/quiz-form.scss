@@ -207,8 +207,11 @@
   }
 
   &__form {
-    max-width: rem(685);
-    margin: 0 auto rem(70) auto;
+    @include adaptiveValue("width", 685, 320);
+
+    @media (min-width:$mobileSmall) {
+      margin: 0 auto rem(70) auto;
+    }
   }
 
   &__item {
@@ -305,6 +308,12 @@
     &_half {
       justify-content: start;
       gap: rem(100);
+
+      @media (max-width:$mobile) {
+        flex-direction: column-reverse;
+        gap: rem(40);
+        margin-top: rem(33);
+      }
     }
   }
 
