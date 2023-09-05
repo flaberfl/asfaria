@@ -54,7 +54,7 @@ window.addEventListener('scroll', function () {
 
 // Скрипт квиза
 
-const quiz = document.getElementById('quiz-form');
+const quiz = document.querySelector('.quiz-form');
 const quizItems = quiz.querySelectorAll('.quiz-form__fieldset');
 const btnsNext = quiz.querySelectorAll('.button_next');
 const btnsPrev = quiz.querySelectorAll('.button_back');
