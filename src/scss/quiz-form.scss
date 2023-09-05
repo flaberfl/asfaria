@@ -335,6 +335,10 @@
   &__input {
     width: rem(327);
     @include adaptiveValue("width", 327, 215);
+
+    &_width {
+      @include adaptiveValue("width", 446, 320);
+    }
   }
 
 
