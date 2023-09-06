@@ -54,13 +54,13 @@ window.addEventListener('scroll', function () {
 
 // Скрипт квиза
 
-const quiz = document.querySelector('.quiz-form');
+let quiz = document.querySelector('.quiz-form__planes');
 const quizItems = quiz.querySelectorAll('.quiz-form__fieldset');
 const btnsNext = quiz.querySelectorAll('.button_next');
 const btnsPrev = quiz.querySelectorAll('.button_back');
 const answer = document.getElementById('answer');
 const inputCheck = document.getElementById('input-check');
-
+console.log(quizItems);
 let count = 0;
 quizItems[count].classList.add('_active');
 
@@ -71,7 +71,6 @@ btnsNext.forEach((btn) => {
     initQuiz();
   });
 
-  console.log(count);
   btn.disabled = true;
 
   inputCheck.disabled = true;
