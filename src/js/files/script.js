@@ -89,7 +89,6 @@ btnsNext.forEach((btn) => {
 
 });
 
-
 btnsPrev.forEach((btn) => {
   btn.addEventListener('click', (e) => {
     e.preventDefault();
