@@ -279,7 +279,7 @@ function quizOffices() {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       count3--;
-      initQuiz2();
+      initQuiz3();
     });
   });
 
@@ -307,7 +307,6 @@ function quizOffices() {
         btnsNext3[quizItemIndex].disabled = true;
       }
 
-
       if (answer3.value !== '') {
         btnsNext3[quizItemIndex].disabled = false;
       }
@@ -317,6 +316,84 @@ function quizOffices() {
 }
 
 quizOffices();
+
+function quizApartments() {
+  const quiz4 = document.querySelector('.quiz-form__apartments');
+  const quizItems4 = quiz4.querySelectorAll('.quiz-form__fieldset');
+  const btnsNext4 = quiz4.querySelectorAll('.button_next');
+  const btnsPrev4 = quiz4.querySelectorAll('.button_back');
+  const answer4 = document.getElementById('answer4');
+  const inputCheck4 = document.getElementById('input-check4');
+
+  let count4 = 0;
+  quizItems4[count4].classList.add('_active');
+
+  btnsNext4.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      count4++;
+      initQuiz4();
+    });
+
+    btn.disabled = true;
+
+    inputCheck4.disabled = true;
+    answer4.oninput = ValueInp;
+
+    function ValueInp() {
+
+      if (this.value !== '') {
+        inputCheck4.disabled = false;
+
+      } else {
+        inputCheck4.disabled = true;
+      }
+    }
+  });
+
+  btnsPrev4.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      count4--;
+      initQuiz4();
+    });
+  });
+
+  function initQuiz4() {
+    quizItems4.forEach((element, i) => {
+      element.classList.remove('_active')
+      if (i === count4) {
+        element.classList.add('_active')
+      }
+    })
+    changeHeader();
+  }
+
+  quizItems4.forEach((quizItem, quizItemIndex) => {
+
+    quizItem.addEventListener('change', (e) => {
+      const target = e.target;
+      const inputsChecked = quizItem.querySelectorAll('input:checked:not(.not-input)');
+
+      if (inputsChecked.length > 0) {
+        // разблокировать кнопку именно эту
+        btnsNext4[quizItemIndex].disabled = false;
+      } else {
+        // заблокировать эту кнопку
+        btnsNext4[quizItemIndex].disabled = true;
+      }
+
+      if (answer4.value !== '') {
+        btnsNext4[quizItemIndex].disabled = false;
+      }
+    })
+  });
+
+}
+
+quizApartments();
+
+
 // document.addEventListener("afterPopupOpen", function (e) {
 //   // Попап
 //   const currentPopup = e.detail.popup;

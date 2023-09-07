@@ -369,7 +369,7 @@
 					</h3>
 				</div>
 
-				<fieldset class="quiz-form__fieldset quiz-form__fieldset_2">
+				<fieldset class="quiz-form__fieldset">
 
 					<div class="quiz-form__body">
 
@@ -605,7 +605,7 @@
 	</div>
 </div>
 
-<div id="quiz-popup-offices" aria-hidden="true" class="popup quiz-popup quiz-popup__planes popup_show1">
+<div id="quiz-popup-offices" aria-hidden="true" class="popup quiz-popup quiz-popup__offices popup_show1">
 	<div class="quiz-popup__wrapper popup__wrapper">
 		<div class="quiz-popup__content popup__content">
 			<button data-close type="button" class="popup__close">
@@ -614,7 +614,7 @@
 				</svg>
 			</button>
 
-			<form class="form quiz-form quiz-form__container" action="#" method="POST" data-dev
+			<form class="form quiz-form quiz-form__offices quiz-form__container" action="#" method="POST" data-dev
 				data-popup-message="#quiz-thanks-popup">
 
 				<div sub-visible class="quiz-form__header">
@@ -659,17 +659,16 @@
 						<div class="quiz-form__block quiz-form__block_swither">
 							<div class="quiz-form__line">
 								<label for="area" class="quiz-form__label">Area of the room in sq.ft.:</label>
-								<input autocomplete="off" type="number" name="area" data-error="" placeholder=""
+								<input id="answer3" autocomplete="off" type="number" name="area" data-error="" placeholder=""
 									class="input quiz-form__input quiz-form__input_width">
 
 							</div>
-
 
 						</div>
 
 						<div class="button__wrap quiz-form__buttons quiz-form__buttons_first">
 							<span>Find out the cost</span>
-							<button type="button" class="quiz-form__button button button_next"><span>Next</span>
+							<button id="input-check3" type="button" class="quiz-form__button button button_next"><span>Next</span>
 							</button>
 
 						</div>
@@ -768,7 +767,7 @@
 </div>
 
 
-<div id="quiz-popup-apartments" aria-hidden="true" class="popup quiz-popup quiz-popup__planes popup_show1">
+<div id="quiz-popup-apartments" aria-hidden="true" class="popup quiz-popup quiz-popup__apartments popup_show1">
 	<div class="quiz-popup__wrapper popup__wrapper">
 		<div class="quiz-popup__content popup__content">
 			<button data-close type="button" class="popup__close">
@@ -777,7 +776,7 @@
 				</svg>
 			</button>
 
-			<form class="form quiz-form quiz-form__container" action="#" method="POST" data-dev
+			<form class="form quiz-form quiz-form__apartments quiz-form__container" action="#" method="POST" data-dev
 				data-popup-message="#quiz-thanks-popup">
 
 				<div sub-visible class="quiz-form__header">
@@ -824,7 +823,7 @@
 						<div class="quiz-form__block quiz-form__block_swither">
 							<div class="quiz-form__line">
 								<label for="area" class="quiz-form__label">Area of the room in sq.ft.:</label>
-								<input autocomplete="off" type="number" name="area" data-error="" placeholder=""
+								<input id="answer4" autocomplete="off" type="number" name="area" data-error="" placeholder=""
 									class="input quiz-form__input">
 
 							</div>
@@ -865,7 +864,7 @@
 
 						<div class="button__wrap quiz-form__buttons quiz-form__buttons_first">
 							<span>Find out the cost</span>
-							<button type="button" class="quiz-form__button button button_next"><span>Next</span>
+							<button id="input-check4" type="button" class="quiz-form__button button button_next"><span>Next</span>
 							</button>
 
 						</div>
@@ -963,7 +962,7 @@
 	</div>
 </div>
 
-<div id="quiz-popup-cars" aria-hidden="true" class="popup quiz-popup quiz-popup__planes popup_show1">
+<div id="quiz-popup-cars" aria-hidden="true" class="popup quiz-popup quiz-popup__cars popup_show1">
 	<div class="quiz-popup__wrapper popup__wrapper">
 		<div class="quiz-popup__content popup__content">
 			<button data-close type="button" class="popup__close">
