@@ -162,9 +162,8 @@ function changeHeader() {
 
 }
 
+
 quizPlanes();
-
-
 function quizYachts() {
   const quiz2 = document.querySelector('.quiz-form__yachts');
   const quizItems2 = quiz2.querySelectorAll('.quiz-form__fieldset');
@@ -237,9 +236,10 @@ function quizYachts() {
       }
     })
   });
+
+
 }
 
-quizYachts();
 
 
 
@@ -248,6 +248,12 @@ document.addEventListener("afterPopupOpen", function (e) {
   // Попап
   const currentPopup = e.detail.popup;
   console.log(currentPopup.hash);
+  // if (currentPopup.hash === '#quiz-popup-planes') {
+  //   quizPlanes();
+  // }
+  if (currentPopup.hash === '#quiz-popup-yachts') {
+    quizYachts();
+  }
 });
 
 
