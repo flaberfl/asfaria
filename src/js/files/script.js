@@ -54,59 +54,82 @@ window.addEventListener('scroll', function () {
 
 // Скрипт квиза
 
+function quizPlanes() {
+  let quiz = document.querySelector('.quiz-form__planes');
+  const quizItems = quiz.querySelectorAll('.quiz-form__fieldset');
+  const btnsNext = quiz.querySelectorAll('.button_next');
+  const btnsPrev = quiz.querySelectorAll('.button_back');
+  const answer = document.getElementById('answer');
+  const inputCheck = document.getElementById('input-check');
 
-let quiz = document.querySelector('.quiz-form__planes');
-const quizItems = quiz.querySelectorAll('.quiz-form__fieldset');
-const btnsNext = quiz.querySelectorAll('.button_next');
-const btnsPrev = quiz.querySelectorAll('.button_back');
-const answer = document.getElementById('answer');
-const inputCheck = document.getElementById('input-check');
+  let count = 0;
+  quizItems[count].classList.add('_active');
 
+  btnsNext.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      count++;
+      initQuiz();
+    });
 
-let count = 0;
-quizItems[count].classList.add('_active');
+    btn.disabled = true;
 
-btnsNext.forEach((btn) => {
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    count++;
-    initQuiz();
+    inputCheck.disabled = true;
+    answer.oninput = ValueInp;
+
+    function ValueInp() {
+
+      if (this.value !== '') {
+        inputCheck.disabled = false;
+
+      } else {
+        inputCheck.disabled = true;
+      }
+    }
   });
 
-  btn.disabled = true;
+  btnsPrev.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      count--;
+      initQuiz();
+    });
+  });
 
-  inputCheck.disabled = true;
-  answer.oninput = ValueInp;
-
-  function ValueInp() {
-
-    if (this.value !== '') {
-      inputCheck.disabled = false;
-
-    } else {
-      inputCheck.disabled = true;
-    }
+  function initQuiz() {
+    quizItems.forEach((element, i) => {
+      element.classList.remove('_active')
+      if (i === count) {
+        element.classList.add('_active')
+      }
+    })
+    changeHeader();
   }
-});
+  quizItems.forEach((quizItem, quizItemIndex) => {
 
-btnsPrev.forEach((btn) => {
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    count--;
-    initQuiz();
+    quizItem.addEventListener('change', (e) => {
+      const target = e.target;
+      const inputsChecked = quizItem.querySelectorAll('input:checked:not(.not-input)');
+
+
+
+      if (inputsChecked.length > 0) {
+        // разблокировать кнопку именно эту
+        btnsNext[quizItemIndex].disabled = false;
+      } else {
+        // заблокировать эту кнопку
+        btnsNext[quizItemIndex].disabled = true;
+      }
+
+
+
+      if (answer.value !== '') {
+        btnsNext[quizItemIndex].disabled = false;
+      }
+    })
   });
-});
 
-function initQuiz() {
-  quizItems.forEach((element, i) => {
-    element.classList.remove('_active')
-    if (i === count) {
-      element.classList.add('_active')
-    }
-  })
-  changeHeader();
 }
-
 
 function changeHeader() {
   const elementsForm = document.querySelectorAll('.quiz-form__fieldset_finish');
@@ -123,6 +146,7 @@ function changeHeader() {
   });
 
   elementsForm.forEach(elementForm => {
+    console.log(elementForm);
 
     if (elementForm.classList.contains('_active')) {
 
@@ -138,114 +162,93 @@ function changeHeader() {
 
 }
 
-quizItems.forEach((quizItem, quizItemIndex) => {
-
-  quizItem.addEventListener('change', (e) => {
-    const target = e.target;
-    const inputsChecked = quizItem.querySelectorAll('input:checked:not(.not-input)');
+quizPlanes();
 
 
+function quizYachts() {
+  const quiz2 = document.querySelector('.quiz-form__yachts');
+  const quizItems2 = quiz2.querySelectorAll('.quiz-form__fieldset');
+  const btnsNext2 = quiz2.querySelectorAll('.button_next');
+  const btnsPrev2 = quiz2.querySelectorAll('.button_back');
+  const answer2 = document.getElementById('answer2');
+  const inputCheck2 = document.getElementById('input-check2');
 
-    if (inputsChecked.length > 0) {
-      // разблокировать кнопку именно эту
-      btnsNext[quizItemIndex].disabled = false;
-    } else {
-      // заблокировать эту кнопку
-      btnsNext[quizItemIndex].disabled = true;
+  let count2 = 0;
+  quizItems2[count2].classList.add('_active');
+
+  btnsNext2.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      count2++;
+      initQuiz2();
+    });
+
+    btn.disabled = true;
+
+    inputCheck2.disabled = true;
+    answer2.oninput = ValueInp;
+
+    function ValueInp() {
+
+      if (this.value !== '') {
+        inputCheck2.disabled = false;
+
+      } else {
+        inputCheck2.disabled = true;
+      }
     }
-
-
-
-    if (answer.value !== '') {
-      btnsNext[quizItemIndex].disabled = false;
-    }
-  })
-});
-
-
-
-const quiz2 = document.querySelector('.quiz-form__yachts');
-const quizItems2 = quiz2.querySelectorAll('.quiz-form__fieldset');
-const btnsNext2 = quiz2.querySelectorAll('.button_next');
-const btnsPrev2 = quiz2.querySelectorAll('.button_back');
-const answer2 = document.getElementById('answer2');
-const inputCheck2 = document.getElementById('input-check2');
-
-let count2 = 0;
-quizItems2[count2].classList.add('_active');
-
-btnsNext2.forEach((btn) => {
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    count2++;
-    initQuiz2();
-    // console.log(count2);
-
   });
 
-  btn.disabled = true;
+  btnsPrev2.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      count2--;
+      initQuiz2();
+    });
+  });
 
-  inputCheck2.disabled = true;
-  answer2.oninput = ValueInp;
-
-  function ValueInp() {
-
-    if (this.value !== '') {
-      inputCheck2.disabled = false;
-
-    } else {
-      inputCheck2.disabled = true;
-    }
+  function initQuiz2() {
+    quizItems2.forEach((element, i) => {
+      element.classList.remove('_active')
+      if (i === count2) {
+        element.classList.add('_active')
+      }
+    })
+    changeHeader();
   }
-});
 
-btnsPrev2.forEach((btn) => {
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    count2--;
-    initQuiz2();
+  quizItems2.forEach((quizItem, quizItemIndex) => {
+
+    quizItem.addEventListener('change', (e) => {
+      const target = e.target;
+      const inputsChecked = quizItem.querySelectorAll('input:checked:not(.not-input)');
+
+      if (inputsChecked.length > 0) {
+        // разблокировать кнопку именно эту
+        btnsNext2[quizItemIndex].disabled = false;
+      } else {
+        // заблокировать эту кнопку
+        btnsNext2[quizItemIndex].disabled = true;
+      }
+
+
+      if (answer2.value !== '') {
+        btnsNext2[quizItemIndex].disabled = false;
+      }
+    })
   });
-});
-
-
-function initQuiz2() {
-  quizItems2.forEach((element, i) => {
-    element.classList.remove('_active')
-    if (i === count2) {
-      element.classList.add('_active')
-    }
-  })
-  changeHeader();
 }
 
-quizItems2.forEach((quizItem, quizItemIndex) => {
-
-  quizItem.addEventListener('change', (e) => {
-    const target = e.target;
-    const inputsChecked = quizItem.querySelectorAll('input:checked:not(.not-input)');
-
-    if (inputsChecked.length > 0) {
-      // разблокировать кнопку именно эту
-      btnsNext2[quizItemIndex].disabled = false;
-    } else {
-      // заблокировать эту кнопку
-      btnsNext2[quizItemIndex].disabled = true;
-    }
+quizYachts();
 
 
-    if (answer2.value !== '') {
-      btnsNext2[quizItemIndex].disabled = false;
-    }
-  })
-});
 
 
 document.addEventListener("afterPopupOpen", function (e) {
   // Попап
   const currentPopup = e.detail.popup;
-  console.log(currentPopup);
+  console.log(currentPopup.hash);
 });
-
 
 
 // answer.oninput = function () {
