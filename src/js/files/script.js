@@ -218,7 +218,6 @@ function initQuiz2() {
   changeHeader();
 }
 
-
 quizItems2.forEach((quizItem, quizItemIndex) => {
 
   quizItem.addEventListener('change', (e) => {
@@ -241,6 +240,11 @@ quizItems2.forEach((quizItem, quizItemIndex) => {
 });
 
 
+document.addEventListener("afterPopupOpen", function (e) {
+  // Попап
+  const currentPopup = e.detail.popup;
+  console.log(currentPopup);
+});
 
 
 
