@@ -53,6 +53,36 @@ window.addEventListener('scroll', function () {
 // --move-y: ${(e.clientY - window.innerWidth / 2) * -.01}1deg;
 
 // Скрипт квиза
+function changeHeader() {
+  const elementsForm = document.querySelectorAll('.quiz-form__fieldset_finish');
+  const subVisible = document.querySelectorAll('[sub-visible]');
+  const subHidden = document.querySelectorAll('[sub-hidden]');
+
+  subVisible.forEach(element => {
+    element.hidden = false;
+    console.log('Rjhjxt');
+  });
+
+  subHidden.forEach(element => {
+    element.hidden = true;
+  });
+
+  elementsForm.forEach(elementForm => {
+    console.log(elementForm);
+
+    if (elementForm.classList.contains('_active')) {
+
+      subVisible.forEach(element => {
+        element.hidden = true;
+      });
+
+      subHidden.forEach(element => {
+        element.hidden = false;
+      });
+    }
+  });
+
+}
 
 function quizPlanes() {
   let quiz = document.querySelector('.quiz-form__planes');
@@ -131,39 +161,8 @@ function quizPlanes() {
 
 }
 
-function changeHeader() {
-  const elementsForm = document.querySelectorAll('.quiz-form__fieldset_finish');
-  const subVisible = document.querySelectorAll('[sub-visible]');
-  const subHidden = document.querySelectorAll('[sub-hidden]');
-
-  subVisible.forEach(element => {
-    element.hidden = false;
-    console.log('Rjhjxt');
-  });
-
-  subHidden.forEach(element => {
-    element.hidden = true;
-  });
-
-  elementsForm.forEach(elementForm => {
-    console.log(elementForm);
-
-    if (elementForm.classList.contains('_active')) {
-
-      subVisible.forEach(element => {
-        element.hidden = true;
-      });
-
-      subHidden.forEach(element => {
-        element.hidden = false;
-      });
-    }
-  });
-
-}
-
-
 quizPlanes();
+
 function quizYachts() {
   const quiz2 = document.querySelector('.quiz-form__yachts');
   const quizItems2 = quiz2.querySelectorAll('.quiz-form__fieldset');
@@ -240,21 +239,94 @@ function quizYachts() {
 
 }
 
+quizYachts();
 
+function quizOffices() {
+  const quiz3 = document.querySelector('.quiz-form__offices');
+  const quizItems3 = quiz3.querySelectorAll('.quiz-form__fieldset');
+  const btnsNext3 = quiz3.querySelectorAll('.button_next');
+  const btnsPrev3 = quiz3.querySelectorAll('.button_back');
+  const answer3 = document.getElementById('answer3');
+  const inputCheck3 = document.getElementById('input-check3');
 
+  let count3 = 0;
+  quizItems3[count3].classList.add('_active');
 
+  btnsNext3.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      count3++;
+      initQuiz3();
+    });
 
-document.addEventListener("afterPopupOpen", function (e) {
-  // Попап
-  const currentPopup = e.detail.popup;
-  console.log(currentPopup.hash);
-  // if (currentPopup.hash === '#quiz-popup-planes') {
-  //   quizPlanes();
-  // }
-  if (currentPopup.hash === '#quiz-popup-yachts') {
-    quizYachts();
+    btn.disabled = true;
+
+    inputCheck3.disabled = true;
+    answer3.oninput = ValueInp;
+
+    function ValueInp() {
+
+      if (this.value !== '') {
+        inputCheck3.disabled = false;
+
+      } else {
+        inputCheck3.disabled = true;
+      }
+    }
+  });
+
+  btnsPrev3.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      count3--;
+      initQuiz2();
+    });
+  });
+
+  function initQuiz3() {
+    quizItems3.forEach((element, i) => {
+      element.classList.remove('_active')
+      if (i === count3) {
+        element.classList.add('_active')
+      }
+    })
+    changeHeader();
   }
-});
+
+  quizItems3.forEach((quizItem, quizItemIndex) => {
+
+    quizItem.addEventListener('change', (e) => {
+      const target = e.target;
+      const inputsChecked = quizItem.querySelectorAll('input:checked:not(.not-input)');
+
+      if (inputsChecked.length > 0) {
+        // разблокировать кнопку именно эту
+        btnsNext3[quizItemIndex].disabled = false;
+      } else {
+        // заблокировать эту кнопку
+        btnsNext3[quizItemIndex].disabled = true;
+      }
+
+
+      if (answer3.value !== '') {
+        btnsNext3[quizItemIndex].disabled = false;
+      }
+    })
+  });
+
+}
+
+quizOffices();
+// document.addEventListener("afterPopupOpen", function (e) {
+//   // Попап
+//   const currentPopup = e.detail.popup;
+//   console.log(currentPopup.hash);
+//   // if (currentPopup.hash === '#quiz-popup-planes') {
+//   //   quizPlanes();
+//   // }
+//   if (currentPopup.hash === '#quiz-popup-yachts') {
+//   }
+// });
 
 
 // answer.oninput = function () {
