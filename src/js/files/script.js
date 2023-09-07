@@ -54,6 +54,7 @@ window.addEventListener('scroll', function () {
 
 // Скрипт квиза
 
+
 let quiz = document.querySelector('.quiz-form__planes');
 const quizItems = quiz.querySelectorAll('.quiz-form__fieldset');
 const btnsNext = quiz.querySelectorAll('.button_next');
@@ -85,7 +86,6 @@ btnsNext.forEach((btn) => {
       inputCheck.disabled = true;
     }
   }
-
 });
 
 btnsPrev.forEach((btn) => {
@@ -102,34 +102,38 @@ function initQuiz() {
     if (i === count) {
       element.classList.add('_active')
     }
-
-    // Замена текста header popup на последнем слайде
-
-    let elementForm = document.querySelector('.quiz-form__fieldset_finish');
-
-    if (elementForm.classList.contains('_active')) {
-      // Выполнить действие, если элемент имеет класс _active
-      document.querySelector('.quiz-form__title').innerText = 'estimated cost of service $12,000';
-      document.getElementById('sub-visible').hidden = true;
-      document.getElementById('sub-hidden').hidden = false;
-
-    }
-    else {
-      document.querySelector('.quiz-form__title').innerText = 'CALCULATE THE COST';
-      document.getElementById('sub-visible').hidden = false;
-      document.getElementById('sub-hidden').hidden = true;
-    }
   })
+  changeHeader();
 }
 
-// myText.removeAttribute("hidden");
+function changeHeader() {
+  let elementForm = document.getElementsByClassName('quiz-form__fieldset_finish');
+  document.querySelectorAll('.quiz-form__fieldset').forEach(elem => {
+    console.log(document.querySelectorAll('.quiz-form__fieldset'));
+    if (elementForm.classList.contains('_active')) {
+      document.querySelectorAll('[sub-visible]').forEach(element => {
+        element.hidden = true;
+      });
+      document.querySelectorAll('[sub-hidden]').forEach(element => {
+        element.hidden = false;
+      });
+    }
+    else {
+      document.querySelectorAll('[sub-visible]').forEach(element => {
+        element.hidden = false;
+      });
+      document.querySelectorAll('[sub-hidden]').forEach(element => {
+        element.hidden = true;
+      });
+    }
+  });
+}
+
 quizItems.forEach((quizItem, quizItemIndex) => {
 
   quizItem.addEventListener('change', (e) => {
     const target = e.target;
     const inputsChecked = quizItem.querySelectorAll('input:checked:not(.not-input)');
-
-
 
 
     if (inputsChecked.length > 0) {
@@ -147,6 +151,88 @@ quizItems.forEach((quizItem, quizItemIndex) => {
     }
   })
 });
+
+
+
+const quiz2 = document.querySelector('.quiz-form__yachts');
+const quizItems2 = quiz2.querySelectorAll('.quiz-form__fieldset');
+const btnsNext2 = quiz2.querySelectorAll('.button_next');
+const btnsPrev2 = quiz2.querySelectorAll('.button_back');
+const answer2 = document.getElementById('answer2');
+const inputCheck2 = document.getElementById('input-check2');
+
+let count2 = 0;
+quizItems2[count2].classList.add('_active');
+
+btnsNext2.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    count2++;
+    initQuiz2();
+    console.log(count2);
+
+  });
+
+  btn.disabled = true;
+
+  inputCheck2.disabled = true;
+  answer2.oninput = ValueInp;
+
+  function ValueInp() {
+
+    if (this.value !== '') {
+      inputCheck2.disabled = false;
+
+    } else {
+      inputCheck2.disabled = true;
+    }
+  }
+});
+
+btnsPrev2.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    count2--;
+    initQuiz2();
+  });
+});
+
+
+function initQuiz2() {
+  quizItems2.forEach((element, i) => {
+    element.classList.remove('_active')
+    if (i === count2) {
+      element.classList.add('_active')
+    }
+  })
+  changeHeader();
+}
+
+
+quizItems2.forEach((quizItem, quizItemIndex) => {
+
+  quizItem.addEventListener('change', (e) => {
+    const target = e.target;
+    const inputsChecked = quizItem.querySelectorAll('input:checked:not(.not-input)');
+
+    if (inputsChecked.length > 0) {
+      // разблокировать кнопку именно эту
+      btnsNext2[quizItemIndex].disabled = false;
+    } else {
+      // заблокировать эту кнопку
+      btnsNext2[quizItemIndex].disabled = true;
+    }
+
+
+    if (answer2.value !== '') {
+      btnsNext2[quizItemIndex].disabled = false;
+    }
+  })
+});
+
+
+
+
 
 // answer.oninput = function () {
 //   this.value = this.value.substr(0, 5);
