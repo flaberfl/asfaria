@@ -61,7 +61,8 @@ const btnsNext = quiz.querySelectorAll('.button_next');
 const btnsPrev = quiz.querySelectorAll('.button_back');
 const answer = document.getElementById('answer');
 const inputCheck = document.getElementById('input-check');
-console.log(quizItems);
+
+
 let count = 0;
 quizItems[count].classList.add('_active');
 
@@ -106,27 +107,35 @@ function initQuiz() {
   changeHeader();
 }
 
+
 function changeHeader() {
-  let elementForm = document.getElementsByClassName('quiz-form__fieldset_finish');
-  document.querySelectorAll('.quiz-form__fieldset').forEach(elem => {
-    console.log(document.querySelectorAll('.quiz-form__fieldset'));
+  const elementsForm = document.querySelectorAll('.quiz-form__fieldset_finish');
+  const subVisible = document.querySelectorAll('[sub-visible]');
+  const subHidden = document.querySelectorAll('[sub-hidden]');
+
+  subVisible.forEach(element => {
+    element.hidden = false;
+    console.log('Rjhjxt');
+  });
+
+  subHidden.forEach(element => {
+    element.hidden = true;
+  });
+
+  elementsForm.forEach(elementForm => {
+
     if (elementForm.classList.contains('_active')) {
-      document.querySelectorAll('[sub-visible]').forEach(element => {
+
+      subVisible.forEach(element => {
         element.hidden = true;
       });
-      document.querySelectorAll('[sub-hidden]').forEach(element => {
+
+      subHidden.forEach(element => {
         element.hidden = false;
-      });
-    }
-    else {
-      document.querySelectorAll('[sub-visible]').forEach(element => {
-        element.hidden = false;
-      });
-      document.querySelectorAll('[sub-hidden]').forEach(element => {
-        element.hidden = true;
       });
     }
   });
+
 }
 
 quizItems.forEach((quizItem, quizItemIndex) => {
@@ -134,6 +143,7 @@ quizItems.forEach((quizItem, quizItemIndex) => {
   quizItem.addEventListener('change', (e) => {
     const target = e.target;
     const inputsChecked = quizItem.querySelectorAll('input:checked:not(.not-input)');
+
 
 
     if (inputsChecked.length > 0) {
@@ -169,7 +179,7 @@ btnsNext2.forEach((btn) => {
     e.preventDefault();
     count2++;
     initQuiz2();
-    console.log(count2);
+    // console.log(count2);
 
   });
 
