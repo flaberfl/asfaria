@@ -39,7 +39,8 @@ body::after {
 		height: rem(19);
 	}
 
-	.thanks-popup__content & {
+	.thanks-popup__content &,
+	.policy-popup & {
 		@include adaptiveValue("right", 30, 20);
 		@include adaptiveValue("top", 30, 20);
 	}
@@ -112,7 +113,6 @@ body::after {
 
 .thanks-popup {
 
-
 	&__content {
 		@include adaptiveValue("padding-top", 90, 60);
 		padding-left: rem(32);
@@ -149,5 +149,65 @@ body::after {
 		position: relative;
 		bottom: rem(-24);
 		max-width: 100%;
+	}
+}
+
+.policy-popup {
+
+	&__content {
+		max-width: rem(1400);
+		@include adaptiveValue("padding-top", 92, 60);
+		@include adaptiveValue("padding-right", 119, 22);
+		@include adaptiveValue("padding-left", 119, 22);
+		@include adaptiveValue("padding-bottom", 92, 28);
+		background-color: #272B30;
+
+		&::before {
+			display: none;
+		}
+	}
+
+	&__title {
+		@include adaptiveValue("margin-bottom", 42, 26);
+
+		font-size: rem(24);
+		font-weight: 500;
+		color: #fff;
+		letter-spacing: 2.4px;
+	}
+
+	&__text {
+		overflow: auto;
+		@include adaptiveValue("padding-right", 33, 11);
+
+		max-height: rem(640);
+
+		@include adaptiveValue("font-size", 18, 14);
+		font-weight: 400;
+		line-height: 120%;
+
+		&::-webkit-scrollbar {
+			width: rem(8);
+
+			@media (max-width:$mobile) {
+				width: rem(6);
+			}
+		}
+
+		&::-webkit-scrollbar-track {
+			background-color: #4C5661;
+			border-radius: rem(4);
+		}
+
+		&::-webkit-scrollbar-thumb {
+			border-radius: rem(4);
+			background-color: #00F0FF;
+		}
+
+		p {
+			&:not(:last-child) {
+				@include adaptiveValue("margin-bottom", 28, 22);
+			}
+		}
 	}
 }
