@@ -393,6 +393,83 @@ function quizApartments() {
 
 quizApartments();
 
+// quizCars();
+
+// function quizCars() {
+//   const quiz5 = document.querySelector('.quiz-form__cars');
+//   const quizItems5 = quiz5.querySelectorAll('.quiz-form__fieldset');
+
+
+//   let count5 = 0;
+//   quizItems5[count5].classList.add('_active');
+
+//   btnsNext4.forEach((btn) => {
+//     btn.addEventListener('click', (e) => {
+//       e.preventDefault();
+//       count4++;
+//       initQuiz4();
+//     });
+
+//     btn.disabled = true;
+
+//     inputCheck4.disabled = true;
+//     answer4.oninput = ValueInp;
+
+//     function ValueInp() {
+
+//       if (this.value !== '') {
+//         inputCheck4.disabled = false;
+
+//       } else {
+//         inputCheck4.disabled = true;
+//       }
+//     }
+//   });
+
+//   btnsPrev4.forEach((btn) => {
+//     btn.addEventListener('click', (e) => {
+//       e.preventDefault();
+//       count4--;
+//       initQuiz4();
+//     });
+//   });
+
+//   function initQuiz4() {
+//     quizItems4.forEach((element, i) => {
+//       element.classList.remove('_active')
+//       if (i === count4) {
+//         element.classList.add('_active')
+//       }
+//     })
+//     changeHeader();
+//   }
+
+//   quizItems4.forEach((quizItem, quizItemIndex) => {
+
+//     quizItem.addEventListener('change', (e) => {
+//       const target = e.target;
+//       const inputsChecked = quizItem.querySelectorAll('input:checked:not(.not-input)');
+
+//       if (inputsChecked.length > 0) {
+//         // разблокировать кнопку именно эту
+//         btnsNext4[quizItemIndex].disabled = false;
+//       } else {
+//         // заблокировать эту кнопку
+//         btnsNext4[quizItemIndex].disabled = true;
+//       }
+
+//       if (answer4.value !== '') {
+//         btnsNext4[quizItemIndex].disabled = false;
+//       }
+//     })
+//   });
+
+// }
+
+
+
+
+
 
 // document.addEventListener("afterPopupOpen", function (e) {
 //   // Попап
