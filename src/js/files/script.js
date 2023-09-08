@@ -6,6 +6,7 @@ import {
   flsModules
 } from "./modules.js";
 
+
 let scrollpos = window.scrollY
 let lastScroll = 0;
 const scrollChange = 80
@@ -494,6 +495,13 @@ quizApartments();
 
 
 
+let card = document.querySelector('.types__image_img');
+
+document.addEventListener('mousemove', function (e) {
+  let xAxis = (window.innerWidth / 3 - e.pageX);
+  let yAxis = (window.innerHeight / 3 - e.pageY);
+  card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+});
 
 
 

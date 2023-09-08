@@ -70,29 +70,32 @@
       }
     }
   }
-  
+
   /* .types__image */
   &__image {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    perspective: 20px;
+
     &:not(:last-child) {
       @include adaptiveValue("height", 253, 84);
       @include adaptiveValue("width", 446, 148);
       border-radius: rem(50);
       background: linear-gradient(196deg, #196FC5 0%, #7F3F96 100%);
-      
+
       &::before {
         content: '';
         position: absolute;
       }
     }
-    
+
     img {
       position: absolute;
       transition: all 0.5s ease 0s;
       filter: drop-shadow(3px 15px 25px #272B30);
+      transform-style: preserve-3d;
     }
 
     &_offices {

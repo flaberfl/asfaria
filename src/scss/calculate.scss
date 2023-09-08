@@ -158,6 +158,8 @@
     background-color: #272B30;
     border-radius: 50%;
 
+    perspective: 20px;
+
 
     &::before {
       content: '';
