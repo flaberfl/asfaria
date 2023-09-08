@@ -9,7 +9,7 @@
 		@@include('html/_header.htm',{})
 		<main class="page">
 
-			<section class="page__intro intro">
+			<section class="intro">
 				<a href="" class="intro__scroll-btn" data-goto=".about-us">
 					<svg width="35" height="28" viewBox="0 0 35 28" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<rect x="34" y="1" width="26" height="33" rx="11.5" transform="rotate(90 34 1)" stroke="#4C5661" />
@@ -29,8 +29,8 @@
 						<h2 class="intro__adress">New York, New Jercey, Connecticut</h2>
 
 						<div class="intro__contacts">
-							<a href="" class="intro__button button"><span>contact us</span></a>
-							<a href="" class="intro__link link">
+							<a href="" data-goto=".feedback" class="intro__button button"><span>contact us</span></a>
+							<a href="" data-goto=".types" class="intro__link link">
 								<img src="@img/left-circle.svg" alt="">
 								Learn more about how we can help
 							</a>
@@ -81,7 +81,7 @@
 								an everyday objects like electronic devices or furniture. Special tools may be needed to locate them and
 								prevent surveillance.
 							</p>
-							<a href="" class="item-devices__link link link_r" data-watch anim-up-down delay10>
+							<a href="#" data-goto=".calculate" class="item-devices__link link link_r" data-watch anim-up-down delay10>
 								<img src="@img/left-circle.svg" alt="">
 								Apply for inspection</a>
 						</div>
@@ -95,7 +95,7 @@
 								or a phone charger. They may be used to gather information on individuals or companies with malicious
 								intent.
 							</p>
-							<a href="" class="item-devices__link link link_r" data-watch anim-up-down delay10>
+							<a href="#" data-goto=".calculate" class="item-devices__link link link_r" data-watch anim-up-down delay10>
 								<img src="@img/left-circle.svg" alt="">
 								Apply for inspection</a>
 						</div>
@@ -147,14 +147,14 @@
 							<div class="types__text-block">
 								<p class="types__descr"><span>Other area for inspection?</span>
 									We’ll help</p>
-								<a href="" class="types__link link link_r" data-da=".types__item_last, 1040">
+								<a href="#" data-goto=".calculate" class="types__link link link_r" data-da=".types__item_last, 1040">
 									<img src="@img/left-circle.svg" alt="">Submit the application
 								</a>
 							</div>
 							<!-- <div class="types__image">
 							</div> -->
 						</div>
-						<a href="" class="types__link link link_r types__link_null">
+						<a href="#" data-goto=".calculate" class="types__link link link_r types__link_null">
 							<img src="@img/left-circle.svg" alt="">Submit the application
 						</a>
 					</div>
