@@ -126,7 +126,7 @@
 
 .wpcf7-list-item {
   position: relative;
-  display: inline-block;
+  // display: inline-block;
 
   &::before {
     content: '';
@@ -204,6 +204,7 @@
   }
 
   &__form {
+    margin: 0 auto;
     @include adaptiveValue("width", 685, 320);
 
     @media (min-width:$mobileSmall) {
@@ -311,6 +312,10 @@
       @media (max-width:$mobile) {
         justify-content: center;
       }
+    }
+
+    .quiz-popup__cars & {
+      justify-content: center;
     }
 
     &_half {
