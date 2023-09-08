@@ -55,12 +55,13 @@ window.addEventListener('scroll', function () {
 // Скрипт квиза
 
 function quizPlanes() {
-  let quiz = document.querySelector('.quiz-form__planes');
+  const quiz = document.querySelector('.quiz-form__planes');
   const quizItems = quiz.querySelectorAll('.quiz-form__fieldset');
   const btnsNext = quiz.querySelectorAll('.button_next');
   const btnsPrev = quiz.querySelectorAll('.button_back');
   const answer = document.getElementById('answer');
   const inputCheck = document.getElementById('input-check');
+
 
   let count = 0;
   quizItems[count].classList.add('_active');
@@ -103,15 +104,14 @@ function quizPlanes() {
         element.classList.add('_active')
       }
     })
-    changeHeader();
+    changeHeaderPlanes();
+
   }
   quizItems.forEach((quizItem, quizItemIndex) => {
 
     quizItem.addEventListener('change', (e) => {
       const target = e.target;
       const inputsChecked = quizItem.querySelectorAll('input:checked:not(.not-input)');
-
-
 
       if (inputsChecked.length > 0) {
         // разблокировать кнопку именно эту
@@ -121,8 +121,6 @@ function quizPlanes() {
         btnsNext[quizItemIndex].disabled = true;
       }
 
-
-
       if (answer.value !== '') {
         btnsNext[quizItemIndex].disabled = false;
       }
@@ -130,8 +128,6 @@ function quizPlanes() {
   });
 
 }
-
-
 
 function quizYachts() {
   const quiz2 = document.querySelector('.quiz-form__yachts');
@@ -182,7 +178,7 @@ function quizYachts() {
         element.classList.add('_active')
       }
     })
-    changeHeader();
+    changeHeaderYachts();
   }
 
   quizItems2.forEach((quizItem, quizItemIndex) => {
@@ -208,8 +204,6 @@ function quizYachts() {
 
 
 }
-
-
 
 function quizOffices() {
   const quiz3 = document.querySelector('.quiz-form__offices');
@@ -260,7 +254,7 @@ function quizOffices() {
         element.classList.add('_active')
       }
     })
-    changeHeader();
+    changeHeaderOffices();
   }
 
   quizItems3.forEach((quizItem, quizItemIndex) => {
@@ -284,8 +278,6 @@ function quizOffices() {
   });
 
 }
-
-
 
 function quizApartments() {
   const quiz4 = document.querySelector('.quiz-form__apartments');
@@ -336,7 +328,7 @@ function quizApartments() {
         element.classList.add('_active')
       }
     })
-    changeHeader();
+    changeHeaderApartments();
   }
 
   quizItems4.forEach((quizItem, quizItemIndex) => {
@@ -361,10 +353,13 @@ function quizApartments() {
 
 }
 
-function changeHeader() {
-  const elementsForm = document.querySelectorAll('.quiz-form__fieldset_finish');
-  const subVisible = document.querySelectorAll('[sub-visible]');
-  const subHidden = document.querySelectorAll('[sub-hidden]');
+function changeHeaderPlanes() {
+  const quiz = document.querySelector('.quiz-form__planes');
+  const elementsForm = quiz.querySelectorAll('.quiz-form__fieldset_finish');
+  const subVisible = quiz.querySelectorAll('[sub-visible]');
+  const subHidden = quiz.querySelectorAll('[sub-hidden]');
+
+  console.log(quiz);
 
   subVisible.forEach(element => {
     element.hidden = false;
@@ -392,12 +387,107 @@ function changeHeader() {
 
 }
 
+function changeHeaderYachts() {
+  const quiz = document.querySelector('.quiz-form__yachts');
+  const elementsForm = quiz.querySelectorAll('.quiz-form__fieldset_finish');
+  const subVisible = quiz.querySelectorAll('[sub-visible]');
+  const subHidden = quiz.querySelectorAll('[sub-hidden]');
+
+  console.log(quiz);
+
+  subVisible.forEach(element => {
+    element.hidden = false;
+    console.log('Rjhjxt');
+  });
+
+  subHidden.forEach(element => {
+    element.hidden = true;
+  });
+
+  elementsForm.forEach(elementForm => {
+    console.log(elementForm);
+
+    if (elementForm.classList.contains('_active')) {
+
+      subVisible.forEach(element => {
+        element.hidden = true;
+      });
+
+      subHidden.forEach(element => {
+        element.hidden = false;
+      });
+    }
+  });
+
+}
+
+function changeHeaderOffices() {
+  const quiz = document.querySelector('.quiz-form__offices');
+  const elementsForm = quiz.querySelectorAll('.quiz-form__fieldset_finish');
+  const subVisible = quiz.querySelectorAll('[sub-visible]');
+  const subHidden = quiz.querySelectorAll('[sub-hidden]');
+
+
+  subVisible.forEach(element => {
+    element.hidden = false;
+    console.log('Rjhjxt');
+  });
+
+  subHidden.forEach(element => {
+    element.hidden = true;
+  });
+
+  elementsForm.forEach(elementForm => {
+    console.log(elementForm);
+
+    if (elementForm.classList.contains('_active')) {
+
+      subVisible.forEach(element => {
+        element.hidden = true;
+      });
+
+      subHidden.forEach(element => {
+        element.hidden = false;
+      });
+    }
+  });
+
+}
+
+function changeHeaderApartments() {
+  const quiz = document.querySelector('.quiz-form__apartments');
+  const elementsForm = quiz.querySelectorAll('.quiz-form__fieldset_finish');
+  const subVisible = quiz.querySelectorAll('[sub-visible]');
+  const subHidden = quiz.querySelectorAll('[sub-hidden]');
+
+  subVisible.forEach(element => {
+    element.hidden = false;
+    console.log('Rjhjxt');
+  });
+
+  subHidden.forEach(element => {
+    element.hidden = true;
+  });
+
+  elementsForm.forEach(elementForm => {
+    console.log(elementForm);
+
+    if (elementForm.classList.contains('_active')) {
+
+      subVisible.forEach(element => {
+        element.hidden = true;
+      });
+
+      subHidden.forEach(element => {
+        element.hidden = false;
+      });
+    }
+  });
+
+}
 
 quizPlanes();
-
 quizYachts();
-
-
 quizOffices();
 quizApartments();
 
