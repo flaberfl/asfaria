@@ -114,6 +114,12 @@
 				display: none;
 			}
 		}
+
+		.quiz-form__fieldset_finish & {
+			@media (max-width:$mobile) {
+				margin-bottom: rem(20);
+			}
+		}
 	}
 
 	&__action {
