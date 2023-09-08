@@ -366,6 +366,7 @@
 					</ul>
 				</div>
 			</section>
+			@@include('html/_popup.htm',{})
 
 			<section class="calculate" data-prlx-parent>
 				<div class="calculate__container">
@@ -600,7 +601,8 @@
 							<div class="checkbox">
 								<input id="c_1" data-error="Нет подтверждения" class="checkbox__input" type="checkbox" value="1"
 									name="form[]" checked>
-								<label for="c_1" class="checkbox__label"><span class="checkbox__text">I agree with <a href="#!" data-popup="#policy-popup">the
+								<label for="c_1" class="checkbox__label"><span class="checkbox__text">I agree with <a href="#!"
+											data-popup="#policy-popup">the
 											privacy policy</a></span></label>
 							</div>
 
@@ -653,7 +655,6 @@
 
 		@@include('html/_footer.htm',{})
 	</div>
-	@@include('html/_popup.htm',{})
 	@@include('html/_js.htm',{})
 </body>
 

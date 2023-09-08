@@ -191,14 +191,20 @@
     &_apartments {
       @include adaptiveValue("width", 366, 170);
       top: -10%;
+
+      @media (max-width: em(600)) {
+        top: -2%;
+      }
     }
 
     &_cars {
       @include adaptiveValue("width", 400, 188);
+      top: 16%;
     }
 
     &_yachts {
       @include adaptiveValue("width", 380, 174);
+      top: 20%;
     }
 
     &_planes {
