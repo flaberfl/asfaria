@@ -77,7 +77,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    perspective: 20px;
+    perspective: rem(1000);
+    transform-style: preserve-3d;
 
     &:not(:last-child) {
       @include adaptiveValue("height", 253, 84);
@@ -96,6 +97,8 @@
       transition: all 0.5s ease 0s;
       filter: drop-shadow(3px 15px 25px #272B30);
       transform-style: preserve-3d;
+      perspective: rem(1000);
+
     }
 
     &_offices {
