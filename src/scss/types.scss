@@ -79,11 +79,13 @@
     align-items: center;
     transition: transform 0.3s ease 0s;
 
-    &:hover {
-      transform: perspective(300px) rotateY(-2deg);
+    @media (any-hover: hover) {
+      &:hover {
+        transform: perspective(300px) rotateY(-2deg);
 
-      img {
-        transform: perspective(300px) rotateY(7deg);
+        img {
+          transform: perspective(300px) rotateY(7deg);
+        }
       }
     }
 
