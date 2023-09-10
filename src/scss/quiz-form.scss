@@ -240,11 +240,12 @@
     border-radius: 50%;
   }
 
-  // &__line {
-  //   .quiz-form__block_swither & {
-  //     width: rem(327);
-  //   }
-  // }
+  &__line {
+    margin: 0 auto;
+    // .quiz-form__block_swither & {
+    //   width: rem(327);
+    // }
+  }
 
   &__label {
     display: block;
@@ -344,12 +345,8 @@
   }
 
   &__input {
-    width: rem(327);
-    @include adaptiveValue("width", 327, 215);
-
-    &_width {
-      @include adaptiveValue("width", 446, 320);
-    }
+    // @include adaptiveValue("width", 327, 215);
+    @include adaptiveValue("width", 446, 320);
   }
 
 
