@@ -97,9 +97,28 @@ function quizPlanes() {
       }
     })
     changeHeaderPlanes();
-
     planesPrice.innerHTML = calculatePrice(answer.value, 26, 3200, 25);
+
+    const checkMinPrice = document.getElementById('check-minprice');
+
+    // if (checkMinPrice.checked) {
+    //   document.querySelector('.quiz-form__label').innerHTML = 'Area of the room in sq.ft.:';
+    //   document.getElementById('planes-price').innerHTML = calculatePrice(answer.value, 1600, 3200, 1.8);
+    // } else {
+    //   document.querySelector('.quiz-form__label').innerHTML = 'Specify the length of the plane, ft:';
+    // }
+
+
+    if (checkMinPrice.checked) {
+      document.querySelectorAll('.quiz-form__label').forEach(element =>
+        element.innerHTML = 'Area of the room in sq.ft.:');
+      document.getElementById('planes-price').innerHTML = calculatePrice(answer.value, 1600, 3200, 1.8);
+    } else {
+      document.querySelectorAll('.quiz-form__label').forEach(element =>
+        element.innerHTML = 'Specify the length of the plane, ft:');
+    }
   }
+
   quizItems.forEach((quizItem, quizItemIndex) => {
 
     quizItem.addEventListener('change', (e) => {
@@ -117,6 +136,9 @@ function quizPlanes() {
       if (answer.value !== '') {
         btnsNext[quizItemIndex].disabled = false;
       }
+
+      // changeLabel();
+
     })
   });
 
@@ -175,6 +197,17 @@ function quizYachts() {
     changeHeaderYachts();
 
     yachtsPrice.innerHTML = calculatePrice(answer2.value, 38, 4300, 70);
+
+    const checkMinPrice2 = document.getElementById('check-minprice2');
+
+    if (checkMinPrice2.checked) {
+      document.querySelectorAll('.quiz-form__label').forEach(element =>
+        element.innerHTML = 'Area of the room in sq.ft.:');
+      document.getElementById('yachts-price').innerHTML = calculatePrice(answer2.value, 1600, 3200, 1.8);
+    } else {
+      document.querySelectorAll('.quiz-form__label').forEach(element =>
+        element.innerHTML = 'Specify the length of the plane, ft:');
+    }
   }
 
   quizItems2.forEach((quizItem, quizItemIndex) => {
