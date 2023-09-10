@@ -39,19 +39,6 @@ window.addEventListener('scroll', function () {
   }
 })
 
-// Скрипт параллакса от мыши
-
-// document.addEventListener('mouseover', e => {
-//   Object.assign(document.documentElement, {
-//     style: `
-//     --move-x: ${(e.clientX) * -.04}deg;
-//     --move-y: ${(e.clientY) * -.03}1deg;
-//     `
-//   })
-// })
-
-// --move-x: ${(e.clientX - window.innerWidth / 2) * -.005}deg;
-// --move-y: ${(e.clientY - window.innerWidth / 2) * -.01}1deg;
 
 // Скрипт квиза
 
@@ -62,6 +49,7 @@ function quizPlanes() {
   const btnsPrev = quiz.querySelectorAll('.button_back');
   const answer = document.getElementById('answer');
   const inputCheck = document.getElementById('input-check');
+  const planesPrice = document.getElementById('planes-price');
 
 
   let count = 0;
@@ -80,6 +68,9 @@ function quizPlanes() {
     answer.oninput = ValueInp;
 
     function ValueInp() {
+
+      calculatePrice(this.value);
+      console.log(calculatePrice(this.value))
 
       if (this.value !== '') {
         inputCheck.disabled = false;
@@ -107,6 +98,7 @@ function quizPlanes() {
     })
     changeHeaderPlanes();
 
+    planesPrice.innerHTML = calculatePrice(answer.value, 26, 3200, 25);
   }
   quizItems.forEach((quizItem, quizItemIndex) => {
 
@@ -137,6 +129,7 @@ function quizYachts() {
   const btnsPrev2 = quiz2.querySelectorAll('.button_back');
   const answer2 = document.getElementById('answer2');
   const inputCheck2 = document.getElementById('input-check2');
+  const yachtsPrice = document.getElementById('yachts-price');
 
   let count2 = 0;
   quizItems2[count2].classList.add('_active');
@@ -180,6 +173,8 @@ function quizYachts() {
       }
     })
     changeHeaderYachts();
+
+    yachtsPrice.innerHTML = calculatePrice(answer2.value, 38, 4300, 70);
   }
 
   quizItems2.forEach((quizItem, quizItemIndex) => {
@@ -213,6 +208,8 @@ function quizOffices() {
   const btnsPrev3 = quiz3.querySelectorAll('.button_back');
   const answer3 = document.getElementById('answer3');
   const inputCheck3 = document.getElementById('input-check3');
+  let officePrice = document.getElementById('office-price');
+
 
   let count3 = 0;
   quizItems3[count3].classList.add('_active');
@@ -238,6 +235,7 @@ function quizOffices() {
         inputCheck3.disabled = true;
       }
     }
+
   });
 
   btnsPrev3.forEach((btn) => {
@@ -256,6 +254,7 @@ function quizOffices() {
       }
     })
     changeHeaderOffices();
+    officePrice.innerHTML = calculatePrice(answer3.value, 1600, 3200, 1.8);
   }
 
   quizItems3.forEach((quizItem, quizItemIndex) => {
@@ -287,6 +286,7 @@ function quizApartments() {
   const btnsPrev4 = quiz4.querySelectorAll('.button_back');
   const answer4 = document.getElementById('answer4');
   const inputCheck4 = document.getElementById('input-check4');
+  const apartmentsPrice = document.getElementById('apartments-price');
 
   let count4 = 0;
   quizItems4[count4].classList.add('_active');
@@ -330,6 +330,7 @@ function quizApartments() {
       }
     })
     changeHeaderApartments();
+    apartmentsPrice.innerHTML = calculatePrice(answer4.value, 1900, 3200, 1.3);
   }
 
   quizItems4.forEach((quizItem, quizItemIndex) => {
@@ -428,10 +429,8 @@ function changeHeaderOffices() {
   const subVisible = quiz.querySelectorAll('[sub-visible]');
   const subHidden = quiz.querySelectorAll('[sub-hidden]');
 
-
   subVisible.forEach(element => {
     element.hidden = false;
-    console.log('Rjhjxt');
   });
 
   subHidden.forEach(element => {
@@ -491,6 +490,19 @@ quizPlanes();
 quizYachts();
 quizOffices();
 quizApartments();
+
+// console.log(calculatePriceOffice(32, 26, 3200, 25));
+// (calculatePriceOffice(Длина(площадь объекта), Лимит, Старт.стоимость, Доплата за каждый фут сверху));
+
+function calculatePrice(length, ftValue, priceVlalue, moreValue) {
+  if (length <= ftValue) {
+    return priceVlalue;
+  } else {
+    let extraMeters = length - ftValue;
+    let pricePerMeter = moreValue;
+    return pricePerMeter * extraMeters + priceVlalue;
+  }
+}
 
 // document.addEventListener("afterPopupOpen", function (e) {
 //   // Попап
