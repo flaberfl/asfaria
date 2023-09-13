@@ -107,6 +107,7 @@
   &__main-img {
     position: relative;
     left: 9.7%;
+    bottom: -9%;
     @include adaptiveValue("width", 440, 277);
 
     z-index: 20;
