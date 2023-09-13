@@ -110,11 +110,11 @@ function quizPlanes() {
 
 
     if (checkMinPrice.checked) {
-      document.querySelectorAll('.quiz-form__label').forEach(element =>
+      document.querySelectorAll('.quiz-form__label_rooms').forEach(element =>
         element.innerHTML = 'Area of the room in sq.ft.:');
       document.getElementById('planes-price').innerHTML = calculatePrice(answer.value, 1600, 3200, 1.8);
     } else {
-      document.querySelectorAll('.quiz-form__label').forEach(element =>
+      document.querySelectorAll('.quiz-form__label_rooms').forEach(element =>
         element.innerHTML = 'Specify the length of the plane, ft:');
     }
   }
@@ -201,12 +201,12 @@ function quizYachts() {
     const checkMinPrice2 = document.getElementById('check-minprice2');
 
     if (checkMinPrice2.checked) {
-      document.querySelectorAll('.quiz-form__label').forEach(element =>
+      document.querySelectorAll('.quiz-form__label_rooms').forEach(element =>
         element.innerHTML = 'Area of the room in sq.ft.:');
       document.getElementById('yachts-price').innerHTML = calculatePrice(answer2.value, 1600, 3200, 1.8);
     } else {
-      document.querySelectorAll('.quiz-form__label').forEach(element =>
-        element.innerHTML = 'Specify the length of the plane, ft:');
+      document.querySelectorAll('.quiz-form__label_rooms').forEach(element =>
+        element.innerHTML = 'Specify the length of the yachts, ft:');
     }
   }
 
