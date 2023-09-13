@@ -38,16 +38,16 @@
 		&_tel {
 			position: relative;
 
-			&::after {
-				content: '+1';
-				position: absolute;
-				font-size: rem(14);
-				font-weight: 500;
-				color: #fff;
+			// &::after {
+			// 	content: '+1';
+			// 	position: absolute;
+			// 	font-size: rem(14);
+			// 	font-weight: 500;
+			// 	color: #fff;
 
-				@include adaptiveValue("left", 38, 21);
-				@include adaptiveValue("top", 60, 38);
-			}
+			// 	@include adaptiveValue("left", 38, 21);
+			// 	@include adaptiveValue("top", 60, 38);
+			// }
 
 			&:before {
 				content: '';
@@ -65,6 +65,15 @@
 				@include adaptiveValue("padding-left", 112, 77);
 			}
 		}
+	}
+
+	.wpcf7-select {
+		position: absolute;
+		top: -100%;
+
+		font-size: rem(14);
+		font-weight: 500;
+		color: #fff;
 	}
 
 	&__label {

@@ -3,6 +3,11 @@
 .select {
 	min-width: 0;
 	position: relative;
+
+
+	position: absolute;
+	top: -50%;
+
 	// .select__body
 	&__body {
 		position: relative;
@@ -11,8 +16,12 @@
 	&__title {
 		color: inherit;
 		text-align: left;
-		border: 1px solid #d9d9d9;
-		background-color: #610e0e;
+		// border: 1px solid #d9d9d9;
+		// background-color: #610e0e;
+		
+		color: #fff;
+		font-weight: 500;
+		font-size: toRem(14);
 		cursor: pointer;
 		width: 100%;
 		border-radius: 4px;
@@ -74,7 +83,7 @@
 		border-radius: 0 0 4px 4px;
 		min-width: 100%;
 		left: 0;
-		background-color: #fff;
+		// background-color: #fff;
 		border-top: 0;
 		border: 1px solid #d9d9d9;
 		border-top: 0;
@@ -100,6 +109,7 @@
 		cursor: pointer;
 		padding: 5px 15px;
 		color: inherit;
+		color: #fff;
 		&._select-selected {
 			background-color: #eee;
 		}
