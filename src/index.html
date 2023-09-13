@@ -554,7 +554,6 @@
 
 			<section class="feedback">
 				<div class="feedback__container">
-
 					<h2 class="feedback__title title" data-watch anim-up-down>Do you Still have a question?</h2>
 					<form action="#!" class="feedback__form form" data-dev data-popup-message="#thanks-popup">
 						<div class="form__line form__line_name" data-watch anim-up-down>
@@ -566,12 +565,14 @@
 							<label class="form__label" for="tel">Phone Number*</label>
 							<input autocomplete="off" type="text" name="tel" data-error="Type your phone number"
 								data-required="number" data-placeholder="(___) ___-__-__" placeholder="(___) ___-__-__" class="input">
-							<select class="wpcf7-form-control wpcf7-select" aria-invalid="false" name="menu-91">
-								<option value="+1">+1</option>
-								<option value="+234">+234</option>
-								<option value="+380">+380</option>
-								<option value="+7">+7</option>
-							</select>
+							<div class="code-select">
+								<select class="wpcf7-form-control wpcf7-select" aria-invalid="false" name="menu-91">
+									<option value="+1">+1</option>
+									<option value="+7">+7</option>
+									<option value="+380">+380</option>
+									<option value="+20">+20</option>÷
+								</select>
+							</div>
 						</div>
 						<div class="form__line form__line_mail" data-watch anim-up-down delay20>
 							<label class="form__label" for="name">Your Email*</label>
