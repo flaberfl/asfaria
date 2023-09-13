@@ -2,11 +2,11 @@
 // Сніппет (HTML): sel
 .select {
 	min-width: 0;
-	position: relative;
+	// position: relative;
 
 
 	position: absolute;
-	top: toRem(56);
+	top: 56px;
 
 	// .select__body
 	&__body {
@@ -83,7 +83,7 @@
 		border-radius: 0 0 4px 4px;
 		min-width: 100%;
 		left: 0;
-		// background-color: #fff;
+		background-color: rgba($color: #fff, $alpha: .7);
 		border-top: 0;
 		border: 1px solid #d9d9d9;
 		border-top: 0;
@@ -109,7 +109,7 @@
 		cursor: pointer;
 		padding: 5px 15px;
 		color: inherit;
-		color: #fff;
+		// color: #000;
 		&._select-selected {
 			background-color: #eee;
 		}
