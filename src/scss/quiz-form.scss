@@ -233,11 +233,56 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-
+    @include adaptiveValue("margin-bottom", 45, 27);
     @include adaptiveValue("width", 289, 170);
     @include adaptiveValue("height", 289, 170);
+    
     background: linear-gradient(196deg, #196FC5 0%, #7F3F96 100%);
     border-radius: 50%;
+
+    &_office {
+      img {
+        width: rem(295);
+        @include adaptiveValue("width", 295, 153);
+      }
+    }
+
+    &_apartments {
+      img {
+        @include adaptiveValue("width", 366, 170);
+        top: -10%;
+
+        @media (max-width: em(600)) {
+          top: -2%;
+        }
+      }
+    }
+
+    &_cars {
+      img {
+        @include adaptiveValue("width", 400, 188);
+        top: 16%;
+      }
+    }
+
+    &_yachts {
+      img {
+        @include adaptiveValue("width", 380, 174);
+        top: 20%;
+      }
+    }
+
+    &_planes {
+      img {
+        @include adaptiveValue("width", 350, 165);
+      }
+    }
+
+    img {
+      position: absolute;
+      transition: all 0.5s ease 0s;
+      filter: drop-shadow(3px 25px 15px #272B30);
+    }
   }
 
   &__line {
