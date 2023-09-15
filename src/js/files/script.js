@@ -51,6 +51,18 @@ function quizPlanes() {
   const inputCheck = document.getElementById('input-check');
   const planesPrice = document.getElementById('planes-price');
 
+  const checkbox = document.getElementById('c_2');
+  const btn_submit = document.getElementById('b_2');
+
+  btn_submit.disabled = true;
+  checkbox.addEventListener("change", () => {
+    if (checkbox.checked) {
+      btn_submit.disabled = false;
+    } else {
+      btn_submit.disabled = true;
+    }
+  });
+
 
   let count = 0;
   quizItems[count].classList.add('_active');
@@ -153,6 +165,18 @@ function quizYachts() {
   const inputCheck2 = document.getElementById('input-check2');
   const yachtsPrice = document.getElementById('yachts-price');
 
+  const checkbox = document.getElementById('c_3');
+  const btn_submit = document.getElementById('b_3');
+
+  btn_submit.disabled = true;
+  checkbox.addEventListener("change", () => {
+    if (checkbox.checked) {
+      btn_submit.disabled = false;
+    } else {
+      btn_submit.disabled = true;
+    }
+  });
+
   let count2 = 0;
   quizItems2[count2].classList.add('_active');
 
@@ -250,10 +274,8 @@ function quizOffices() {
   checkbox.addEventListener("change", () => {
     if (checkbox.checked) {
       btn_submit.disabled = false;
-      // btn_submit.removeAttribute('disabled');
     } else {
       btn_submit.disabled = true;
-      // btn_submit.setAttribute('disabled');
     }
   });
 
@@ -334,6 +356,19 @@ function quizApartments() {
   const answer4 = document.getElementById('answer4');
   const inputCheck4 = document.getElementById('input-check4');
   const apartmentsPrice = document.getElementById('apartments-price');
+
+  const checkbox = document.getElementById('c_5');
+  const btn_submit = document.getElementById('b_5');
+
+  btn_submit.disabled = true;
+  checkbox.addEventListener("change", () => {
+    if (checkbox.checked) {
+      btn_submit.disabled = false;
+    } else {
+      btn_submit.disabled = true;
+    }
+  });
+
 
   let count4 = 0;
   quizItems4[count4].classList.add('_active');
@@ -537,6 +572,19 @@ quizPlanes();
 quizYachts();
 quizOffices();
 quizApartments();
+
+
+const checkbox = document.getElementById('c_6');
+const btn_submit = document.getElementById('b_6');
+
+btn_submit.disabled = true;
+checkbox.addEventListener("change", () => {
+  if (checkbox.checked) {
+    btn_submit.disabled = false;
+  } else {
+    btn_submit.disabled = true;
+  }
+});
 
 // console.log(calculatePriceOffice(32, 26, 3200, 25));
 // (calculatePriceOffice(Длина(площадь объекта), Лимит, Старт.стоимость, Доплата за каждый фут сверху));
