@@ -236,7 +236,7 @@
     @include adaptiveValue("margin-bottom", 45, 27);
     @include adaptiveValue("width", 289, 170);
     @include adaptiveValue("height", 289, 170);
-    
+
     background: linear-gradient(196deg, #196FC5 0%, #7F3F96 100%);
     border-radius: 50%;
 
@@ -422,7 +422,11 @@
 
 }
 
-
+.feedback__button {
+  &:disabled {
+    opacity: .3;
+  }
+}
 
 .quiz-popup {
 

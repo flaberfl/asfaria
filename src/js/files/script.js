@@ -243,6 +243,20 @@ function quizOffices() {
   const inputCheck3 = document.getElementById('input-check3');
   let officePrice = document.getElementById('office-price');
 
+  const checkbox = document.getElementById('c_4');
+  const btn_submit = document.getElementById('b_4');
+
+  btn_submit.disabled = true;
+  checkbox.addEventListener("change", () => {
+    if (checkbox.checked) {
+      btn_submit.disabled = false;
+      // btn_submit.removeAttribute('disabled');
+    } else {
+      btn_submit.disabled = true;
+      // btn_submit.setAttribute('disabled');
+    }
+  });
+
 
   let count3 = 0;
   quizItems3[count3].classList.add('_active');
