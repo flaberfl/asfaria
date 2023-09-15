@@ -572,10 +572,26 @@ quizPlanes();
 quizYachts();
 quizOffices();
 quizApartments();
+quizCars();
 
 
-const checkbox = document.getElementById('c_6');
-const btn_submit = document.getElementById('b_6');
+
+function quizCars() {
+  const checkbox = document.getElementById('c_6');
+  const btn_submit = document.getElementById('b_6');
+
+  btn_submit.disabled = true;
+  checkbox.addEventListener("change", () => {
+    if (checkbox.checked) {
+      btn_submit.disabled = false;
+    } else {
+      btn_submit.disabled = true;
+    }
+  });
+}
+
+const checkbox = document.getElementById('c_1');
+const btn_submit = document.getElementById('b_1');
 
 btn_submit.disabled = true;
 checkbox.addEventListener("change", () => {
