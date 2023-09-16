@@ -49,6 +49,7 @@ function quizPlanes() {
   const btnsPrev = quiz.querySelectorAll('.button_back');
   const answer = document.getElementById('answer');
   const inputCheck = document.getElementById('input-check');
+  const inputPlan = document.getElementById('input-plan');
   const planesPrice = document.getElementById('planes-price');
 
   const checkbox = document.getElementById('c_2');
@@ -110,9 +111,9 @@ function quizPlanes() {
     })
     changeHeaderPlanes();
     planesPrice.innerHTML = calculatePrice(answer.value, 26, 3200, 25);
-
+    inputPlan.value = calculatePrice(answer.value, 26, 3200, 25);
     const checkMinPrice = document.getElementById('check-minprice');
-
+console.log(inputPlan);
     // if (checkMinPrice.checked) {
     //   document.querySelector('.quiz-form__label').innerHTML = 'Area of the room in sq.ft.:';
     //   document.getElementById('planes-price').innerHTML = calculatePrice(answer.value, 1600, 3200, 1.8);

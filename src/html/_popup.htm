@@ -46,7 +46,7 @@
 					<div class="quiz-form__body">
 
 						<div class="quiz-form__item">
-							<div class="quiz-form__image quiz-form__image_planes">
+							<div class="quiz-form__image calculate__image">
 								<img src="@img/calculate/planes.png" alt="Planes" class="calculate__img calculate__img_planes">
 								<div class="calculate__check">
 									<svg class="calculate__svg" width="23" height="23" viewBox="0 0 23 23" fill="none"
@@ -135,39 +135,6 @@
 									class="input quiz-form__input">
 
 							</div>
-
-							<!-- <div class="quiz-form__options _swither">
-								<span class="wpcf7-form-control wpcf7-radio">
-
-									<span class="wpcf7-list-item">
-										<label>
-											<input class="not-input" id="units-ft" type="radio" name="units" value="ft" checked>
-											<span class="wpcf7-list-item-label">
-												ft
-											</span>
-										</label>
-
-									</span>
-
-								</span>
-
-								<span class="wpcf7-form-control wpcf7-radio wpcf7-radio-m">
-
-									<span class="wpcf7-list-item">
-
-										<label>
-											<input class="not-input" id="units-m" type="radio" name="units" value="m">
-											<span class="wpcf7-list-item-label">
-												m
-											</span>
-										</label>
-
-									</span>
-
-								</span>
-
-							</div> -->
-
 						</div>
 
 
@@ -236,7 +203,7 @@
 
 							<div class="checkbox">
 								<input id="c_2" data-error="Нет подтверждения" class="checkbox__input not-input" type="checkbox"
-									value="1" name="checkbox">
+									value="1" name="checkbox" checked>
 								<label for="c_2" class="checkbox__label"><span class="checkbox__text">I agree with <a href="#!"
 											data-popup="policy-popup">the
 											privacy policy</a></span></label>
@@ -516,7 +483,7 @@
 
 							<div class="checkbox">
 								<input id="c_3" data-error="Нет подтверждения" class="checkbox__input not-input" type="checkbox"
-									value="1" name="checkbox">
+									value="1" name="checkbox" checked>
 								<label for="c_3" class="checkbox__label"><span class="checkbox__text">I agree with <a href="#!"
 											data-popup="#policy-popup">the
 											privacy policy</a></span></label>
@@ -592,6 +559,7 @@
 				</div>
 
 				<div sub-hidden class="quiz-form__header" hidden>
+					<input id="input-plan" name="price" hidden>
 					<h2 class="quiz-form__title title">estimated cost of service $<span id="office-price"></span></h2>
 					<h3 class="quiz-form__subtitle calculate__subtitle subtitle">
 						The final cost will be applied after the calculation by our operator before the start of work.
@@ -694,7 +662,7 @@
 											privacy policy</a></span></label>
 							</div>
 
-							<button id="b_4" type="submit" class="feedback__button button"><span>Submit</span></button>
+							<button id="b_4" type="submit" class="feedback__button button" disabled><span>Submit</span></button>
 						</div>
 
 					</div>
@@ -892,7 +860,7 @@
 
 							<div class="checkbox">
 								<input id="c_5" data-error="Нет подтверждения" class="checkbox__input not-input" type="checkbox"
-									value="1" name="checkbox">
+									value="1" name="checkbox" checked>
 								<label for="c_5" class="checkbox__label"><span class="checkbox__text">I agree with <a href="#!"
 											data-popup="#policy-popup">the
 											privacy policy</a></span></label>
@@ -1009,7 +977,7 @@
 
 							<div class="checkbox">
 								<input id="c_6" data-error="Нет подтверждения" class="checkbox__input not-input" type="checkbox"
-									value="1" name="checkbox">
+									value="1" name="checkbox" checked>
 								<label for="c_6" class="checkbox__label"><span class="checkbox__text">I agree with <a href="#!"
 											data-popup="#policy-popup">the
 											privacy policy</a></span></label>
